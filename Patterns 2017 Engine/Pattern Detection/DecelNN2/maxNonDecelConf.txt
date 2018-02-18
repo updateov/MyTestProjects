@@ -1,4 +1,0 @@
-abruptDecel : 0.36
-lateDecel : 0.26
-earlyDecel : 0.20
-nonAssociatedGradualDecel : 0.14

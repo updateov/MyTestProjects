@@ -1,4 +1,0 @@
-//Array of 1 coeffs
-{
-1
-};
