@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings thumbprint="8b6de359868d59b66e83c7e0b3c39271f4d157b8">
+  <sections>
+    <!-- THE SETTINGS BELOW THIS LINE ARE NORMALLY MODIFIED -->
+    <section level="0" name="Standard">
+      <setting key="OBLinkURL" value="http://enter-the-OBLink-server-URL-here/" info="OBLink server address" type="string" />
+      <setting key="OBLinkUsername" value="enter-the-OBLink-username-here" info="OBLink user" type="string" />
+      <setting key="OBLinkPassword" value="enter-the-OBLink-password-here" info="OBLink password" type="string" />
+      <setting key="PatternsDBPath" value="c:\patterns-data\" info="Database path for saving data" type="string" />
+      <setting key="cr_window" value="10" info="Duration in minutes used to calculate the contractility rate" type="integer" />
+      <setting key="cr_limit" value="10" info="Maximum value on the Y scale for the contractility graph" type="integer" />
+      <setting key="cr_stage1" value="5" info="Number of contractions in the contractility rate that trigger the stage 1 color" type="integer" />
+      <setting key="cr_stage2" value="30" info="Duration in minutes after which a stage 1 is upgraded to a stage 2 color in the contractility rate" type="integer" />
+      <setting key="controlNumber" value="123456" info="Control code to decrypt the GE Centricity url parameters for the activex web page" type="string" />
+    </section>
+    <!-- THE SETTINGS BELOW THIS LINE ARE RARELY MODIFIED -->
+    <section level="1" name="Intermediate">
+      <setting key="DeleteEpisodeWhenClosed" value="True" info="Delete the episode files when they are closed (the file that contains the tracings, events and user actions)" type="boolean" />
+      <setting key="DelayBeforeDeleteEpisodeWhenClose" value="0" info="If closed episode's data is to be deleted, how many days after last time the episode was monitored do we wait before actually deleting the data" type="integer" />
+      <setting key="EpisodeOutOfMonitorToOutOfScopeDuration" value="4" info="A patient that is out of monitor will be automatically move to out of scope after xx hours" type="integer" />
+      <setting key="EpisodeOutOfMonitorToCloseDuration" value="24" info="A patient that is out of monitor will be automatically move to close after xx hours" type="integer" />
+      <setting key="MaxDaysOfTracingReturnedToActiveX" value="7" info="How many days of tracing in the past can be returned to the ActiveX" type="integer" />
+      <setting key="TracingLateCollectingLive" value="10" info="If the live tracing is more than xx seconds off from the current clock time, then mark the episode as late live" type="integer" />
+      <setting key="SystemRequirements_Memory_MB" value="3800" info="Minimum amount of physical memory required" type="integer" />
+      <setting key="SystemRequirements_Core_Count" value="2" info="Minimum number of physical cores required" type="integer" />
+      <setting key="OBLinkMaximumDurationWithoutRefreshToGoOffline" value="300" info="After how many seconds without a chalkboard refresh do we set the 'offline' status" type="integer" />
+      <setting key="TraceExtendedInformationWithPHIData" value="False" info="For trace, set to true so that debugging trace includes all patients information including PHI" type="boolean" />
+      <setting key="HistoricalTracingMaximumDuration" value="12" info="Maximum number of past hours of tracings that will be retrieve from OBLink with the historical API" type="integer" />
+      <setting key="refresh" value="5" info="How often the Patterns Active X refreshes the data (in seconds)" type="integer" />
+      <setting key="timeout_dlg" value="1" info="If the user does not do it before, all dialog opened by the Patterns ActiveX will close automatically after xx minute(s)" type="integer" />
+      <setting key="versionActiveX" value="0.0.0.1" info="Version of the ActiveX, if the current version does not match that, the user will be prompted to upgrade" type="string" />
+    </section>
+    <!-- THE SETTINGS BELOW THIS LINE ARE NOT NORMALLY MODIFIED -->
+    <section level="2" name="Advanced">
+      <setting key="ValidationVersionActiveX" value="01.00.00.00" info="Version of the active x required. Blank it to disable validation." type="string" />
+      <setting key="MaintenanceDelay" value="12" info="Minimum duration in hours between two iterations for the maintenance" type="integer" />
+      <setting key="ChalkboardRefreshDelay" value="60" info="Minimum duration in seconds between two iterations for the refresh chalkboard" type="integer" />
+      <setting key="CommitEpisodesDelay" value="600" info="Minimum duration in seconds between two iterations for the commit to database" type="integer" />
+      <setting key="CollectTracingDelay" value="5" info="Minimum duration in seconds between two iterations for the collect tracings" type="integer" />
+      <setting key="CollectTracingMaximumElapse" value="30" info="How long (in seconds) the collection of tracing is allow to run at once. If there are many episode in recovery, do as many as possible withing that time and then move on to the next type of task. The remaining episodes will be done next round trip" type="integer" />
+      <setting key="CompressCachedTracingDelay" value="120" info="Minimum duration in seconds between two iterations for the compress tracings" type="integer" />
+      <setting key="LiveCountersDelay" value="2" info="Minimum duration in seconds between two iterations for the refresh of the live tracings performance counters" type="integer" />
+      <setting key="CatalogDatabaseFilename" value="patterns.catalog.db3" info="File name of the catalog database" type="string" />
+      <setting key="DBConnectionStringFormat" value="Data Source={0};Pooling=True;Max Pool Size=100;" info="DB connection string format and options" type="string" />
+      <setting key="OBLinkChalkboardRequestTimeout" value="30000" info="Timeout in milliseconds for the chalkboard request to OBLink" type="integer" />
+      <setting key="OBLinkChalkboardRefreshRetries" value="2" info="How many retries in the update of the chalkbord if something wrong happened there before failing it" type="integer" />
+      <setting key="OBLinkChalkboardCheckForOBLinkPatientMismatch" value="True" info="It happened that OBLink inverted patient chart answers, turn this key to True to detect this and ask again" type="boolean" />
+      <setting key="OBLinkPatientRequestTimeout" value="15000" info="Timeout in milliseconds for the patient data request to OBLink" type="integer" />
+      <setting key="OBLinkChalkboardRequestUrl" value="OBLink_datasynch.asp?UserID={0}&amp;Password={1}&amp;FunctionId=5" info="Request used to retrieve the chalkboard from OBLink" type="string" />
+      <setting key="OBLinkPatientDataRequestUrl" value="OBLink_datasynch.asp?UserID={0}&amp;Password={1}&amp;FunctionId=7&amp;Chart=PeriGenPatternsData&amp;PatientID={2}" info="Request used to retrieve the patient data from OBLink" type="string" />
+      <setting key="OBLinkPatientADTRequestUrl" value="OBLink_datasynch.asp?UserID={0}&amp;Password={1}&amp;FunctionId=8&amp;Chart=PeriGenPatternsADTLog&amp;PatientID={2}" info="Request used to retrieve the patient ADTLog from OBLink" type="string" />
+      <setting key="OBLinkPatientTrailRequestUrl" value="OBLink_datasynch.asp?UserID={0}&amp;Password={1}&amp;FunctionId=8&amp;Chart=PeriGenPatternsTrail&amp;PatientID={2}" info="Request used to retrieve the patient trail from OBLink" type="string" />
+      <setting key="OBLinkPatientTracingsRequestUrl" value="/Bin/QSWeb.dll?FetalData?{0}&amp;{1}&amp;{2}&amp;{3}&amp;{4}" info="Request used to retrieve the tracing from OBLink" type="string" />
+      <setting key="OBLinkTracingReferenceTime" value="1975-12-31T00:00:00" info="The base time used by OBLink to encode date and time" type="string" />
+      <setting key="OBLinkChartColumnDateFormat" value="M/d/yyyy HH:mm" info="The format string used to parse the date and time of the columns header in the chart data returned by OBLink in the Trail chart" type="string" />
+      <setting key="OBLinkEDDDateFormat" value="M/d/yy" info="The format string used to parse the EDD date returned in the data chart by OBLink" type="string" />
+      <setting key="TraceExtendedOBLinkData" value="False" info="For debugging, set to true so that debugging trace includes all requests and answers from OBLink for the charts. Be careful, this logs too much to be left turned on the logged data contains PHI information" type="boolean" />
+      <setting key="TraceExtendedReconciliationData" value="False" info="For debugging, set to true so that debugging trace includes all information pertinent to chalkboard reconciliation (including a before and after). Be careful, this logs too much to be left turned on the logged data contains PHI information" type="boolean" />
+      <setting key="TraceExtendedActiveXData" value="False" info="For debugging, set to true so that debugging trace includes all requests and answers from the ActiveX. Be careful, this logs too much to be left turned on the logged data contains PHI information" type="boolean" />
+      <setting key="HistoricalTracingHasMoreTracingThreshold" value="90" info="Minimum amount of seconds of missing tracing to trigger the use of historical" type="integer" />
+      <setting key="SleepTimeAfterEachHistorical" value="0" info="Additional sleep time in milliseconds after each request of historical tracing, introduce to avoid stressing OBLink too much..." type="integer" />
+      <setting key="SleepTimeAfterEachLive" value="0" info="Additional sleep time in milliseconds after each request of live tracing, introduce to avoid stressing OBLink too much..." type="integer" />
+      <setting key="LiveTracingHasMoreTracingThreshold" value="300" info="Minimum amount of seconds of missing tracing to trigger the use of historical" type="integer" />
+      <setting key="LiveTracingMaximumDuration" value="600" info="Maximum number of past seconds of tracings that will be retrieve from OBLink with the live API (must be higher than HistoricalTracingHasMoreTracingThreshold)" type="integer" />
+      <setting key="TracingMergeBridgeableGap" value="30" info="Maximum bridgeable gap for tracing when merging the small blocks returned by OBLink" type="integer" />
+      <setting key="HistoricalTracingBlockDuration" value="1" info="Size in hours of the chunk of tracing that can be retrieved in one call to OBLink" type="integer" />
+      <setting key="HistoricalTracingRetryLimit" value="2" info="How many retries before stopping the retrieval of the historical tracing of an episode" type="integer" />
+      <setting key="HistoricalTracingOpenTimeout" value="5000" info="Timeout in milliseconds for opening request for historical tracing" type="integer" />
+      <setting key="HistoricalTracingReadTimeout" value="1000" info="Timeout in milliseconds for reading historical tracing in the stream" type="integer" />
+      <setting key="LiveTracingOpenTimeout" value="10000" info="Timeout in milliseconds for opening request for live tracing" type="integer" />
+      <setting key="LiveTracingReadTimeout" value="5000" info="Timeout in milliseconds for reading live tracing in the stream" type="integer" />
+      <setting key="LiveTracingOverlapDuration" value="30" info="When switching to live tracing mode, it is necessary to have a little overlap (in seconds) to avoid gap" type="integer" />
+      <setting key="HistoricalTracingOverlapDuration" value="120" info="When switching to historical tracing mode, it is necessary to have a little overlap (in seconds) to avoid gap" type="integer" />
+      <setting key="PatternsEngineMaximumBridgeableGap" value="300" info="Minimum gap in the tracing (in seconds) that will trigger a recycling of the detection engine" type="integer" />
+      <setting key="PatternsEngineBufferPrimingDelay" value="15" info="Priming buffer length in minutes when restarting an engine on an episode with existing tracings (useful on server restart mostly)" type="integer" />
+      <setting key="PatternsEngineMinimumDurationToAppend" value="60" info="Minimum duration of new tracing before triggering a patterns detection" type="integer" />
+      <setting key="CompressCachedTracingMaximumDuration" value="3600" info="Maximum duration in second of a tracing that can be a candidate for a compression" type="integer" />
+      <setting key="CompressCachedTracingExcludeLastBlocks" value="150" info="The most xxx recents blocks are never compressed in cache in order to permit the incremental updates from ActiveX to work properly" type="integer" />
+      <setting key="ShuffleEpisodeOnCollectTracings" value="False" info="Process the episode in random order when collecting the tracing ?" type="boolean" />
+      <setting key="ServiceStopTimeout" value="120" info="Timeout in seconds when stopping the service" type="integer" />
+      <setting key="TimeoutToAllowLiveTracingToStop" value="20" info="Timeout in seconds when stopping the service to allow live tracing threads to stop" type="integer" />
+      <setting key="DisableAdminAPILocalIPValidation" value="False" info="By default, only local IP client can access the Admin IP addresses on the web service and chalkboard" type="boolean" />
+      <setting key="DefaultConnectionLimit" value="200" info="The maximum number of concurrent connections allowed by a ServicePoint object" type="integer" />
+      <setting key="MaxServicePointIdleTime" value="10000" info="The maximum idle time, in milliseconds, of a ServicePoint object." type="integer" />
+      <setting key="urlOpenActiveX" value="../common/Default.aspx?" info="URL to open the ActiveX from the chalkboard" type="string" />
+      <setting key="urlServiceFeed" value="http://{0}:7802/PatternsDataFeed/" info="URL to the service that provides the data for the ActiveX " type="string" />
+      <setting key="urlChalkboard" value="http://{0}:7802/PatternsDataFeed/patients" info="URL to the service that provides the data for the chalkboard" type="string" />
+      <setting key="urlCloseEpisode" value="http://{0}:7802/PatternsDataFeed/close/{1}" info="URL to the service that provides the service of closing an episode (used from the chalkboard)" type="string" />
+    </section>
+  </sections>
+</settings>

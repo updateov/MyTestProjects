@@ -1,0 +1,13 @@
+﻿<License>
+  <Type>Standard</Type>
+  <ProductFeatures>
+    <Feature name="IssueDate">2017-09-07T00:00:00</Feature>
+    <Feature name="WixBundleManufacturer">PeriGen Solutions Ltd.</Feature>
+  </ProductFeatures>
+  <Customer>
+    <Name>PeriGen Solutions Ltd.</Name>
+    <Email>nir.bar@perigen.com</Email>
+  </Customer>
+  <Expiration>Mon, 01 Jan 0001 00:00:00 GMT</Expiration>
+  <Signature>MEQCIDM5Cbv/+9NnHKII53z6kYvZJvEfsRv94Al1QQd+fXm3AiAcPWKXMyeEjYzV2gxbVToLB7vf81BliMLvl8IqoajgMQ==</Signature>
+</License>

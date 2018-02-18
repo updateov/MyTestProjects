@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="main" EntityNamespace="ArchiveCatalog" ContextNamespace="ArchiveCatalog" Class="ArchiveCatalogContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="344c144e-872e-401c-a109-12972c321f39" Provider="Devart.Data.SQLite.Linq.Provider.SQLiteDataProvider, Devart.Data.SQLite.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=D:\Develop\TestProjects\DevartTest\ArchiveTest;FailIfMissing=False" Provider="Devart.Data.SQLite" />
+  <Table Name="" Member="Patients">
+    <Type Name="Patient" ed:Guid="4decf5b7-fcda-4327-b1f2-0dc8b13f5541">
+      <Column Name="PatientId" Type="System.Int32" AutoSync="OnInsert" DbType="integer NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" ed:ValidateRequired="True" ed:Guid="b0cf4c36-f7c3-482f-bb66-6a241465c8b2" />
+      <Column Name="VisitKey" Type="System.String" DbType="text" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="False" ed:Guid="bc9e0f99-3c9c-4c9d-aed7-e0bdc7838bc2" />
+    </Type>
+  </Table>
+</Database>

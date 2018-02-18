@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PeriGen.Patterns.GE.Service.PatternsEpisode">
+    <Position X="3.5" Y="4.25" Width="2.25" />
+    <Members>
+      <Property Name="EnginePrimed" Hidden="true" />
+      <Property Name="EnginePrimedContractions" Hidden="true" />
+      <Property Name="EnginePrimedEvents" Hidden="true" />
+      <Property Name="HoursOfTracings" Hidden="true" />
+      <Property Name="RealTimeLatencyLong" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Engine" Type="PeriGen.Patterns.Engine.PatternsEngineWrapper">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.463" Y="0.427" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AnKggBghSSMIkBEAQAwEwT4IYAo5AUAABIYgQAAIABE=</HashCode>
+      <FileName>PatternsEpisode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Engine" />
+      <Property Name="LiveThread" />
+      <Property Name="PatientStatus" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="TracingBlocks" />
+      <Property Name="TracingArtifacts" />
+      <Property Name="TracingActions" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Episode">
+    <Position X="3.75" Y="0.5" Width="1.75" />
+    <Members>
+      <Property Name="BedId" Hidden="true" />
+      <Property Name="FullDescription" Hidden="true" />
+      <Property Name="IsOpen" Hidden="true" />
+      <Property Name="Location" Hidden="true" />
+      <Property Name="LockObject" Hidden="true" />
+      <Property Name="MergeInProgress" Hidden="true" />
+      <Property Name="MRN" Hidden="true" />
+      <Property Name="PatientEDD" Hidden="true" />
+      <Property Name="PatientFetus" Hidden="true" />
+      <Property Name="PatientName" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="EpisodeStatus" />
+      <Property Name="Patient" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Demographics.Patient">
+    <Position X="6.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Property Name="ADTLog" Hidden="true" />
+      <Property Name="EDDAsString" Hidden="true" />
+      <Property Name="FetusesAsString" Hidden="true" />
+      <Property Name="FullDescription" Hidden="true" />
+      <Property Name="MRNCRC" Hidden="true" />
+      <Property Name="TrailList" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PeriGen.Patterns.Engine.PatternsEngineWrapper">
+    <Position X="5.25" Y="9.5" Width="2.75" />
+    <Members>
+      <Method Name="Finalize" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+    <Lollipop Position="0.627" />
+  </Class>
+  <Class Name="PeriGen.Patterns.Engine.Data.DetectionArtifact" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PeriGen.Patterns.Engine.Data.TracingBlock" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PeriGen.Patterns.ActiveXInterface.XUserAction" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Threading.Thread" Collapsed="true">
+    <Position X="7" Y="7" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.TracingServices.TracingProcessorBase">
+    <Position X="1.75" Y="9.25" Width="2.25" />
+    <Members>
+      <Property Name="InputStream" Hidden="true" />
+      <Property Name="Request" Hidden="true" />
+      <Property Name="Response" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.TracingServices.TracingProcessorHistoric">
+    <Position X="4" Y="12" Width="2.25" />
+    <Members>
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="TracingProcessorHistoric" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.TracingServices.TracingProcessorLive">
+    <Position X="0.75" Y="12.25" Width="2.25" />
+    <Members>
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="TracingProcessorLive" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Service.PatternsChalkboard">
+    <Position X="10.25" Y="8.75" Width="2.25" />
+    <Members>
+      <Method Name="~PatternsChalkboard" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="ValidateLivePatientLocations" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="PeriGen.Patterns.GE.Interface.Chalkboard&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="11.375" Y="7.562" />
+        <Point X="11.375" Y="8.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACBAAAAAAAAAABAAAAAAAAAAAAAAABAQAAA=</HashCode>
+      <FileName>PatternsChalkboard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Chalkboard&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="7" Width="2.25" />
+    <Members>
+      <Method Name="Chalkboard" Hidden="true" />
+      <Property Name="EpisodesLockObject" Hidden="true" />
+      <Method Name="RetrieveOBLinkPatientList" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Episodes" Type="System.Collections.Generic.List&lt;T&gt;">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.992" Y="-0.782" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Episodes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Service.Common" Collapsed="true">
+    <Position X="13.5" Y="8.25" Width="1.25" />
+    <AssociationLine Name="Chalkboard" Type="PeriGen.Patterns.GE.Service.PatternsChalkboard" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.125" Y="8.812" />
+        <Point X="14.125" Y="9.375" />
+        <Point X="12.5" Y="9.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.183" Y="0.166" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Common.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Chalkboard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="13.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="1.3" Collapsed="true" />
+  </Class>
+  <Class Name="PeriGen.Patterns.PatternsDataFeed">
+    <Position X="9.5" Y="11.5" Width="2.75" />
+    <Members>
+      <Property Name="Host" Hidden="true" />
+      <Field Name="Settings_DisableAdminAPILocalIPValidation" Hidden="true" />
+      <Field Name="Settings_MaxDaysOfTracingReturnedToActiveX" Hidden="true" />
+      <Field Name="Settings_TraceExtendedActiveXData" Hidden="true" />
+      <Field Name="Settings_ValidationVersionActiveX" Hidden="true" />
+      <Method Name="ValidateActiveXVersion" Hidden="true" />
+      <Method Name="ValidateClientAddressIsLocalIP" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAggAAQBEAAAAAAAkKAAAAAIAACAAAAQAAAAAAAAA=</HashCode>
+      <FileName>PatternsDataFeed.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="PeriGen.Patterns.ActiveXInterface.IPatternsDataFeed">
+    <Position X="12.75" Y="11.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="PeriGen.Patterns.ActiveXInterface.StatusType">
+    <Position X="7" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="PeriGen.Patterns.GE.Interface.EpisodeStatuses">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

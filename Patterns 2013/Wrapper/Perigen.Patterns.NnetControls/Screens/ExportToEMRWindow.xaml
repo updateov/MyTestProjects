@@ -1,0 +1,477 @@
+﻿<Window x:Class="Perigen.Patterns.NnetControls.Screens.ExportToEMRWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Perigen.Patterns.NnetControls.Controls"
+        Title="ExportToEMRWindow" 
+        MinHeight="250" MinWidth="290" Width="290"
+        Name="exportToEMRWindow"
+        WindowStyle="None"        
+        AllowsTransparency="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        Topmost="True"
+        Opacity="0"
+        SizeToContent="Height"
+        Loaded="exportToEMRWindow_Loaded"
+        >
+    
+    <Window.Resources>
+
+        <Storyboard x:Key="gridFadeInMessage">
+            <DoubleAnimation Storyboard.TargetName="exportToEMRWindow" BeginTime="0:0:0.1"
+                    Storyboard.TargetProperty="Opacity" From="0.00" To="1.00" AutoReverse="False" Duration="0:0:0.3" />
+        </Storyboard>
+
+        <Storyboard x:Key="gridFadeOutMessage">
+            <DoubleAnimation Storyboard.TargetName="exportToEMRWindow" BeginTime="0:0:0.1"
+                    Storyboard.TargetProperty="Opacity" From="1.00" To="0.00" AutoReverse="False" Duration="0:0:0.3" />
+        </Storyboard>
+        
+        <ControlTemplate x:Key="IconExport">
+            <Image Source="../Resources/Export.ico" Width="12" Height="12"/>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="IconClose">
+            <Image Source="../Resources/close.ico" Width="12" Height="12"/>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="IconCloseHover">
+            <Image Source="../Resources/x_hover.png" Width="12" Height="12"/>
+        </ControlTemplate>
+
+        <Style x:Key="LinkButtonFontStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="#3e87bb"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="TextDecorations" Value="Underline"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="ButtonCancelStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#241E1A"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="IsCancel" Value="True" />
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{TemplateBinding Content}" 
+                                   Style="{StaticResource LinkButtonFontStyle}"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="OverlayOK" CornerRadius="0" Height="26" Width="116" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsEnabled}" Value="False">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsMouseOver}" Value="False">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </DataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonExportStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Background" Value="#e7f4fe"/>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="OverlayOK" CornerRadius="0" Height="26" Width="116" Background="#e7f4fe" BorderBrush="#d8e8f5" BorderThickness="1">
+                            
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                
+                                <ContentControl Template="{StaticResource IconExport}" Margin="0,0,7,0"/>
+                                
+                                <TextBlock x:Name="txtOK" Text="{TemplateBinding Content}" 
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           Foreground="#3e87bb" Background="Transparent" FontFamily="Arial" FontSize="12" />
+                            
+                            </StackPanel>
+                            
+                        </Border>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="TimeTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#2d2d2d"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+
+        <Style x:Key="TitleTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#686868"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+        
+        <Style x:Key="ParamDescriptionStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#686868"/>
+            <Setter Property="Width" Value="175"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="LableDescriptionStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#686868"/>
+            <Setter Property="Width" Value="60"/>
+        </Style>
+
+        <Style x:Key="ParamValueStyle" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#444444"/>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        </Style>
+
+        <Style x:Key="CommentTextStyle" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#444444"/>
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="BorderBrush" Value="#d2d2d2" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <Style x:Key="CategoryComboStyle" TargetType="{x:Type ComboBox}">
+            <Setter Property="Foreground" Value="#444444"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="BorderBrush" Value="#d2d2d2" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        </Style>
+
+        <Style x:Key="CategoryComboItemStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Foreground" Value="#444444"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        </Style>
+        
+    </Window.Resources>
+    
+    <Grid Background="Transparent" Name="mainGrid">
+        <Grid.BitmapEffect>
+            <DropShadowBitmapEffect Color="Gray" ShadowDepth="5" Opacity="0.85"/>
+        </Grid.BitmapEffect>
+
+        <Grid Background="White" Margin="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Canvas x:Name="CloseButton"  Height="12" Width="12" Grid.Row="0" Margin="0,8,8,0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="White" 
+                    MouseLeftButtonDown="CloseButton_Click">
+                <ContentControl>
+                    <ContentControl.Style>
+                        <Style TargetType="ContentControl">
+                            <Setter Property="Template" Value="{StaticResource IconClose}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Template" Value="{StaticResource IconCloseHover}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ContentControl.Style>
+                </ContentControl>
+            </Canvas>
+            
+            <StackPanel Orientation="Horizontal" Grid.Row="0" >
+                
+                <TextBlock Grid.Row="0" Style="{StaticResource TitleTextStyle}"
+                           Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                           Text="Export Time Range:" />
+                
+                <TextBlock Name="txtTimeRange" Margin="5,0,0,0" 
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource TimeTextStyle}"/>
+                
+            </StackPanel>
+            
+            <Grid Grid.Row="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--Mean contraction interval-->
+                <StackPanel Height="25" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding MeanContractionIntervalVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="Mean Contraction Interval       Q" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:DoubleTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" IsInFocus="True" x:Name="ctrlMeanContractionInterval"
+                                            Value="{Binding MeanContractionInterval, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                            IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                            Height="20" Width="38" ControlTabIndex="0" 
+                                            ParameterName="Mean Contraction Interval"/>
+
+                    <TextBlock Text="min" Style="{StaticResource ParamDescriptionStyle}" Margin="5,0,0,0"/>
+                </StackPanel>
+
+                <!--# of Contractions-->
+                <StackPanel Height="25" Grid.Row="1" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding NumOfContractionsVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="# of Contractions" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfContractions"
+                                             Value="{Binding NumOfContractions, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="1" 
+                                             ParameterName="# of Contractions"/>
+                </StackPanel>
+
+                <!--# of Long Contractions-->
+                <StackPanel Height="25" Grid.Row="2" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding NumOfLongContractionsVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="# of Long Contractions" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfLongContractions"
+                                             Value="{Binding NumOfLongContractions, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="2" 
+                                             ParameterName="# of Long Contractions"/>
+                </StackPanel>
+
+                <!--Montevideo Units-->
+                <StackPanel Height="25" Grid.Row="3" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left" 
+                            Visibility="{Binding MVUVisibility, ElementName=exportToEMRWindow}">
+                    <TextBlock Text="Montevideo Units (per 10 min)" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlMeanMontevideoUnits"
+                                             Value="{Binding MontevideoUnits, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="3" 
+                                             ParameterName="Montevideo Units" Visibility="{Binding MVUVisibility, ElementName=exportToEMRWindow}"/>
+                </StackPanel>
+
+                <!--Mean baseline-->
+                <StackPanel Height="25" Grid.Row="4" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding MeanBaselineVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="Mean Baseline (bpm)" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlMeanBaseline"
+                                             Value="{Binding MeanBaseline, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="4" 
+                                             ParameterName="Mean Baseline"/>
+                </StackPanel>
+
+                <!--Mean baseline variability-->
+                <StackPanel Height="25" Grid.Row="5" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding MeanBaselineVariabilityVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="Mean Baseline Variability (bpm)" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:DoubleTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlMeanBaselineVariability"
+                                            Value="{Binding MeanBaselineVariability, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                            IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                            Height="20" Width="38" ControlTabIndex="5"
+                                            ParameterName="Mean Baseline Variability"/>
+                </StackPanel>
+
+                <!--# of Accelerations-->
+                <StackPanel Height="25" Grid.Row="6" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding NumOfAccelerationsVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="# of Accelerations" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfAccelerations"
+                                             Value="{Binding NumOfAccelerations, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="6" 
+                                             ParameterName="# of Accelerations"/>
+                </StackPanel>
+
+                <!--# of Decelerations-->
+                <StackPanel Height="25" Grid.Row="7" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding NumOfDecelerationsVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="# of Decelerations" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfDecelerations"
+                                             Value="{Binding NumOfDecelerations, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="7" 
+                                             ParameterName="# of Decelerations"/>
+                </StackPanel>
+
+                <!--  Per site configuration  -->
+
+                <!--# of Early Decelerations-->
+                <StackPanel Height="25" Grid.Row="8" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding EarlyDecelerationsVisibility, ElementName=exportToEMRWindow}">
+                    <TextBlock Text="# of Early Decelerations" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfEarlyDecelerations"
+                                             Value="{Binding NumOfEarlyDecelerations, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="8" 
+                                             ParameterName="# of Early Decelerations"
+                                             Visibility="{Binding EarlyDecelerationsVisibility, ElementName=exportToEMRWindow}"/>
+                </StackPanel>
+
+                <!--# of Variable Decelerations-->
+                <StackPanel Height="25" Grid.Row="9" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left" 
+                            Visibility="{Binding VariableDecelerationsVisibility, ElementName=exportToEMRWindow}">
+                    <TextBlock Text="# of Variable Decelerations" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfVariableDecelerations"
+                                             Value="{Binding NumOfVariableDecelerations, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="9" 
+                                             ParameterName="# of Variable Decelerations"
+                                             Visibility="{Binding VariableDecelerationsVisibility, ElementName=exportToEMRWindow}"/>
+                </StackPanel>
+
+                <!--# of Late Decelerations-->
+                <StackPanel Height="25" Grid.Row="10" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left" 
+                            Visibility="{Binding LateDecelerationsVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="# of Late Decelerations" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfLateDecelerations"
+                                             Value="{Binding NumOfLateDecelerations, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="10" 
+                                             ParameterName="# of Late Decelerations"
+                                             Visibility="{Binding LateDecelerationsVisibility, ElementName=exportToEMRWindow}"/>
+                </StackPanel>
+
+                <!--# of Prolonged Decelerations-->
+                <StackPanel Height="25" Grid.Row="11" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left"
+                            Visibility="{Binding ProlongedDecelerationsVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="# of Prolonged Decelerations" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfProlongedDecelerations"
+                                             Value="{Binding NumOfProlongedDecelerations, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="11" 
+                                             ParameterName="# of Prolonged Decelerations"
+                                             Visibility="{Binding ProlongedDecelerationsVisibility, ElementName=exportToEMRWindow}"/>                                
+                </StackPanel>
+
+                <!--# of Other Decelerations-->
+                <StackPanel Height="25" Grid.Row="12" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left" 
+                            Visibility="{Binding OtherDecelerationsVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="# of Other Decelerations" Style="{StaticResource ParamDescriptionStyle}"/>
+
+                    <controls:IntegerTextBox TextStyle="{StaticResource ParamValueStyle}" BorderColor="#d2d2d2" x:Name="ctrlNumOfOtherDecelerations"
+                                             Value="{Binding NumOfOtherDecelerations, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                             IsCanceled="{Binding IsCanceled, ElementName=exportToEMRWindow}"
+                                             Height="20" Width="38" ControlTabIndex="12"
+                                             ParameterName="# of Other Decelerations"
+                                             Visibility="{Binding OtherDecelerationsVisibility, ElementName=exportToEMRWindow}"/>
+                    
+                </StackPanel>
+
+                <!--Category-->
+                <StackPanel Height="25" Grid.Row="13" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left" 
+                            Visibility="{Binding CategoryVisibility, ElementName=exportToEMRWindow}">
+                    
+                    <TextBlock Text="Category" Style="{StaticResource LableDescriptionStyle}" VerticalAlignment="Center"/>
+
+                    <ComboBox Name="comboCategory" Height="20" Width="170" Style="{StaticResource CategoryComboStyle}"
+                              ItemsSource="{Binding Categories, ElementName=exportToEMRWindow}" TabIndex="13"
+                              SelectedValue="{Binding CategoryVal, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        
+                        <ComboBox.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                     Color="#A2A2A2" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
+                                     Color="Black" />
+                        </ComboBox.Resources>
+
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding}" Style="{StaticResource CategoryComboItemStyle}" VerticalAlignment="Center" Height="20" TextAlignment="Left" Margin="5,0,10,-6"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>               
+                        
+                    </ComboBox>
+
+                </StackPanel>
+
+                <!--Comment-->
+                <StackPanel Height="40" Grid.Row="14" Width="280" Orientation="Horizontal" Margin="20,0,0,0" HorizontalAlignment="Left" 
+                            Visibility="{Binding CommentVisibility, ElementName=exportToEMRWindow}">
+                   
+                    <TextBlock Text="Comment" Style="{StaticResource LableDescriptionStyle}" VerticalAlignment="Top" Margin="0,5,0,0"/>
+
+                    <TextBox Name="txtComment" BorderBrush="#d2d2d2" BorderThickness="1" MaxLength="500" TabIndex="14"
+                             VerticalScrollBarVisibility="Auto" Style="{StaticResource CommentTextStyle}"
+                             Text="{Binding Comment, ElementName=exportToEMRWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                            
+                </StackPanel>
+            </Grid>
+            
+            <StackPanel Orientation="Horizontal" Grid.Row="2" >
+                <Button Content="Export" Style="{StaticResource ButtonExportStyle}" TabIndex="30" HorizontalAlignment="Left" Margin="20,0,0,0" Click="ExportBtn_Click"/>
+                <Button Content="Cancel" Style="{StaticResource ButtonCancelStyle}" TabIndex="31" Margin="0,0,20,0" Click="CancelBtn_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

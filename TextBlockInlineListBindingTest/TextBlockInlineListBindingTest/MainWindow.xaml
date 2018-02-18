@@ -1,0 +1,19 @@
+﻿<Window x:Class="TextBlockInlineListBindingTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:bindings="clr-namespace:TextBlockInlineListBindingTest"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.Resources>
+            <bindings:TextBlockInlineConvertor x:Key="inlineConverter" />
+        </Grid.Resources>
+        <DockPanel>
+            <TextBlock x:Name="tbInlines" 
+                       DockPanel.Dock="Top"
+                       TextTrimming="CharacterEllipsis"
+                       bindings:TextBlockBindingSamplePage.InlineList="{Binding Items, Converter={StaticResource inlineConverter},Mode=TwoWay}">
+            </TextBlock>
+            <Button Content="Click" Click="Button_Click"/>
+        </DockPanel>
+    </Grid>
+</Window>

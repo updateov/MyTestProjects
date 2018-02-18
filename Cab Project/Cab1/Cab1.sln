@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Cab1", "Cab1\Cab1.vdproj", "{B02EB7E0-4532-4657-9435-B7C960C5B2C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B02EB7E0-4532-4657-9435-B7C960C5B2C7}.Debug|Default.ActiveCfg = Debug
+		{B02EB7E0-4532-4657-9435-B7C960C5B2C7}.Debug|Default.Build.0 = Debug
+		{B02EB7E0-4532-4657-9435-B7C960C5B2C7}.Release|Default.ActiveCfg = Release
+		{B02EB7E0-4532-4657-9435-B7C960C5B2C7}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

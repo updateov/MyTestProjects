@@ -1,0 +1,23 @@
+﻿<Window x:Class="SuperCombos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="525">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="Cell">
+                <Image/>
+            </DataTemplate>
+        </Grid.Resources>
+        <DataGrid DataContext="{Binding}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn CellTemplate="{StaticResource Cell}" Width="1*"/>
+                <DataGridTemplateColumn CellTemplate="{StaticResource Cell}" Width="1*"/>
+                <DataGridTemplateColumn CellTemplate="{StaticResource Cell}" Width="1*"/>
+                <DataGridTemplateColumn CellTemplate="{StaticResource Cell}" Width="1*"/>
+                <DataGridTemplateColumn CellTemplate="{StaticResource Cell}" Width="1*"/>
+                <DataGridTemplateColumn CellTemplate="{StaticResource Cell}" Width="1*"/>
+                <DataGridTemplateColumn CellTemplate="{StaticResource Cell}" Width="1*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

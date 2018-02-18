@@ -1,0 +1,10 @@
+8
+
+DecelNN2\nnet_6x4_RR1_NN12.txt
+DecelNN2\nnet_6x4_RR2_NN6.txt
+DecelNN2\nnet_6x4_RR3_NN13.txt
+DecelNN2\nnet_6x4_RR4_NN8.txt
+DecelNN2\nnet_6x4_RR5_NN3.txt
+DecelNN2\nnet_6x4_RR6_NN6.txt
+DecelNN2\nnet_6x4_RR7_NN8.txt
+DecelNN2\nnet_6x4_RR8_NN7.txt

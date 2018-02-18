@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Variables list
+    #DBFile#
+    #ArchiveDBFile#
+	
+ 1. PrevTreeLastFolderExecuted & PrevTreeLastScriptExecuted are in order to prevent running newer tree without completeing the prev tree
+	
+-->
+<Root>
+  <Configurations>
+    <CleanInstallatioHook Query="select 1 from Episodes LIMIT 1;"/> <!-- return 1 if this Existing installation-->
+    <DBConnections>
+      <DBConnection Key="#DBFile#" Value="EpisodeDB.db" IsMainDB="true"/>
+      <DBConnection Key="#ArchiveDBFile#" Value="EpisodeArchiveDB.db" IsMainDB="false"/>
+    </DBConnections>
+  </Configurations>
+  <AppVersions CleanInstallationAppVersion="01.02.00" CleanInstallationFolderNumber="1" CleanInstallationScriptName="02_Script_ArchiveDB.sql" CreatedDate="2015-01-01">
+    <AppVersion AppVersionFolder="01.02.00" BaseOnVersion="" PrevTreeLastFolderExecuted ="" PrevTreeLastScriptExecuted=""  CreatedDate="2015-01-01"/>
+  </AppVersions>
+</Root>

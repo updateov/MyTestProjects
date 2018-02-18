@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PatternsAddOnSettings.xsd">
+  <sections>
+    <!-- THE SETTINGS BELOW THIS LINE ARE NORMALLY MODIFIED -->
+    <section level="0" name="Statistics and Logging">
+      <setting key="LoggingLevelDebug" value="INFORMATION" info="Minimal level of event type which will be written to Debug view\Trace." type="LoggerLevel" editedByUser="False"/>
+      <setting key="LoggingLevelConsole" value="INFORMATION" info="Minimal level of event type which will be written to the Console." type="LoggerLevel" editedByUser="False"/>
+      <setting key="LoggingLevelEventLog" value="INFORMATION" info="Minimal level of event type which will be written to the EventLog." type="LoggerLevel" editedByUser="False"/>
+      <setting key="LoggingEventLogName" value="Application"  info="Name of EventLog for events." type="string" editedByUser="False"/>
+    </section>
+
+  </sections>
+  <valueDataTypeEnums>
+    <enum name="LoggerLevel">
+      <enumVal value="ALL" />
+      <enumVal value="VERBOSE" />
+      <enumVal value="INFORMATION" />
+      <enumVal value="WARNING" />
+      <enumVal value="ERROR" />
+      <enumVal value="CRITICAL" />
+      <enumVal value="OFF" />
+    </enum>
+  </valueDataTypeEnums>
+</settings>

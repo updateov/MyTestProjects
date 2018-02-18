@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="PatternsBA.View.InstallLocationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="500"
+             >
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </UserControl.Resources>
+
+    <DockPanel>
+
+        <!-- Buttons strip -->
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right"
+                    DataContext="{Binding NavigationViewModel}"
+                    >
+            <!-- Cancel -->
+            <Button IsDefault="True" HorizontalAlignment="Right" Style="{StaticResource LinkButtonStyle}" 
+                    Command="{Binding StopCommand}"
+                    Content="Cancel" />
+            <!-- Next -->
+            <Button IsDefault="True" HorizontalAlignment="Right" Margin="0,0,16,0" Style="{StaticResource DialogButtonStyle}"
+                    Command="{Binding NextCommand}"
+                    Content="Next" />
+        </StackPanel>
+
+        <!-- Target folder -->
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0">
+            <TextBlock Text="Install Folder:" Style="{StaticResource GenericText}"/>
+            <TextBox Width="300" VerticalAlignment="Top" Margin="10,0,5,0" 
+                     ToolTip="Set installation target folder"
+                     x:Name="pathTextBox"
+                     Text="{Binding VariablesViewModel.InstallFolder.String}"/>
+            <Button Style="{StaticResource LinkButtonStyle}" 
+                    Click="browseInstallFolder_Click"
+                    Content="Browse"/>
+        </StackPanel>
+
+    </DockPanel>
+</UserControl>

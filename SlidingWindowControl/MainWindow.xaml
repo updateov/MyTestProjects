@@ -1,0 +1,19 @@
+﻿<Window x:Class="SlidingWindowControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="261.129" Width="397.727">
+    <StackPanel>
+        <Border Height="20" Width="362" BorderBrush="Black" BorderThickness="1" Margin="0,10,0,0" Padding="0">
+            <Canvas x:Name="drawingCanvas" Visibility="Visible" Width="360">
+
+            </Canvas>
+        </Border>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Button Content="Draw All" Click="Button_All" Margin="5,0"/>
+            <Button Content="Draw Rectangle" Click="Button_DrawRectangle" Margin="5,0"/>
+            <Button Content="Draw Line" Click="Button_DrawLine" Margin="5,0"/>
+            <Button Content="Draw Text" Click="Button_DrawText" Margin="5,0"/>
+            <Button Content="Draw Time" Click="Button_DrawTime" Margin="5,0"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PatternsUserControl</id>
+    <version>01.00.00.00</version>
+    <title>Patterns User Control</title>
+    <authors>PeriGen Solutions</authors>
+    <owners>PeriGen Solutions</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PeriCALM Patterns™ Control</description>
+    <copyright>Copyright PeriGen Inc. 1999-2017. All rights reserved.</copyright>
+  </metadata>
+  <files>
+	<file src="release\*.dll" target="lib\net40"/>
+	<file src="release\*.xml" target="lib\net40"/>
+	<file src="release\Help\*.pdf" target="lib\net40\Help"/>
+	<file src="release\Help\*.pdf" target="content\Help"/>
+  </files>
+</package>

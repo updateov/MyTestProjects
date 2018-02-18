@@ -1,0 +1,6 @@
+﻿<%@ ServiceHost 
+		Language="C#" 
+		Debug="true" 
+		Service="PeriGen.Patterns.Research.SQLServer.PatternsDataFeed" 
+		CodeBehind="PatternsDataFeed.svc.cs" 
+		Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>

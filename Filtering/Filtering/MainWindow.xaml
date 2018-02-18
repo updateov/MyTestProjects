@@ -1,0 +1,78 @@
+﻿<Window x:Class="Filtering.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:cvm="clr-namespace:Filtering"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <AlternationConverter x:Key="BackgroundConverter">
+            <SolidColorBrush>Blue</SolidColorBrush>
+            <SolidColorBrush>Red</SolidColorBrush>
+        </AlternationConverter>
+
+
+        <Style x:Key="DateTimePickerTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#FF443B34"/>
+            <Setter Property="BorderBrush" Value="#FFE6E5DE"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#FFE7E7E1"/>
+                    <Setter Property="Foreground" Value="#FF98988E"/>
+                    <Setter Property="BorderBrush" Value="#FFE6E5DE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <DataTemplate DataType="{x:Type cvm:AnnotationFilterTagViewModel}" x:Key="FilterTagTemplate">
+            <Border Margin="10,3,5,5" Background="{DynamicResource TagBoxBackgroundColor}" BorderThickness="1" BorderBrush="{DynamicResource TagBoxBackgroundColor}">
+                <DockPanel>
+                    <Button DockPanel.Dock="Right"
+                                Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=DataContext.FilterControlPanel.TagClosed}" 
+                                Margin="5,2,2,2" 
+                                Visibility="{Binding CloseButtonVisibility}" 
+                                CommandParameter="{Binding ElementName=tx,Path=DataContext}" 
+                                Template="{DynamicResource CloseButtonDarkIcon}"/>
+                    <TextBlock x:Name="tx" Text="{Binding FilterTagModel.Name}" Style="{DynamicResource FilterTagText}" Margin="5,2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                </DockPanel>
+            </Border>
+        </DataTemplate>
+        
+        <Style x:Key="alternatingWithBinding" TargetType="{x:Type DataGridRow}">
+            <Setter Property="Background" 
+                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(ItemsControl.AlternationIndex), Converter={StaticResource BackgroundConverter}}"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox  Name="textBoxNom" 
+                      Style="{StaticResource DateTimePickerTextBox}"
+                      Width="120"
+                      IsEnabled="False" 
+                      TextChanged="textBoxNom_TextChanged" 
+                      Margin="3">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding FilterControlPanel.DateTimePickerTimeChanged}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBox>
+            <TextBox  Name="textBoxPrenom" Width="120" TextChanged="textBoxPrenom_TextChanged" Margin="3"/>
+            <Button Name="Select" Content="Select" Margin="3" Click="Select_Click"/>
+        </StackPanel>
+        <DataGrid Name="dataGrid" 
+                  ItemsSource="{Binding cvPersonnes, Mode=OneWay}" 
+                  ItemContainerStyle="{StaticResource alternatingWithBinding}"
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch" 
+                  AutoGenerateColumns="False"
+                  AlternationCount="2"
+                  ScrollViewer.CanContentScroll="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" IsReadOnly="True" Header="Id" Width="15*" MaxWidth="150"/>
+                <DataGridTextColumn Binding="{Binding Nom}" IsReadOnly="True" Header="Nom" Width="7*" MaxWidth="100"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" IsReadOnly="True" Header="Prenom" Width="15*" MaxWidth="350"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB7C832D-B25B-4089-AE07-863553CAB992}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CurveChartControl</RootNamespace>
+    <AssemblyName>CurveChartControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.WPF.4, Version=4.0.20122.260, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\ComponentOne\Studio for WPF\bin\v4\C1.WPF.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.WPF.C1Chart.4, Version=4.0.20122.132, Culture=neutral, PublicKeyToken=f63432dd4d20448b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\ComponentOne\Studio for WPF\bin\v4\C1.WPF.C1Chart.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.WPF.C1Chart.Extended.4, Version=4.0.20122.132, Culture=neutral, PublicKeyToken=f63432dd4d20448b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\ComponentOne\Studio for WPF\bin\v4\C1.WPF.C1Chart.Extended.4.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.WPF.DateTimeEditors.4, Version=4.0.20122.260, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\ComponentOne\Studio for WPF\bin\v4\C1.WPF.DateTimeEditors.4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutData.cs" />
+    <Compile Include="AppResources.cs" />
+    <Compile Include="BaseWindow.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Converters.cs" />
+    <Compile Include="CurveModel.cs" />
+    <Compile Include="CurveURLParameters.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Languages.cs" />
+    <Compile Include="CurveControl.xaml.cs">
+      <DependentUpon>CurveControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CurveControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Common.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Scrollbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ScrollbarColors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ThemeCALM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\accept.png" />
+    <Resource Include="Images\arrow_refresh.png" />
+    <Resource Include="Images\Blue.png" />
+    <Resource Include="Images\Bullet-Arrow-Down.png" />
+    <Resource Include="Images\Bullet-Arrow-Up.png" />
+    <Resource Include="Images\Bullet-Black.png" />
+    <Resource Include="Images\Bullet-Blue.png" />
+    <Resource Include="Images\Bullet-Error.png" />
+    <Resource Include="Images\Bullet-Info.png" />
+    <Resource Include="Images\bullet_extraInfo.png" />
+    <Resource Include="Images\bullet_star.png" />
+    <Resource Include="Images\CEMark.png" />
+    <Resource Include="Images\Chart-Pie.png" />
+    <Resource Include="Images\chart_curve.png" />
+    <Resource Include="Images\chart_line.png" />
+    <Resource Include="Images\chart_pie.png" />
+    <Resource Include="Images\Consult_instructions.png" />
+    <Resource Include="Images\date.png" />
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\demo.png" />
+    <Resource Include="Images\Dilatation.png" />
+    <Resource Include="Images\Edit32.png" />
+    <Resource Include="Images\EditCALM.png" />
+    <Resource Include="Images\EditIcon.png" />
+    <Resource Include="Images\Error32.png" />
+    <Resource Include="Images\exam_error.png" />
+    <Resource Include="Images\FetalPos.png" />
+    <Resource Include="Images\FetalPosold.png" />
+    <Resource Include="Images\Green.png" />
+    <Resource Include="Images\Info2.png" />
+    <Resource Include="Images\Invalid32.png" />
+    <Resource Include="Images\LastSnapshot.png" />
+    <Resource Include="Images\Layer.png" />
+    <Resource Include="Images\LOA.png" />
+    <Resource Include="Images\LOP.png" />
+    <Resource Include="Images\LOT.png" />
+    <Resource Include="Images\Manufacturer.png" />
+    <Resource Include="Images\McKessonLogo.png" />
+    <Resource Include="Images\NoStation.png" />
+    <Resource Include="Images\OA.png" />
+    <Resource Include="Images\Ok.png" />
+    <Resource Include="Images\OP.png" />
+    <Resource Include="Images\PatientData.png" />
+    <Resource Include="Images\pencil.png" />
+    <Resource Include="Images\percentile.png" />
+    <Resource Include="Images\PeriGenLogo.png" />
+    <Resource Include="Images\PeriGenPoweredLogo.png" />
+    <Resource Include="Images\Question.png" />
+    <Resource Include="Images\Refresh.png" />
+    <Resource Include="Images\Refresh16.png" />
+    <Resource Include="Images\Review.png" />
+    <Resource Include="Images\ROA.png" />
+    <Resource Include="Images\ROP.png" />
+    <Resource Include="Images\ROT.png" />
+    <Resource Include="Images\snapshot.png" />
+    <Resource Include="Images\table_lightning.png" />
+    <Resource Include="Images\Theme.png" />
+    <Resource Include="Images\Unknown.png" />
+    <Resource Include="Images\Write2.png" />
+    <Resource Include="Images\Write216.png" />
+    <Resource Include="Images\Write232.png" />
+    <Resource Include="Images\Write248.png" />
+    <Resource Include="Images\Write2Hi.png" />
+    <Resource Include="Images\Write3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Languages\english.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\Languages.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

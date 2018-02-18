@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:panelsw="http://schemas.panel-sw.co.il/wix/WixExtension"
+     >
+  
+  <Product Id="*"
+           Name="!(wix.PluginsProduct)"
+           Manufacturer="!(wix.PeriGen)"
+           Version="!(wix.PatternsVersion)"
+           Language="1033"
+           UpgradeCode="{CD491F88-5939-4021-80F3-9327BAA3C6BF}"
+           >
+    <Package InstallerVersion="300" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate CabinetTemplate="plgn{0}.cab" EmbedCab="yes" />
+    <SetProperty Id="ARPINSTALLLOCATION" Value="[INSTALLFOLDER]" Sequence="execute" Before="InstallInitialize"/>
+    <Property Id="ARPCOMMENTS" Value="!(wix.PluginsComments)" />
+
+    <Feature Id="Core" Absent="disallow" Level="1">
+      <MergeRef Id="Microsoft_VC100_ATL_$(sys.BUILDARCH)"/>
+      <MergeRef Id="Microsoft_VC100_CRT_$(sys.BUILDARCH)"/>
+      <MergeRef Id="Microsoft_VC100_MFC_$(sys.BUILDARCH)"/>
+      <MergeRef Id="Microsoft_VC100_MFCLOC_$(sys.BUILDARCH)"/>
+      <MergeRef Id="Microsoft_VC100_OpenMP_$(sys.BUILDARCH)"/>
+      <ComponentRef Id="PatternsPluginsService.psf"/>
+      <ComponentRef Id="DeleteInstallShieldBootstrapper"/>
+    </Feature>
+
+    <Feature Id="CheckListClient" Level="1">
+      <ComponentGroupRef Id="ClientFiles" />
+      <ComponentGroupRef Id="CALM_ConnectionFiles" />
+      <ComponentGroupRef Id="CommonFiles" />
+      <ComponentRef Id="CopyLegacyFiles"/>
+
+      <Feature Id="CheckListClient_PatternsOnly" Level="1">
+        <ComponentGroupRef Id="ClientFiles_PatternsOnly"/>
+        <ComponentGroupRef Id="CALM_ConnectionFiles_PatternsOnly"/>
+        <ComponentGroupRef Id="MSMQ"/>
+      </Feature>
+    </Feature>
+
+    <Feature Id="CheckListPlugin" Level="10">
+      <ComponentGroupRef Id="CheckListPluginFiles" />
+    </Feature>
+
+    <Feature Id="ExportPlugin" Level="10">
+      <ComponentGroupRef Id="ExportPluginFiles" />
+      <ComponentGroupRef Id="CALM_ConnectionFiles" />
+      <ComponentGroupRef Id="CommonFiles" />
+      <ComponentRef Id="CopyLegacyDb"/>
+
+      <Feature Id="ExportPlugin_PatternsOnly" Level="10">
+        <ComponentGroupRef Id="CALM_ConnectionFiles_PatternsOnly"/>
+      </Feature>
+    </Feature>
+
+    <!-- By default, install Core and CheckListClient features. -->
+    <Property Id="INSTALLLEVEL" Value="1" />
+    <Property Id="MSIFASTINSTALL" Value="7"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="PeriGenFolder" Name="PeriGen">
+          <Directory Id="INSTALLFOLDER" Name="PeriCALM Patterns Plugins">
+            <Directory Id="ConfigFolder" Name="Config">
+              <Directory Id="CALMMetadataFolder" Name="CALMMetadata"/>
+            </Directory>
+            <Directory Id="PrevFolder" Name="Prev"/>
+            <Directory Id="DBsFolder" Name="DBs"/>
+            <Directory Id="HelpFolder" Name="Help"/>
+            <Directory Id="ResFolder" Name="res"/>
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id="DesktopFolder"/>
+      <Directory Id="StartupFolder"/>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="PmChecklistFolder" Name="PeriCALM CheckList" />
+      </Directory>
+    </Directory>
+
+    <DirectoryRef Id="TARGETDIR" DiskId="1">
+      <Merge Id="Microsoft_VC100_ATL_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)\Microsoft_VC100_ATL_$(sys.BUILDARCH).msm" Language="1033" />
+      <Merge Id="Microsoft_VC100_CRT_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)\Microsoft_VC100_CRT_$(sys.BUILDARCH).msm" Language="1033" />
+      <Merge Id="Microsoft_VC100_MFC_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)\Microsoft_VC100_MFC_$(sys.BUILDARCH).msm" Language="1033" />
+      <Merge Id="Microsoft_VC100_MFCLOC_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)Microsoft_VC100_MFCLOC_$(sys.BUILDARCH).msm" Language="1033" />
+      <Merge Id="Microsoft_VC100_OpenMP_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)Microsoft_VC100_OpenMP_$(sys.BUILDARCH).msm" Language="1033" />
+    </DirectoryRef>
+
+    <!-- =================================== -->
+    <!-- Enable MSMQ -->
+    <ComponentGroup Id="MSMQ" Directory="INSTALLFOLDER">
+
+      <Component Id="MSMQ" Guid="">
+        <CreateFolder/>
+        <panelsw:Dism Id="MSMQ" EnableFeature="^MSMQ$" />
+      </Component>
+
+      <!-- DISM command line for Windows Server 2008 R2 -->
+      <?define DISM_CMDLINE=/Online /NoRestart /Quiet /LogLevel:2 "/LogPath:[MsiLogFileLocation]_dism.log" /Enable-Feature /FeatureName:MSMQ-Server?>
+      <Component Id="MSMQ_601" Guid="">
+        <Condition><![CDATA[VersionNT = 601]]></Condition>
+        <CreateFolder/>
+        <panelsw:ExecOn Id="Dism" Command='"[WindowsFolder]Sysnative\Dism.exe" $(var.DISM_CMDLINE)' OnInstall="yes" BeforeStopServices="yes" Impersonate="no"/>
+      </Component>
+    </ComponentGroup>
+    <InstallExecuteSequence>
+      <Custom Action="DismSched" Before="StopServices"><![CDATA[VersionNT <> 601]]></Custom>
+    </InstallExecuteSequence>
+
+    <!-- Copy legacy leftover files to 'Prev' folder -->
+    <Property Id="LEGACY_INSTALL_DIR">
+      <RegistrySearch Id="LEGACY_INSTALL_DIR.reg" Root="HKLM" Win64="no" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[WIX_UPGRADE_DETECTED]" Name="InstallLocation" Type="directory">
+        <DirectorySearch Id="LEGACY_INSTALL_DIR.dir" />
+      </RegistrySearch>
+    </Property>
+    <Component Id="CopyLegacyFiles" Directory="PrevFolder" Guid="{7CE3CAE7-2D83-4C9E-88BB-AD7FB8263AA0}">
+      <Condition><![CDATA[LEGACY_INSTALL_DIR And WIX_UPGRADE_DETECTED]]></Condition>
+      <CopyFile Id="CopyLegacyFiles" DestinationDirectory="PrevFolder" SourceProperty="LEGACY_INSTALL_DIR" SourceName="*"/>
+      <CopyFile Id="CopyCheclistClient.psf" DestinationDirectory="INSTALLFOLDER" SourceProperty="LEGACY_INSTALL_DIR" SourceName="CheckList_Client.psf" />
+    </Component>
+
+    <!-- Delete InstallShield bootstrapper files -->
+    <Property Id="LEGACY_BOOTSTRAPPER_DIR">
+      <RegistrySearch Id="LEGACY_BOOTSTRAPPER_DIR.reg" Root="HKLM" Win64="no" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\InstallShield_[WIX_UPGRADE_DETECTED]" Name="LogFile" Type="file"/>
+    </Property>
+    <Component Id="DeleteInstallShieldBootstrapper" Directory="INSTALLFOLDER" Guid="">
+      <Condition><![CDATA[LEGACY_BOOTSTRAPPER_DIR And WIX_UPGRADE_DETECTED]]></Condition>
+      <CreateFolder/>
+      <RemoveRegistryKey Action="removeOnInstall" Id="InstallScript" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\InstallShield_[WIX_UPGRADE_DETECTED]" Root="HKLM"/>
+      <RemoveFile Id="DeleteInstallShieldBootstrapper.files" Property="LEGACY_BOOTSTRAPPER_DIR" Name="*" On="install"/>
+      <RemoveFolder Id="DeleteInstallShieldBootstrapper.dir" Property="LEGACY_BOOTSTRAPPER_DIR" On="install"/>
+    </Component>
+
+    <!-- DB Update on Export plugin -->
+    <Property Id="LEGACY_SQLITE_DB_DIR">
+      <RegistrySearch Id="LEGACY_SQLITE_DB_DIR.reg" Root="HKLM" Win64="no" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[WIX_UPGRADE_DETECTED]" Name="InstallLocation" Type="directory">
+        <DirectorySearch Id="LEGACY_SQLITE_DB_DIR.dir" AssignToProperty="yes" Depth="2">
+          <FileSearch Id="LEGACY_SQLITE_DB_DIR.file" Name="ExportDB.db"/>
+        </DirectorySearch>
+      </RegistrySearch>
+    </Property>
+
+    <panelsw:RegularExpression Id="SourceDir" Input="[SourceDir]" Expression="^(.*)\\+$" Replacement="$1" DstProperty="SRC_DIR_UNTERMINATED" Extended="yes"/>
+    <panelsw:RegularExpression Id="DBsFolder" Input="[DBsFolder]" Expression="^(.*)\\+$" Replacement="$1" DstProperty="DBS_FOLDER_UNTERMINATED" Extended="yes"/>
+    <SetProperty Id="DBUpdate.Export.exe" Value='"[SourceDir]DBUpdate.Export.exe" "[SRC_DIR_UNTERMINATED]" "[DBS_FOLDER_UNTERMINATED]"' Sequence='execute' Before='DBUpdate.Export.exe' />
+    <CustomAction Id="DBUpdate.Export.exe" DllEntry="WixQuietExec" BinaryKey="WixCA" Execute="deferred" Impersonate="no" />
+    <Component Id="CopyLegacyDb" Guid="{F6FF4E1A-62C6-427D-981A-8D974C03EB90}" Directory="DBsFolder">
+      <Condition><![CDATA[LEGACY_SQLITE_DB_DIR And WIX_UPGRADE_DETECTED]]></Condition>
+      <CopyFile Id="CopyLegacyDb" Delete="yes" DestinationDirectory="DBsFolder" SourceProperty="LEGACY_SQLITE_DB_DIR" SourceName="*.db"/>
+    </Component>
+
+    <InstallExecuteSequence>
+      <ResolveSource After="CostInitialize"><![CDATA[Not Installed]]></ResolveSource>
+      <Custom Action="DBUpdate.Export.exe" After="DuplicateFiles"><![CDATA[Not Installed And (&ExportPlugin >= 3) And LEGACY_SQLITE_DB_DIR And WIX_UPGRADE_DETECTED]]></Custom>
+    </InstallExecuteSequence>
+
+    <Property Id="IS_CENTRAL_STATION" Value="0"/>
+    <SetProperty Id="MMACHINENAME" Value="[ComputerName]" After="InstallInitialize" Sequence="execute"><![CDATA[Not MMACHINENAME]]></SetProperty>
+    <Property Id="MCLIENTMODE" Value="BedSide" />
+    <SetProperty Id="MCLIENTMODE" After="InstallInitialize" Sequence="execute" Value="Central"><![CDATA[(&CheckListClient >= 3) And (IS_CENTRAL_STATION = 1)]]></SetProperty>
+    <SetProperty Id="MURLPATH" After="SetMMACHINENAME" Sequence="execute" Value="http://[MMACHINENAME]:7803/PluginsDataFeed/CheckListPlugin"><![CDATA[(&CheckListClient >= 3)]]></SetProperty>
+  </Product>
+</Wix>

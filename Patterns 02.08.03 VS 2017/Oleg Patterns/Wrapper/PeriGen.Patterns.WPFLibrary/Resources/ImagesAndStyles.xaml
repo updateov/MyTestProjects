@@ -1,0 +1,159 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="BmpAboutBanner">
+        <Image Source="../Images/about_banner.jpg"/>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="NewAboutBanner">
+        <Image Source="../Images/PeriGen_logo_color.jpg"/>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="CuesBanner">
+        <Image Source="../Images/Cues128.png"/>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="BmpConsultInstructions">
+        <Image Source="../Images/Consult_instructions.bmp"/>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="BmpCELogo">
+        <Image Source="../Images/ce_logo.bmp"/>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="BmpManufacturer">
+        <Image Source="../Images/Manufacturer.bmp"/>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconCloseGrey">
+        <Image Source="../Images/x_grey.png" Width="16" Height="16"/>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconCloseHover">
+        <Image Source="../Images/x_hover.png" Width="16" Height="16"/>
+    </ControlTemplate>
+
+    <Storyboard x:Key="aboutAlgorithmFadeIn">
+        <DoubleAnimation Storyboard.TargetName="aboutAlgorithmWindow" BeginTime="0:0:0.1"
+                Storyboard.TargetProperty="Opacity" From="0.00" To="1.00" AutoReverse="False" Duration="0:0:0.3" />
+    </Storyboard>
+
+    <Storyboard x:Key="aboutAlgorithmFadeOut">
+        <DoubleAnimation Storyboard.TargetName="aboutAlgorithmWindow" BeginTime="0:0:0.1"
+                Storyboard.TargetProperty="Opacity" From="1.00" To="0.00" AutoReverse="False" Duration="0:0:0.3" />
+    </Storyboard>
+
+    <Storyboard x:Key="aboutBoxFadeIn">
+        <DoubleAnimation Storyboard.TargetName="aboutWindow" BeginTime="0:0:0.1"
+                Storyboard.TargetProperty="Opacity" From="0.00" To="1.00" AutoReverse="False" Duration="0:0:0.2" />
+    </Storyboard>
+
+    <Storyboard x:Key="aboutBoxFadeOut">
+        <DoubleAnimation Storyboard.TargetName="aboutWindow" BeginTime="0:0:0.1"
+                Storyboard.TargetProperty="Opacity" From="1.00" To="0.00" AutoReverse="False" Duration="0:0:0.2" />
+    </Storyboard>
+    
+    <Style x:Key="AdmitTitleStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="#241E1A" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+    </Style>
+
+    <Style x:Key="AlgDescriptionStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="AlgTextStyle" TargetType="Run">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+
+    <Style x:Key="AlgTextBoldStyle" TargetType="Run">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="AlgTextItalicStyle" TargetType="Run">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="Foreground" Value="#4a7b83" />
+    </Style>
+
+    <Style x:Key="AlgTextItalicBoldStyle" TargetType="Run" BasedOn="{StaticResource AlgTextItalicStyle}">
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="AboutTitleStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="#241E1A" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+    </Style>
+
+    <Style x:Key="AboutGroupTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="AboutTextStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+
+    <Style x:Key="LinkButtonFontStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="#315EAD"/>
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="Height" Value="18"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="TextDecorations" Value="Underline"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="HyperlinkFontStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="#315EAD"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="TextDecorations" Value="Underline"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CloseButtonStyle" TargetType="Button">
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Background" Value="Black"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="OverlayOK" CornerRadius="0" Height="30" Width="90" Background="Black">
+                        <TextBlock x:Name="txtClose" Text="Close" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFF" Background="Transparent" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
+    

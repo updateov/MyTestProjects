@@ -1,0 +1,11 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" x:Class="CRIReaderCompareTool.MainWindow"
+        Title="Compare Testing Tool" Background="LightGray" BorderBrush="Bisque" FontSize="14" Height="299.212" Width="398.028">
+    <Grid>
+        <Button x:Name="selectFiles" Content="selectFiles" HorizontalAlignment="Left" Height="25" Margin="50,41,0,0" VerticalAlignment="Top" Width="73" Click="selectFiles_Click"/>
+        <TextBox Name="txtStatus" HorizontalAlignment="Left" Height="72" Margin="51,165,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Width="224"/>
+        <TextBox   Background="AliceBlue" Name="filesSelected" HorizontalAlignment="Left" Height="77" Margin="51,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="224"/>
+    </Grid>
+</Window>

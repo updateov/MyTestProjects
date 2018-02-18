@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+
+    <!-- General Parameters -->
+    <PatternsVersion>02.08.03</PatternsVersion>
+    <PatternsProductBaseName Condition="'$(PatternsProductBaseName)'==''">PeriCALM Patterns</PatternsProductBaseName>
+    <PatternsProduct>$(PatternsProductBaseName) $(PatternsVersion)</PatternsProduct>
+    <PluginsProduct>PeriCALM Patterns Plugins $(PatternsVersion)</PluginsProduct>
+    <PeriGen>PeriGen Solutions Ltd.</PeriGen>
+
+    <!-- Parse the last part of TFS build number -->
+    <TF_BUILD_BUILDNUMBER Condition="'$(TF_BUILD_BUILDNUMBER)'==''">02.08.02.138</TF_BUILD_BUILDNUMBER>
+    <BuildNumberIndex>$(TF_BUILD_BUILDNUMBER.LastIndexOf('.'))</BuildNumberIndex>
+    <BuildNumber>$(TF_BUILD_BUILDNUMBER.Substring($(BuildNumberIndex)))</BuildNumber>
+    <BuildNumber>$(BuildNumber.Substring(1))</BuildNumber>
+
+    <PatternsComments>$(PatternsProduct) Build $(BuildNumber).$([System.DateTime]::Now.ToString("MMddyyyy"))</PatternsComments>
+    <PluginsComments>$(PluginsProduct) Build $(BuildNumber).$([System.DateTime]::Now.ToString("MMddyyyy"))</PluginsComments>
+
+    <WixVariables>$(WixVariables);PeriGen=$(PeriGen);PatternsProductBaseName=$(PatternsProductBaseName);PatternsProduct=$(PatternsProduct);PatternsVersion=$(PatternsVersion);PluginsProduct=$(PluginsProduct);PatternsComments=$(PatternsComments);PluginsComments=$(PluginsComments);BuildNumber=$(BuildNumber);</WixVariables>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <BindInputPaths Include="$(TF_BUILD_SOURCESDIRECTORY)\Patterns\Release\">
+      <BindName>BIN</BindName>
+    </BindInputPaths>
+    <BindInputPaths Include="$(TargetDir)">
+      <BindName>BIN</BindName>
+    </BindInputPaths>
+    <BindInputPaths Include="$(OutputPath)">
+      <BindName>BIN</BindName>
+    </BindInputPaths>
+    <BindInputPaths Include="$(OutputDir)">
+      <BindName>BIN</BindName>
+    </BindInputPaths>
+    <BindInputPaths Include="\\Virtfs\Public$\Patterns 02.08.02 Bin\">
+      <BindName>BIN</BindName>
+    </BindInputPaths>
+
+    <BindInputPaths Include="$(TF_BUILD_SOURCESDIRECTORY)\">
+      <BindName>SRC</BindName>
+    </BindInputPaths>
+
+    <BindInputPaths Include="\\Virtfs\Public$\HUB Dev\">
+      <BindName>REDIST</BindName>
+    </BindInputPaths>
+
+    <BindInputPaths Include="C:\Program Files (x86)\Common Files\Merge Modules\">
+      <BindName>VS_MSM</BindName>
+    </BindInputPaths>
+
+    <BindInputPaths Include="C:\Program Files (x86)\Common Files\Devart\">
+      <BindName>DEVART</BindName>
+    </BindInputPaths>
+    <BindInputPaths Include="C:\Program Files\Common Files\Devart\">
+      <BindName>DEVART</BindName>
+    </BindInputPaths>
+    <BindInputPaths Include="\\Virtfs\Public$\HUB Dev\Devart\">
+      <BindName>DEVART</BindName>
+    </BindInputPaths>
+  </ItemGroup>
+
+  <Import Project="$(SolutionDir)Patterns.user.props"
+          Condition="Exists('$(SolutionDir)Patterns.user.props')"
+          />
+</Project>

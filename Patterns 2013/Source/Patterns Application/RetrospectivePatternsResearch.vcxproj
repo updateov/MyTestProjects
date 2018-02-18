@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>RetrospectivePatternsResearch</ProjectName>
+    <ProjectGuid>{896E1E13-88D7-4AE3-91BD-D60E12EBF812}</ProjectGuid>
+    <RootNamespace>Patterns Application Standalone</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)-$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)-$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;..\Patterns;..\Patterns GUI;..\Pattern Data; ..\Pattern Detection;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_APPLICATION;patterns_has_signal_processing;patterns_parer_classification;patterns_standalone;patterns_retrospective;patterns_research;ACTIVE_CONTRACTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;patterns_has_signal_processing;VS2008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Pattern Detection;..\Pattern Detection\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Psapi.lib;Version.lib;Htmlhelp.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)RetrospectivePatternsResearch.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\Patterns;..\Patterns GUI;..\Pattern Data; ..\Pattern Detection;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_APPLICATION;patterns_standalone;patterns_has_signal_processing;patterns_parer_classification;patterns_retrospective;patterns_research;ACTIVE_CONTRACTION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;patterns_has_signal_processing;VS2008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Pattern Detection;..\Pattern Detection\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Psapi.lib;Version.lib;Htmlhelp.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)RetrospectivePatternsResearch.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pattern Data\PatternData.vcxproj">
+      <Project>{bc91fab4-3aa3-4750-ac5c-8183eabd2efa}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Pattern Detection\PatternDetection.vcxproj">
+      <Project>{8f0eca36-1c27-439f-9ee3-f8593a657026}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Torch3\Torch\Torch.vcxproj">
+      <Project>{f95b8f50-04d7-45ec-a113-c5960fc4f5af}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="about_dlg.cpp" />
+    <ClCompile Include="auto_update_dlg.cpp" />
+    <ClCompile Include="disclaimer_dlg.cpp" />
+    <ClCompile Include="enter_activation_dlg.cpp" />
+    <ClCompile Include="icon_button.cpp" />
+    <ClCompile Include="license_validation.cpp" />
+    <ClCompile Include="main frame.cpp" />
+    <ClCompile Include="main view.cpp" />
+    <ClCompile Include="no_license_dlg.cpp" />
+    <ClCompile Include="patient list view.cpp" />
+    <ClCompile Include="patient view.cpp" />
+    <ClCompile Include="Patterns Application.cpp" />
+    <ClCompile Include="please_wait_dlg.cpp" />
+    <ClCompile Include="popup message.cpp" />
+    <ClCompile Include="request_license_dialog.cpp" />
+    <ClCompile Include="welcome_dlg.cpp" />
+    <ClCompile Include="..\Patterns\patterns, conductor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, config.cpp" />
+    <ClCompile Include="..\Patterns\patterns, fetus.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, input adapter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, samples.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, subscription.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Gui\patterns gui, patient list control.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Gui\patterns gui, services.cpp" />
+    <ClCompile Include="..\Patterns Gui\patterns gui, tracing, debug.cpp" />
+    <ClCompile Include="..\Patterns Gui\patterns gui, tracing.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Gui\patterns gui, viewer input adapter.cpp" />
+    <ClCompile Include="base64.cpp" />
+    <ClCompile Include="dib256.cpp" />
+    <ClCompile Include="dibpal.cpp" />
+    <ClCompile Include="file_loading.cpp" />
+    <ClCompile Include="hyperlink.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Rendevouz.cpp" />
+    <ClCompile Include="SerialShield.cpp" />
+    <ClCompile Include="SplashScreen.cpp" />
+    <ClCompile Include="tinystr.cpp" />
+    <ClCompile Include="tinyxml.cpp" />
+    <ClCompile Include="tinyxmlerror.cpp" />
+    <ClCompile Include="tinyxmlparser.cpp" />
+    <ClCompile Include="..\Parer\Classification.cpp" />
+    <ClCompile Include="..\Parer\ParerClassifier.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="about_dlg.h" />
+    <ClInclude Include="auto_update_dlg.h" />
+    <ClInclude Include="disclaimer_dlg.h" />
+    <ClInclude Include="enter_activation_dlg.h" />
+    <ClInclude Include="icon_button.h" />
+    <ClInclude Include="license_validation.h" />
+    <ClInclude Include="main frame.h" />
+    <ClInclude Include="main view.h" />
+    <ClInclude Include="no_license_dlg.h" />
+    <ClInclude Include="patient list view.h" />
+    <ClInclude Include="patient view.h" />
+    <ClInclude Include="Patterns Application.h" />
+    <ClInclude Include="please_wait_dlg.h" />
+    <ClInclude Include="popup message.h" />
+    <ClInclude Include="request_license_dialog.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="welcome_dlg.h" />
+    <ClInclude Include="PatternsVersionNumber.h" />
+    <ClInclude Include="..\Patterns\patterns, conductor.h" />
+    <ClInclude Include="..\Patterns\patterns, config.h" />
+    <ClInclude Include="..\Patterns\patterns, fetus.h" />
+    <ClInclude Include="..\Patterns\patterns, input adapter.h" />
+    <ClInclude Include="..\Patterns\patterns, samples.h" />
+    <ClInclude Include="..\Patterns\patterns, subscription.h" />
+    <ClInclude Include="..\Patterns Gui\patterns gui, patient list control.h" />
+    <ClInclude Include="..\Patterns Gui\patterns gui, services.h" />
+    <ClInclude Include="..\Patterns Gui\patterns gui, tracing.h" />
+    <ClInclude Include="..\Patterns Gui\patterns gui, viewer input adapter.h" />
+    <ClInclude Include="base64.h" />
+    <ClInclude Include="dib256.h" />
+    <ClInclude Include="dibpal.h" />
+    <ClInclude Include="file_loading.h" />
+    <ClInclude Include="hyperlink.h" />
+    <ClInclude Include="Rendevouz.h" />
+    <ClInclude Include="sendmail.h" />
+    <ClInclude Include="SerialShield.h" />
+    <ClInclude Include="SplashScreen.h" />
+    <ClInclude Include="tinystr.h" />
+    <ClInclude Include="tinyxml.h" />
+    <ClInclude Include="..\Parer\Classification.h" />
+    <ClInclude Include="..\Parer\ParerClassifier.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\about_banner.bmp" />
+    <None Include="res\banner.bmp" />
+    <None Include="res\ce_logo.bmp" />
+    <None Include="res\left.bmp" />
+    <None Include="res\leftmost.bmp" />
+    <None Include="res\navigation buttons.bmp" />
+    <None Include="res\nextpage.bmp" />
+    <None Include="res\Patterns Application.rc2" />
+    <None Include="res\patterns.ico" />
+    <None Include="res\pause.bmp" />
+    <None Include="res\previouspage.bmp" />
+    <None Include="res\right.bmp" />
+    <None Include="res\rightmost.bmp" />
+    <None Include="res\splash-retrospective.bmp" />
+    <None Include="res\Welcome.bmp" />
+    <None Include="..\..\Setup\Retrospective Patterns Setup\CALM Patterns Research Setup.nsi" />
+    <None Include="SerialShield.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Patterns Application.rc" />
+    <ResourceCompile Include="..\Patterns Gui\patterns gui, tracing.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Patterns Application.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

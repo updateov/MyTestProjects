@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CLRPatternsUserControls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clrresource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CLRPatternsUserControls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\ContractilityIndex.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\in review.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\information m.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\information.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\object buttons.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\slider.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\t disconnected.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\t hyperstimulation.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\t objects.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Gui\resources\tracing delayed.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\about_banner.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\ce_logo.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\Consult_instructions.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\ge_about_banner.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\ge_banner.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\Manufacturer.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\perigen_banner.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\power_by_perigen_banner.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\t disconnected.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsCRIChart\CRIPatternsChart\res\vcr_buttons.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\Source\Patterns Application\res\navigation buttons.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\PatternsControlContainer\res\data_status.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Help\PeriWatch Cues User Guide.pdf" />
+    <None Include="Help\PeriCALM PATTERNS User Guide.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

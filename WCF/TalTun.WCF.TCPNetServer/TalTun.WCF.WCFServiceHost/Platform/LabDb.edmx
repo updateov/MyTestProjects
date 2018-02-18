@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LabDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="LabDbModelStoreContainer">
+          <EntitySet Name="tt_WCF_Lab1_Products" EntityType="LabDbModel.Store.tt_WCF_Lab1_Products" store:Type="Tables" Schema="dbo" Table="tt.WCF.Lab1.Products" />
+          <EntitySet Name="tt_WCF_Lab1_SalesTrx" EntityType="LabDbModel.Store.tt_WCF_Lab1_SalesTrx" store:Type="Tables" Schema="dbo" Table="tt.WCF.Lab1.SalesTrx" />
+        </EntityContainer>
+        <EntityType Name="tt_WCF_Lab1_Products">
+          <Key>
+            <PropertyRef Name="ProdSysId" />
+          </Key>
+          <Property Name="ProdSysId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="char" Nullable="false" MaxLength="100" />
+          <Property Name="Img" Type="char" Nullable="false" MaxLength="100" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Currency" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tt_WCF_Lab1_SalesTrx">
+          <Key>
+            <PropertyRef Name="TrsSysId" />
+          </Key>
+          <Property Name="TrsSysId" Type="bigint" Nullable="false" />
+          <Property Name="TrxDateTime" Type="datetime" Nullable="false" />
+          <Property Name="CustId" Type="bigint" Nullable="false" />
+          <Property Name="ProdSysId" Type="bigint" Nullable="false" />
+          <Property Name="Qnt" Type="smallint" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LabDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LabDbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tt_WCF_Lab1_Products" EntityType="LabDbModel.tt_WCF_Lab1_Products" />
+          <EntitySet Name="tt_WCF_Lab1_SalesTrx" EntityType="LabDbModel.tt_WCF_Lab1_SalesTrx" />
+        </EntityContainer>
+        <EntityType Name="tt_WCF_Lab1_Products">
+          <Key>
+            <PropertyRef Name="ProdSysId" />
+          </Key>
+          <Property Name="ProdSysId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="true" />
+          <Property Name="Img" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="true" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="Currency" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tt_WCF_Lab1_SalesTrx">
+          <Key>
+            <PropertyRef Name="TrsSysId" />
+          </Key>
+          <Property Name="TrsSysId" Type="Int64" Nullable="false" />
+          <Property Name="TrxDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CustId" Type="Int64" Nullable="false" />
+          <Property Name="ProdSysId" Type="Int64" Nullable="false" />
+          <Property Name="Qnt" Type="Int16" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LabDbModelStoreContainer" CdmEntityContainer="LabDbEntities">
+          <EntitySetMapping Name="tt_WCF_Lab1_Products">
+            <EntityTypeMapping TypeName="LabDbModel.tt_WCF_Lab1_Products">
+              <MappingFragment StoreEntitySet="tt_WCF_Lab1_Products">
+                <ScalarProperty Name="ProdSysId" ColumnName="ProdSysId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tt_WCF_Lab1_SalesTrx">
+            <EntityTypeMapping TypeName="LabDbModel.tt_WCF_Lab1_SalesTrx">
+              <MappingFragment StoreEntitySet="tt_WCF_Lab1_SalesTrx">
+                <ScalarProperty Name="TrsSysId" ColumnName="TrsSysId" />
+                <ScalarProperty Name="TrxDateTime" ColumnName="TrxDateTime" />
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="ProdSysId" ColumnName="ProdSysId" />
+                <ScalarProperty Name="Qnt" ColumnName="Qnt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

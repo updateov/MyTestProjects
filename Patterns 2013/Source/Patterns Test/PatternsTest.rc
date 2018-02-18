@@ -1,0 +1,247 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""PatternsTest.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PATTERNS_DEBUG DIALOGEX 0, 0, 505, 476
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Patterns"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_CONTRACTIONS_OLD,8,15,206,228,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "Old contraction calculation code",IDC_STATIC,7,7,107,8
+    LISTBOX         IDC_CONTRACTIONS_NEW,222,15,200,229,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "New contraction calculation code",IDC_STATIC,222,7,108,8
+    PUSHBUTTON      "Compute",IDC_COMPUTE,429,48,67,13
+    PUSHBUTTON      "Reset",IDC_RESET,429,64,67,15
+    DEFPUSHBUTTON   "Quit",IDOK,429,14,67,13
+    LTEXT           "Status...",IDC_STATUS,430,83,66,12
+    LTEXT           "",IDC_TIME_POINTS,428,207,68,11
+    LTEXT           "Ratio ((d0/d1) / pts):",IDC_STATIC,425,193,71,8
+    LTEXT           "Nb of up points:",IDC_STATIC,427,150,69,9
+    LTEXT           "",IDC_NB_POINTS,425,161,71,9
+    PUSHBUTTON      "Compute all",IDC_COMPUTE_ALL,429,33,67,13
+    PUSHBUTTON      "Test",IDC_TEST,429,301,67,15
+    EDITTEXT        IDC_TEST_DIAGNOSTIC,7,302,413,167,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "Test diagnostic:",IDC_STATIC,7,292,95,10
+    GROUPBOX        "Calculation Informations",IDC_STATIC,7,247,206,37
+    LTEXT           "",IDC_DIFF,432,268,58,14
+    LTEXT           "",IDC_NB_CONTRACTIONS_NEW,298,258,33,15
+    LTEXT           "",IDC_EXE_TIME_OLD,39,268,58,10
+    LTEXT           "",IDC_EXE_TIME_NEW,253,268,58,10
+    LTEXT           "",IDC_NB_CONTRACTIONS_OLD,89,258,33,12
+    LTEXT           "Nb. of contractions:",IDC_STATIC,231,258,66,12
+    LTEXT           "Nb. of contractions:",IDC_STATIC,16,258,68,12
+    GROUPBOX        "Calculation Informations",IDC_STATIC,221,247,200,37
+    LTEXT           "Time:",IDC_STATIC,231,268,19,10
+    LTEXT           "Time:",IDC_STATIC,16,268,24,10
+    PUSHBUTTON      "Test limits",IDC_TEST_LIMITS,429,318,67,15
+    EDITTEXT        IDC_NB_ITERATION,467,336,29,13,ES_AUTOHSCROLL
+END
+
+IDD_PATTERNS_TRACING DIALOGEX 0, 0, 739, 409
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Patterns - Tracing"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Quit",IDOK,680,386,52,16
+    PUSHBUTTON      "Debug",IDC_DEBUG,680,364,52,16
+    LTEXT           "Custom1",IDC_TRACING_1,7,7,725,164,NOT WS_VISIBLE | NOT WS_GROUP | WS_TABSTOP
+    LTEXT           "Custom2",IDC_TRACING_2,7,154,725,106,NOT WS_VISIBLE | NOT WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "Batch",IDC_RECOMPUTE_1,7,307,52,16
+    PUSHBUTTON      "Reset",IDC_RESET_1,7,386,52,16
+    PUSHBUTTON      "Batch",IDC_RECOMPUTE_2,161,348,52,16
+    PUSHBUTTON      "Reset",IDC_RESET_2,161,386,52,16
+    PUSHBUTTON      "Compare2to1",IDC_COMPARE_2_1,219,386,52,16
+    PUSHBUTTON      "Compare1to2",IDC_COMPARE_1_2,219,386,52,16
+    COMBOBOX        IDC_INPUT_1,7,291,52,64,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDC_BROWSE_1,61,291,18,12
+    PUSHBUTTON      "...",IDC_BROWSE_2,217,290,18,12
+    COMBOBOX        IDC_INPUT_2,163,290,52,71,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Fetus 1",IDC_LBL_COL1,7,280,33,8
+    LTEXT           "Fetus 2",IDC_LBL_COL2,338,282,57,8
+    LTEXT           "Decel",IDC_LBL_DECEL,373,307,33,10
+    LTEXT           "Accel",IDC_LBL_ACCEL,373,334,33,10
+    LTEXT           "Bas",IDC_LBL_BAS,373,361,33,10
+    LTEXT           "Detect",IDC_LBL_DETECT,423,280,33,10
+    LTEXT           "Miss",IDC_LBL_MISS,463,280,33,10
+    LTEXT           "FP",IDC_LBL_FP,503,280,33,10
+    LTEXT           "SpSens",IDC_LBL_SAMPSENS,543,280,33,10
+    LTEXT           "SpPPV",IDC_LBL_SAMPPPV,583,280,33,10
+    LTEXT           "EvSens",IDC_LBL_SENS,623,280,33,10
+    LTEXT           "EvPPV",IDC_LBL_PPV,663,280,33,10
+    CTEXT           "",IDC_DEC_DETECT,423,307,33,10
+    CTEXT           "",IDC_DEC_MISS,463,307,33,10
+    CTEXT           "",IDC_DEC_FP,503,307,33,10
+    CTEXT           "",IDC_DEC_SAMPSENS,543,307,33,10
+    CTEXT           "",IDC_DEC_SAMPPPV,583,307,33,10
+    CTEXT           "",IDC_DEC_SENS,623,307,33,10
+    CTEXT           "",IDC_DEC_PPV,663,307,33,10
+    CTEXT           "",IDC_ACC_DETECT,423,334,33,10
+    CTEXT           "",IDC_ACC_MISS,463,334,33,10
+    CTEXT           "",IDC_ACC_FP,503,334,33,10
+    CTEXT           "",IDC_ACC_SAMPSENS,543,334,33,10
+    CTEXT           "",IDC_ACC_SAMPPPV,583,334,33,10
+    CTEXT           "",IDC_ACC_SENS,623,334,33,10
+    CTEXT           "",IDC_ACC_PPV,663,334,33,10
+    CTEXT           "",IDC_BAS_SAMPSENS,543,361,33,10
+    CTEXT           "",IDC_BAS_SAMPPPV,583,361,33,10
+    PUSHBUTTON      "Process",IDC_PROCESS,231,345,52,16
+    PUSHBUTTON      "Process",IDC_PROCESS1,231,365,52,16
+    CONTROL         "",IDC_STEP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,293,357,40,9
+    CONTROL         "",IDC_WAITBS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,293,377,40,9
+    CONTROL         "",IDC_RANDBS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,293,397,40,9
+    CONTROL         "",IDC_REPREJ1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,293,417,40,9
+    CONTROL         "",IDC_REPREJ2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,293,437,40,9
+    CONTROL         "",IDC_DISREP1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,273,417,40,9
+    CONTROL         "",IDC_DISREP2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,273,437,40,9
+    EDITTEXT        IDC_BS1,269,296,36,19,ES_AUTOHSCROLL
+    RTEXT           "BS",IDC_BS1TEXT,269,296,36,19
+    RTEXT           "BS",IDC_BS2TEXT,269,296,36,19
+    RTEXT           "STEP",IDC_STEPTEXT,269,296,36,19
+    RTEXT           "TimeAccel",IDC_ACCELTEXT,269,296,36,19
+    RTEXT           "WAIT",IDC_WAITTEXT,269,296,36,19
+    RTEXT           "RANDBS",IDC_RANDBSTEXT,269,296,36,19
+    LTEXT           "REPREJ",IDC_REPREJ1TEXT,269,296,36,19
+    LTEXT           "REPREJ",IDC_REPREJ2TEXT,269,296,36,19
+    LTEXT           "DisRep",IDC_DISREP1TEXT,269,296,36,19
+    LTEXT           "DisRep",IDC_DISREP2TEXT,269,296,36,19
+    EDITTEXT        IDC_BS2,269,296,36,19,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TIMEACCEL,321,307,44,26,ES_AUTOHSCROLL
+    PUSHBUTTON      "Reboot",IDC_REBOOT,312,360,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PATTERNS_DEBUG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 496
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 469
+    END
+
+    IDD_PATTERNS_TRACING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 732
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 402
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\patterns.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About Patterns..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "PatternsTest.rc2"  // non-Microsoft Visual C++ edited resources
+#include "SignalProcessing.rc2"
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

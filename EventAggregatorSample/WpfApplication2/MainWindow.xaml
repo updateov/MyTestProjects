@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Width="50" Content="Expand" Margin="5" Name="btn" Click="btn_Click">
+                    <!--<Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click" SourceName="btn">
+                            <BeginStoryboard Name="Expand">
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames Storyboard.TargetName="exp" Storyboard.TargetProperty="Expandeded">
+                                        <DiscreteBooleanKeyFrame KeyTime="00:00:00.01" Value="True"/>
+                                    </BooleanAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>-->
+                </Button>
+                <Button Width="50" Content="Collapse" Margin="5" Name="btnColl">
+                    <!--<Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click" SourceName="btnColl">
+                            <BeginStoryboard Name="Collapse">
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames Storyboard.TargetName="xpanders" Storyboard.TargetProperty="Expand">
+                                        <DiscreteBooleanKeyFrame KeyTime="00:00:00.01" Value="False"/>
+                                    </BooleanAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>-->
+                </Button>
+            </StackPanel>
+            <ItemsControl ItemsSource="{Binding}" x:Name="xpanders">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Expander x:Name="exp" IsExpanded="{Binding Expanded, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                            <Expander.Header>
+                                <TextBlock x:Name="head" Text="{Binding HeadText}"/>
+                            </Expander.Header>
+                            <TextBlock Text="{Binding ContentText}"/>
+                        </Expander>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>

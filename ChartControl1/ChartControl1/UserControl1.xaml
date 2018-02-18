@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="ChartControl1.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             x:Name="MainControl"
+             d:DesignHeight="400" d:DesignWidth="700">
+    <Canvas Background="AliceBlue" Margin="0,0,0,0">
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="30" Stretch="Fill" Stroke="#800A0A0A" StrokeThickness="1"              
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="36" Y2="36" Canvas.Top="36" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="42" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="48" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="54" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"              
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="60" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="66" Stretch="Fill" Stroke="#800A0A0A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="72" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="78" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="84" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="90" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="96" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="102" Stretch="Fill" Stroke="#800A0A0A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="108" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="114" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="120" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="126" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="132" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="138" Stretch="Fill" Stroke="#800A0A0A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="144" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="150" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="156" Stretch="Fill" Stroke="#800A0A0A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="180" Stretch="Fill" Stroke="#800A0A0A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="187" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="194" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="201" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="208" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="215" Stretch="Fill" Stroke="#800A0A0A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="222" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="229" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="236" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="243" Stretch="Fill" Stroke="#5A5A5A5A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        <Line X1="0" Y1="30" Y2="30" Canvas.Top="250" Stretch="Fill" Stroke="#800A0A0A" StrokeThickness="1"
+              X2="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
+        
+    </Canvas>
+    
+</UserControl>

@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="Perigen.Patterns.NnetControls.Controls.ComboBoxControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:converters="clr-namespace:Perigen.Patterns.NnetControls.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="130"
+             Name="comboBoxControl" >
+    <UserControl.Resources>
+
+        <converters:NumberToResolutionConverter x:Key="NumberToResolutionConverter" />
+        <converters:MarginToResolutionConverter x:Key="MarginToResolutionConverter" />
+
+        <Style x:Key="ComboStyle" TargetType="{x:Type ComboBox}">
+            <Setter Property="Foreground" Value="#444444"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Converter={StaticResource NumberToResolutionConverter}, ConverterParameter=13}" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="BorderBrush" Value="#d2d2d2" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Blue" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ItemDescriptionStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="{Binding Converter={StaticResource NumberToResolutionConverter}, ConverterParameter=13}" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="Foreground" Value="#241E1A" />
+        </Style>
+
+    </UserControl.Resources>
+    
+    <Grid>
+        
+        <!---->
+        <ComboBox Name="m_comboBox" Style="{StaticResource ComboStyle}"
+                  Height="{Binding Path=Height, RelativeSource={RelativeSource Self}}" 
+                  Width="{Binding Path=Width, RelativeSource={RelativeSource Self}}"
+                  ItemsSource="{Binding Items, ElementName=comboBoxControl}" 
+                  SelectedItem="{Binding Value, ElementName=comboBoxControl}"
+                  SelectionChanged="comboBox_SelectionChanged" LostFocus="comboBox_LostFocus">
+
+            <ComboBox.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                     Color="#A2A2A2" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
+                                     Color="Black" />
+            </ComboBox.Resources>
+
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding}" Style="{StaticResource ItemDescriptionStyle}" 
+                                   Height="{Binding Converter={StaticResource NumberToResolutionConverter}, ConverterParameter=25}" TextAlignment="Left" 
+                                   Margin="{Binding Converter={StaticResource MarginToResolutionConverter}, ConverterParameter='10,10,0,0'}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+        </ComboBox>
+
+        <TextBlock Name="m_textBlock"  Text="{Binding ElementName=m_comboBox, Path=SelectedItem}" 
+                   Margin="{Binding Converter={StaticResource MarginToResolutionConverter}, ConverterParameter='10,2,15,0'}" 
+                   IsHitTestVisible="False" Height="{Binding Converter={StaticResource NumberToResolutionConverter}, ConverterParameter=20}"
+                   TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center">
+            
+            <TextBlock.Style>
+                
+                <Style  BasedOn="{StaticResource ItemDescriptionStyle}" TargetType="TextBlock">
+                            
+                    <Style.Setters>
+                        <Setter Property="Visibility" Value="Visible"/>
+                        <Setter Property="Background" Value="White"/>
+                    </Style.Setters>
+                            
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=m_comboBox, Path=SelectedItem}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Hidden"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                    
+                </Style>
+                
+            </TextBlock.Style>
+            
+        </TextBlock>
+
+    </Grid>
+</UserControl>

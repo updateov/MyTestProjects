@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.10</ProductVersion>
+    <ProjectGuid>{b22c5887-5b3e-4e8e-8916-2100da23c3bf}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <PatternsProductBaseName>PeriWatch Cues</PatternsProductBaseName>
+    <OutputType>Bundle</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)Patterns.props" />
+  <PropertyGroup>
+    <OutputName>PeriWatch_Cues_Setup $(TF_BUILD_BUILDNUMBER)</OutputName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bundle.wxs" />
+    <Compile Include="$(IntermediateOutputPath)\DBUpdate_Export_Scripts_Cues.g1.wxs">
+      <Link>DBUpdate_Export_Scripts_Cues.g1.wxs</Link>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixBalExtension">
+      <HintPath>$(WixExtDir)\WixBalExtension.dll</HintPath>
+      <Name>WixBalExtension</Name>
+    </WixExtension>
+    <WixExtension Include="PeriGenWiXExtension">
+      <HintPath>..\packages\PeriGenWiXExtension.1.0.0.20\lib\PeriGenWiXExtension.dll</HintPath>
+      <Name>PeriGenWiXExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../PatternsBA/PatternsBA.csproj" Condition="'{41F986AF-D795-4563-AF95-02FDFB1659D4}' != '$ba_project_guid$'">
+      <Name>PatternsBA</Name>
+      <Project>{41F986AF-D795-4563-AF95-02FDFB1659D4}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\PatternsMsi\PatternsMsi.wixproj">
+      <Name>PatternsMsi</Name>
+      <Project>{fd025f64-c265-4d43-babf-380ed16bfe8d}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\PatternsPrerequisites\PatternsPrerequisites.wixproj">
+      <Name>PatternsPrerequisites</Name>
+      <Project>{fae8f8d1-550e-474c-9f46-60abe3b2013f}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\PluginsMsi\PluginsMsi.wixproj">
+      <Name>PluginsMsi</Name>
+      <Project>{c2758a58-4346-417d-af81-000332f96d76}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cues.ico" />
+    <Content Include="JetBA-License.lic" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!-- Harvest SRC/Plugins/Export/DBUpdate.Export/DBUpdate for -->
+  <Target Name="BeforeBuild">
+    <HeatDirectory ToolPath="$(WixToolPath)" AutogenerateGuids="True" OutputFile="$(IntermediateOutputPath)\DBUpdate_Export_Scripts_Cues.g.wxs" SuppressFragments="True" Directory="$(TF_BUILD_SOURCESDIRECTORY)\Patterns\Plugins\Export\DBUpdate.Export\DBUpdate_Cues" SuppressCom="True" SuppressRegistry="True" ComponentGroupName="DBUpdate_Export_Scripts" />
+    <XslTransformation XslInputPath="$(SolutionDir)HarvestPayloads.xslt" XmlInputPaths="$(IntermediateOutputPath)\DBUpdate_Export_Scripts_Cues.g.wxs" OutputPaths="$(IntermediateOutputPath)\DBUpdate_Export_Scripts_Cues.g1.wxs" Parameters="&lt;Parameter Name='BindVarName' Value='SRC'/&gt; &lt;Parameter Name='BaseDir' Value='Patterns\Plugins\Export\DBUpdate.Export\DBUpdate_Cues'/&gt;" />
+  </Target>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

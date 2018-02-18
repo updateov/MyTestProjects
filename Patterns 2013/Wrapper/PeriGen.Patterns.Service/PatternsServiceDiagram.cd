@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PeriGen.Patterns.Service.Common">
+    <Position X="19.5" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Common.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.ComputerInfoEx">
+    <Position X="19.5" Y="2.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="PeriGen.Patterns.Service.ComputerInfoEx.SafeNativeMethods">
+        <Compartments>
+          <Compartment Name="Nested Types" Collapsed="false" />
+        </Compartments>
+        <NestedTypes>
+          <Enum Name="PeriGen.Patterns.Service.ComputerInfoEx.SafeNativeMethods.PROCESSOR_CACHE_TYPE" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>ComputerInfoEx.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Enum>
+          <Struct Name="PeriGen.Patterns.Service.ComputerInfoEx.SafeNativeMethods.CACHE_DESCRIPTOR" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>ComputerInfoEx.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Struct>
+          <Enum Name="PeriGen.Patterns.Service.ComputerInfoEx.SafeNativeMethods.RelationProcessorCore" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>ComputerInfoEx.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Enum>
+          <Struct Name="PeriGen.Patterns.Service.ComputerInfoEx.SafeNativeMethods.SYSTEM_LOGICAL_PROCESSOR_INFORMATION" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>ComputerInfoEx.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Struct>
+        </NestedTypes>
+        <TypeIdentifier>
+          <NewMemberFileName>ComputerInfoEx.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAQQCAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ComputerInfoEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.ExtensionMethods">
+    <Position X="22" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAQAAAAAAAAAAAAAAAAAICAAAAAAAAAA=</HashCode>
+      <FileName>ExtensionMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.PatternsChalkboard" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="0.5" Width="3.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BACAAAAAACFAAAAAAAAAAJAACAAAJQCAAAhAACAEAAA=</HashCode>
+      <FileName>PatternsChalkboard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.PatternsDataFeed" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="4.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AkGAwgEAUDAAAEAAAAkCAAAMAIAECAAAAIAAAAAAAAA=</HashCode>
+      <FileName>PatternsDataFeed.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.PatternsEpisode" BaseTypeListCollapsed="true">
+    <Position X="16" Y="0.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="PeriGen.Patterns.Service.PatternsEpisode.EpisodeStatuses">
+        <TypeIdentifier>
+          <NewMemberFileName>PatternsEpisode.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="PeriGen.Patterns.Service.PatternsEpisode.RecoveryStatuses">
+        <TypeIdentifier>
+          <NewMemberFileName>PatternsEpisode.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="PeriGen.Patterns.Service.PatternsEpisode.PODIVisitStatus">
+        <TypeIdentifier>
+          <NewMemberFileName>PatternsEpisode.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>d1SiAFAlS/EJwQUdbQ/kyD95aRo5gcbgRepYRRJYARk=</HashCode>
+      <FileName>PatternsEpisode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.CurveRequestHeader">
+    <Position X="12.25" Y="7" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAgBAQQAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>PatternsRequestHeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.PatternsService">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAICAAAACAAAAAgEACAAAACBEAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>PatternsService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.PatternsTask">
+    <Position X="6.75" Y="5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>MAAQQCAFASACIAAAQADGkAwAYGJABAgQZhAIhAAIEAA=</HashCode>
+      <FileName>PatternsTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.PerformanceCounterHelper">
+    <Position X="12" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>ACAECgAAAAEAIAAAQoAAAAAAACYAAARAAABQAwCAwEA=</HashCode>
+      <FileName>PerformanceCounterHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.Service.Program">
+    <Position X="0.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAABA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.Curve.CurveExam">
+    <Position X="9.5" Y="6.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABICAACEACAAAAAAEAAAACEAAACAEABACABAAAAAAQE=</HashCode>
+      <FileName>CurveExam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.WebServiceManagement.Constants">
+    <Position X="22.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>WebServiceManagement\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.WebServiceManagement.HeaderManager">
+    <Position X="22.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>WebServiceManagement\HeaderManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.WebServiceManagement.Factory.ServiceProxyArgs">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>WebServiceManagement\ServiceProxy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.WebServiceManagement.Factory.ServiceProxy&lt;T&gt;">
+    <Position X="24.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WebServiceManagement\ServiceProxy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PeriGen.Patterns.Service.ICurveDataFeed">
+    <Position X="0.5" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAAAAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICurveDataFeed.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PeriGen.Patterns.Service.IPeriGenOutbound">
+    <Position X="0.5" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPeriGenOutbound.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PeriGen.Patterns.Curve.FetalPositions">
+    <Position X="6.75" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAgAAgAAAAAAAAAACAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>CurveExam.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PeriGen.Patterns.Curve.CurveCalculationStatuses">
+    <Position X="6.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAAAABEAAAAA=</HashCode>
+      <FileName>CurveExam.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PeriGen.Patterns.Curve.CurveCalculationReasons">
+    <Position X="9.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BQAACAEBgGAIQAAgAAAgAAAIAACABAAEBCAWAAEAAAE=</HashCode>
+      <FileName>CurveExam.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="PeriGen.Patterns.WebServiceManagement.Factory.ExecuteServiceDelegate&lt;T&gt;">
+    <Position X="22.5" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WebServiceManagement\ServiceProxy.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

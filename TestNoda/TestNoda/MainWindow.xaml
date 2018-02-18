@@ -1,0 +1,9 @@
+﻿<Window x:Class="TestNoda.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Margin="50" Content="Test" Command="{Binding Clicked}"/>
+        <TextBox Text="{Binding JSONText}" TextWrapping="Wrap"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Perigen.Patterns.NnetControls.Controls.StringControlContainer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Perigen.Patterns.NnetControls.Controls"
+             xmlns:converters="clr-namespace:Perigen.Patterns.NnetControls.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="stringControlContainer"
+             Loaded="StringControlContainer_Loaded">
+    
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="/PresentationFramework.Aero;component/themes/Aero.NormalColor.xaml"/>
+                <ResourceDictionary Source="..\Resources\StylesDictionary.xaml" />
+                <ResourceDictionary Source="..\Resources\ConvertersDictionary.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+    <DockPanel 
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="{Binding Converter={StaticResource MarginToResolutionConverter}, ConverterParameter='15,2,0,2'}" Visibility="Visible">
+
+        <Grid HorizontalAlignment="Stretch" DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="22*"/>
+                <ColumnDefinition Width="44*"/>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{Binding ControlData.Name, ElementName=stringControlContainer}" TextTrimming="CharacterEllipsis"
+                               Style="{StaticResource LableDescriptionStyle}" HorizontalAlignment="Left"
+                               VerticalAlignment="Top" Margin="{Binding Converter={StaticResource MarginToResolutionConverter}, ConverterParameter='0,5,0,0'}" 
+                               />
+<!--Width="{Binding Converter={StaticResource NumberToResolutionConverter}, ConverterParameter=90}"-->
+
+            <Border Grid.Column="1" BorderBrush="#d2d2d2" BorderThickness="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBox Name="txtComment" 
+                     Style="{StaticResource CommentTextStyle}" Height="20"
+                     Text="{Binding ControlData.Value, ElementName=stringControlContainer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                </TextBox>
+            </Border>
+
+        </Grid>
+    </DockPanel>
+    
+</UserControl>

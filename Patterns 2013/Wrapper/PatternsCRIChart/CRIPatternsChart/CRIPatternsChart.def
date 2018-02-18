@@ -1,0 +1,9 @@
+; CRIPatternsChart.def : Declares the module parameters.
+
+LIBRARY      "Patterns CRI Chart.ocx"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer PRIVATE

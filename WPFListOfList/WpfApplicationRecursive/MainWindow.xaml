@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfApplicationRecursive.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="750" Width="1025">
+    <!--<Grid>
+        <Grid.Resources>
+
+            <DataTemplate x:Key="Level5Template">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="3">
+                    <TextBlock Text="{Binding Text}"/>
+                </Border>
+            </DataTemplate>
+
+            <DataTemplate x:Key="Level4Template">
+                <Border BorderBrush="Red" BorderThickness="1" Margin="3">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Text}"/>
+                        <ItemsControl ItemsSource="{Binding Items}" ItemTemplate="{StaticResource Level5Template}" />
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+
+            <DataTemplate x:Key="Level3Template">
+                <Border BorderBrush="Green" BorderThickness="1" Margin="3">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Text}"/>
+                        <ItemsControl ItemsSource="{Binding Items}" ItemTemplate="{StaticResource Level4Template}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+
+            <DataTemplate x:Key="Level2Template">
+                <Border BorderBrush="Blue" BorderThickness="1" Margin="2" >
+                    <StackPanel>
+                        <TextBlock  Text="{Binding Text}" />
+                        <ItemsControl  ItemsSource="{Binding Items}" ItemTemplate="{StaticResource Level3Template}"/>
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+        </Grid.Resources>
+
+
+        <ListBox ItemsSource="{Binding}" 
+                 ItemTemplate="{StaticResource Level2Template}" 
+                 HorizontalContentAlignment="Stretch"   
+                 ScrollViewer.CanContentScroll="False">
+        </ListBox>
+    </Grid>-->
+    <DockPanel>
+        <Button x:Name="start" Content="Start" Click="start_Click"/>
+        <WebBrowser x:Name="youtubeBrowser" Width="Auto"/>
+    </DockPanel>
+</Window>

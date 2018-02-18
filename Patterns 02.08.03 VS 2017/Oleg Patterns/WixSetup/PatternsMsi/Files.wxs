@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension" xmlns:pg="http://schemas.perigen.com/wix/WixExtension">
+  <Fragment>
+
+    <Property Id="MCABNAME" Value="./PeriCALMPatternsOEMChart.cab" />
+    <Property Id="MCRLIMIT" Value="10" />
+    <Property Id="MCRSTAGE1" Value="5" />
+    <Property Id="MCRWINDOW" Value="10" />
+    <Property Id="MENABLECHECKLIST" Value="False" />
+    <SetProperty Before="PsfConfigSched" Sequence="execute" Id="MCABNAME" Value="./PeriCALMPatternsCRIChart.cab"><![CDATA[&PatternsPluginsService>=3 And INSTALL_CHECKLIST_PLUGIN=1]]></SetProperty>
+    <SetProperty Before="PsfConfigSched" Sequence="execute" Id="MCRLIMIT" Value="30"><![CDATA[&PatternsPluginsService>=3 And INSTALL_CHECKLIST_PLUGIN=1]]></SetProperty>
+    <SetProperty Before="PsfConfigSched" Sequence="execute" Id="MCRSTAGE1" Value="15"><![CDATA[&PatternsPluginsService>=3 And INSTALL_CHECKLIST_PLUGIN=1]]></SetProperty>
+    <SetProperty Before="PsfConfigSched" Sequence="execute" Id="MCRWINDOW" Value="30"><![CDATA[&PatternsPluginsService>=3 And INSTALL_CHECKLIST_PLUGIN=1]]></SetProperty>
+    <SetProperty Before="PsfConfigSched" Sequence="execute" Id="MENABLECHECKLIST" Value="True"><![CDATA[&PatternsPluginsService>=3 And INSTALL_CHECKLIST_PLUGIN=1]]></SetProperty>
+
+    <Icon Id="cues.ico" SourceFile="$(var.SolutionDir)Patterns_Setup\cues.ico" />
+    <DirectoryRef Id="INSTALLFOLDER">
+
+      <!-- Shortcuts -->
+      <Component>
+        <Condition><![CDATA[BUNDLE_ARP_COMMENT << "PeriCALM Patterns"]]></Condition>
+        <CreateFolder Directory="PmPatternsFolder" />
+        <RemoveFolder Id="PmPatternsFolder" Directory="PmPatternsFolder" On="uninstall" />
+        <RegistryValue Id="Shortcuts" Root="HKCU" Key="SOFTWARE\PeriGen\PeriCALM Patterns" Name="Shortcuts" Type="string" Value="1"/>
+        <Shortcut Id="PeriGen.Patterns.Chalkboard.exe" Target="[#PeriGen.Patterns.Chalkboard.exe]" Name="PeriCALM Patterns Chalkboard" WorkingDirectory="INSTALLFOLDER" Directory="PmPatternsFolder" Icon="cues.ico"/>
+        <Shortcut Id="PeriGen.Patterns.Engine.Registration.exe" Target="[#PeriGen.Patterns.Engine.Registration.exe]" Name="PeriCALM Patterns Registration" WorkingDirectory="INSTALLFOLDER" Directory="PmPatternsFolder" Icon="cues.ico"/>
+      </Component>
+      <Component>
+        <CreateFolder Directory="PmPatternsFolder" />
+        <RemoveFolder Id="PmPatternsFolder1" Directory="PmPatternsFolder" On="uninstall" />
+        <RegistryValue Id="PerigenSettingsToolShortcut" Root="HKCU" Key="SOFTWARE\PeriGen\PeriCALM Patterns" Name="PerigenSettingsToolShortcut" Type="string" Value="1"/>
+        <Shortcut Id="PerigenSettingsTool.exe" Target="[#PerigenSettingsTool.exe]" Name="PeriCALM Patterns Settings" WorkingDirectory="INSTALLFOLDER" Directory="PmPatternsFolder" Icon="cues.ico"/>
+      </Component>
+
+      <Component>
+        <File Source="!(bindpath.BIN)\AboutBoxWrapper.dll">
+          <CopyFile Id="AboutBoxWrapper.dll_CommonDir" DestinationDirectory="CommonDir"/>
+        </File>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PresentationFramework.dll">
+          <CopyFile Id="PresentationFramework.dll_CommonDir" DestinationDirectory="CommonDir"/>
+        </File>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PresentationFramework.Aero.dll">
+          <CopyFile Id="PresentationFramework.Aero.dll_CommonDir" DestinationDirectory="CommonDir"/>
+        </File>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PresentationCore.dll">
+          <CopyFile Id="PresentationCore.dll_CommonDir" DestinationDirectory="CommonDir"/>
+        </File>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.ActiveXInterface.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Data.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Engine.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Engine.Data.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Helper.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Research.SQLHelper.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Settings.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Settings.Tool.exe"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Devart.Data.dll" />
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Devart.Data.Linq.dll" />
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Devart.Data.SQLite.dll" />
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Devart.Data.SQLite.Linq.dll" />
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\CommonLogger.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGenLogger4.0.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PatternsDriver.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Obfuscation\PeriGen.Patterns.Chalkboard.exe"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Chalkboard.exe.config"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Diagnostics.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Obfuscation\PeriGen.Patterns.Engine.Registration.exe"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Engine.Registration.exe.config"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Obfuscation\PeriGen.Patterns.Service.exe"/>
+        <ServiceInstall Id="PeriCALMPatternsService" Name="PeriCALMPatternsService" DisplayName="CALM Patterns Service" Type="ownProcess" Start="auto" ErrorControl="normal">
+          <ServiceDependency Id="Eventlog"/>
+        </ServiceInstall>
+        <ServiceControl Id="PeriCALMPatternsService" Name="PeriCALMPatternsService" Remove="install" Stop="both" />
+        <util:ServiceConfig ServiceName="PeriCALMPatternsService" RestartServiceDelayInSeconds="1" FirstFailureActionType="restart" SecondFailureActionType="restart" ThirdFailureActionType="restart"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Service.exe.config"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Service.psf">
+          <pg:PSF MergeSource="[SourceDir]PeriGen.Patterns.Service.psf">
+            <pg:Setting Name="VersionCurve" Value="[ProductVersion]" />
+            <pg:Setting Name="VersionPatterns" Value="[ProductVersion]" />
+            
+            <!-- Plugins Service parameters -->
+            <pg:Setting Name="EnableCheckList" Value="[MENABLECHECKLIST]" />
+            <pg:Setting Name="DataFeedURL" Value="http://{0}:7803/PluginsDataFeed/" />
+            <pg:Setting Name="CR_window" Value="[MCRWINDOW]" />
+            <pg:Setting Name="CR_stage1" Value="[MCRSTAGE1]" />
+            <pg:Setting Name="CR_limit" Value="[MCRLIMIT]" />
+            <pg:Setting Name="ActiveXClient" Value="[MCABNAME]" />
+
+          </pg:PSF>
+        </File>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.Settings.Tool.exe.config"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGenSettingsManager.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PerigenSettingsTool.exe"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\SerialShield.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\SQLite32\sqlite3.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\MessagingInterfaces.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\MessagingResponses.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PatternsEngineBridge.dll"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Perigen.Patterns.Processor.exe"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Perigen.Patterns.Processor.exe.config"/>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\PeriGen.Patterns.WPFLibrary.dll">
+          <CopyFile Id="PeriGen.Patterns.WPFLibrary.dll_CommonDir" DestinationDirectory="CommonDir"/>
+        </File>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\RestSharp.dll">
+          <CopyFile Id="RestSharp.dll" DestinationDirectory="CommonDir"/>
+        </File>
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\RestSharp.xml"/>
+      </Component>
+
+      <Directory Id="WebsiteDir" Name="Website">
+        <Component>
+          <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\default.html"/>
+        </Component>
+        <Component>
+          <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\Web.config"/>
+        </Component>
+        <Component>
+          <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\app.ico"/>
+        </Component>
+
+        <Directory Id="AdminDir" Name="Admin">
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\admin\Chalkboard.aspx"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\admin\Chalkboard.xslt"/>
+          </Component>
+          <Component Id="Admin.Web.Config">
+            <File Id="Admin.Web.Config" Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\admin\Web.config"/>
+          </Component>
+        </Directory>
+
+        <Directory Id="BinDir" Name="Bin">
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\bin\EncDecSettings.dll">
+              <CopyFile Id="EncDecSettings.dll.BinDir" DestinationDirectory="INSTALLFOLDER"/>
+            </File>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\Obfuscation\PeriGen.Patterns.WebSite.dll"/>
+          </Component>
+        </Directory>
+
+        <Directory Id="CommonDir" Name="Common">
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\common\Curve.aspx"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\common\Actions.xml"/>
+          </Component>
+
+          <Component Id="ActionXmlConfig" Guid="">
+            <Condition><![CDATA[INSTALL_EXPORT_PLUGIN=1]]></Condition>
+            <CreateFolder/>
+
+            <util:XmlConfig Id="RestSharp.1" Action="create" On="install"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions"
+                            VerifyPath="./DownloadAction[\[]@Source='RestSharp.dll'[\]]"
+                            Node="element" Name="DownloadAction">
+              <util:XmlConfig Id="RestSharp.2" ElementId="RestSharp.1"
+                              File="[#Actions.xml]"
+                              Name="Source" Value="RestSharp.dll"
+                              Sequence="1"
+                              />
+            </util:XmlConfig>
+            <util:XmlConfig Id="RestSharp.3" Action="create" On="install" Node="value"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions/DownloadAction[\[]@Source='RestSharp.dll'[\]]"
+                            Name="Destination"
+                            Sequence="2"
+                            />
+            <util:XmlConfig Id="RestSharp.4" Action="create" On="install" Node="value"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions/DownloadAction[\[]@Source='RestSharp.dll'[\]]"
+                            Name="Version" Value="!(bind.fileVersion.RestSharp.dll)"
+                            Sequence="2"
+                            />
+
+            <util:XmlConfig Id="Perigen.Patterns.NnetControls.1" Action="create" On="install"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions"
+                            VerifyPath="./DownloadAction[\[]@Source='Perigen.Patterns.NnetControls.dll'[\]]"
+                            Node="element" Name="DownloadAction"
+                            Sequence="1">
+              <util:XmlConfig Id="Perigen.Patterns.NnetControls.2" ElementId="Perigen.Patterns.NnetControls.1"
+                              File="[#Actions.xml]"
+                              Name="Source" Value="Perigen.Patterns.NnetControls.dll"
+                              Sequence="1"
+                              />
+            </util:XmlConfig>
+            <util:XmlConfig Id="Perigen.Patterns.NnetControls.3" Action="create" On="install" Node="value"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions/DownloadAction[\[]@Source='Perigen.Patterns.NnetControls.dll'[\]]"
+                            Name="Destination"
+                            Sequence="2"
+                            />
+            <util:XmlConfig Id="Perigen.Patterns.NnetControls.4" Action="create" On="install" Node="value"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions/DownloadAction[\[]@Source='Perigen.Patterns.NnetControls.dll'[\]]"
+                            Name="Version" Value="!(bind.fileVersion.Perigen.Patterns.NnetControls.dll)"
+                            Sequence="2"
+                            />
+
+            <util:XmlConfig Id="Perigen.Patterns.NnetControls.RegisterAction.1" Action="create" On="install"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions/DownloadAction[\[]@Source='Perigen.Patterns.NnetControls.dll'[\]]"
+                            VerifyPath="./RegisterAction"
+                            Node="element" Name="RegisterAction"
+                            Sequence="3"
+                            />
+            <util:XmlConfig Id="Perigen.Patterns.NnetControls.RegisterAction.2" Action="create" On="install" Node="value"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions/DownloadAction[\[]@Source='Perigen.Patterns.NnetControls.dll'[\]]/RegisterAction"
+                            Name="Command" Value="RegAsm.exe"
+                            Sequence="4"
+                              />
+            <util:XmlConfig Id="Perigen.Patterns.NnetControls.RegisterAction.3" Action="create" On="install" Node="value"
+                            File="[#Actions.xml]"
+                            ElementPath="/Actions/DownloadAction[\[]@Source='Perigen.Patterns.NnetControls.dll'[\]]/RegisterAction"
+                            Name="FileName" Value="Perigen.Patterns.NnetControls.dll"
+                            Sequence="4"
+                            />
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\common\CurveLoader.html"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\common\Install.aspx"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\common\Patterns.aspx"/>
+          </Component>
+          <Component>
+            <CreateFolder Directory="ApplicationFilesDir"/>
+            <File Source="!(bindpath.SRC)\PATTERNS\Wrapper\PatternsCurveChart\bin\Release\app.publish\PeriCALM.Patterns.Curve.UI.Chart.xbap">
+              <CopyFile Id="PeriCALM.Patterns.Curve.UI.Chart.xbap" DestinationDirectory="ApplicationFilesDir"/>
+            </File>
+          </Component>
+          
+          <!-- Setting constant GUID on components that were badly authored in Patterns Plugin 01.02.01 
+                   When plugins upgrades, it would remove these files unless we fix the GUID to the same values they had back then
+          -->
+          <Component Id="PeriCALMPatternsCRIChart.CAB" Guid="{A36EA8B4-6A60-4FEB-8255-21E6CB87DAE2}" SharedDllRefCount="yes" KeyPath="yes">
+            <File Source="!(bindpath.BIN)\PeriCALMPatternsCRIChart.CAB"/>
+          </Component>
+          <Component Id="Perigen.Patterns.NnetControls.dll" Guid="{821C12D1-0EA6-448C-9BA0-01A66B4D9509}" SharedDllRefCount="yes" KeyPath="yes">
+            <File Source="!(bindpath.BIN)\Perigen.Patterns.NnetControls.dll" />
+          </Component>
+
+          <Component>
+            <File Source="!(bindpath.BIN)\PeriCALMPatternsOEMChart.CAB"/>
+          </Component>
+
+          <Directory Id="ApplicationFilesDir" Name="Application Files">
+            <Directory Id="ApplicationFilesSubDir" Name="PeriCALM.Patterns.Curve.UI.Chart_02_08_03_!(wix.BuildNumber)">
+              <Component>
+                <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_08_03_!(wix.BuildNumber)\C1.WPF.4.dll.deploy"/>
+              </Component>
+              <Component>
+                <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_08_03_!(wix.BuildNumber)\C1.WPF.C1Chart.4.dll.deploy"/>
+              </Component>
+              <Component>
+                <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_08_03_!(wix.BuildNumber)\C1.WPF.C1Chart.Extended.4.dll.deploy"/>
+              </Component>
+              <Component>
+                <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_08_03_!(wix.BuildNumber)\C1.WPF.DateTimeEditors.4.dll.deploy"/>
+              </Component>
+              <Component>
+                <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_08_03_!(wix.BuildNumber)\PeriCALM.Patterns.Curve.UI.Chart.exe.config.deploy"/>
+              </Component>
+              <Component>
+                <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_08_03_!(wix.BuildNumber)\PeriCALM.Patterns.Curve.UI.Chart.exe.deploy"/>
+              </Component>
+              <Component>
+                <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_08_03_!(wix.BuildNumber)\PeriCALM.Patterns.Curve.UI.Chart.exe.manifest"/>
+              </Component>
+            </Directory>
+          </Directory>
+          
+        </Directory>
+
+        <Directory Id="HelpDir" Name="Help">
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\help\Help.aspx"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\help\Help.aspx.cs"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\help\Help.aspx.designer.cs"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\help\PeriCALM CURVE User Guide.pdf"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.SRC)\Patterns\Wrapper\PeriGen.Patterns.WebSite\help\PeriCALM PATTERNS User Guide.pdf"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\help\PeriCALM CheckList User Guide.pdf"/>
+          </Component>
+          <Component>
+            <File Source="!(bindpath.BIN)\help\PeriWatch Cues User Guide.pdf"/>
+          </Component>
+
+          <Directory Id="ImgDir" Name="Img">
+            <Component>
+              <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\help\img\get_adobe_reader.png" />
+            </Component>
+            <Component>
+              <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\help\img\Logo_EmpoweringClinicians.png" />
+            </Component>
+            <Component>
+              <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\help\img\Logo_Perigen.png" />
+            </Component>
+            <Component>
+              <File Source="!(bindpath.BIN)\Wrapper\PeriGen.Patterns.WebSite\help\img\pdficon_small.png" />
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </DirectoryRef>
+
+    <ComponentGroup Id="PatternsPluginsServiceFiles">
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\PatternsEntities.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\PatternsPluginsCommon.dll" />
+      </Component>
+      <Component Id="CopyFiles" Guid="{8284A1BC-42FE-4120-9AE0-65AB5CC2ABEF}" Directory="INSTALLFOLDER">
+        <CopyFile DestinationDirectory="INSTALLFOLDER" FileId="PeriGenSettingsManager.dll" Id="PeriGenSettingsManager.dll"/>
+        <CopyFile DestinationDirectory="INSTALLFOLDER" FileId="CommonLogger.dll" Id="CommonLogger.dll"/>
+      </Component>
+      <!--Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\CALMXMLSerializer.dll" />
+      </Component-->
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\EntityFramework.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\EntityFramework.SqlServer.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\EntityFramework.SqlServer.xml" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\EntityFramework.xml" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\PatternsPluginsManager.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\PatternsPluginsService.exe">
+          <pg:InstallUtil />
+        </File>
+        <File Source="!(bindpath.BIN)\PatternsPluginsService.exe.config" />
+        <ServiceControl Id="PatternsPluginsService" Name="PatternsPluginsService" Stop="both" Wait="yes" Remove="install"/>
+        <util:ServiceConfig ServiceName="PatternsPluginsService" RestartServiceDelayInSeconds="1" FirstFailureActionType="restart" SecondFailureActionType="restart" ThirdFailureActionType="restart"/>
+      </Component>
+
+      <Component Id="PatternsPluginsService.exe.config.ChecklistPlugin" Guid="" Directory="INSTALLFOLDER">
+        <Condition><![CDATA[INSTALL_CHECKLIST_PLUGIN=1]]></Condition>
+        <CreateFolder/>
+        <util:XmlConfig Id="CRIPlugin.1" Action="create" On="install"
+                      File="[#PatternsPluginsService.exe.config]"
+                      ElementPath="/configuration/appSettings"
+                      VerifyPath="./add[\[]@key='CRIPlugin'[\]]"
+                      Node="element" Name="add">
+          <util:XmlConfig Id="CRIPlugin.2" ElementId="CRIPlugin.1"
+                          File="[#PatternsPluginsService.exe.config]"
+                          Name="key" Value="CRIPlugin"
+                          Sequence="1"
+                          />
+        </util:XmlConfig>
+        <util:XmlConfig Id="CRIPlugin.3" Action="create" On="install" Node="value"
+                        File="[#PatternsPluginsService.exe.config]"
+                        ElementPath="/configuration/appSettings/add[\[]@key='CRIPlugin'[\]]"
+                        Name="value" Value="CRIPlugin.dll;CRIPlugin.CRIPluginTask"
+                        Sequence="2"
+                        />
+      </Component>
+
+      <Component Id="PatternsPluginsService.exe.config.ExportPlugin" Guid="" Directory="INSTALLFOLDER">
+        <Condition><![CDATA[INSTALL_EXPORT_PLUGIN=1]]></Condition>
+        <CreateFolder/>
+        <util:XmlConfig Id="ExportPlugin.1" Action="create" On="install"
+                        File="[#PatternsPluginsService.exe.config]"
+                        ElementPath="/configuration/appSettings"
+                        VerifyPath="./add[\[]@key='ExportPlugin'[\]]"
+                        Node="element" Name="add">
+          <util:XmlConfig Id="ExportPlugin.2" ElementId="ExportPlugin.1"
+                          File="[#PatternsPluginsService.exe.config]"
+                          Name="key" Value="ExportPlugin"
+                          Sequence="1"
+                          />
+        </util:XmlConfig>
+        <util:XmlConfig Id="ExportPlugin.3" Action="create" On="install" Node="value"
+                        File="[#PatternsPluginsService.exe.config]"
+                        ElementPath="/configuration/appSettings/add[\[]@key='ExportPlugin'[\]]"
+                        Name="value" Value="Export.Plugin.dll;Export.Plugin.PluginTask"
+                        Sequence="2"
+                        />
+      </Component>
+
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\PluginsAlgorithms.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\x86\SQLite.Interop.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\System.Data.SQLite.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\System.Data.SQLite.EF6.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\System.Data.SQLite.Linq.dll" />
+      </Component>
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.BIN)\System.Data.SQLite.xml" />
+      </Component>
+    </ComponentGroup>
+
+    <!-- Downloader files -->
+    <ComponentGroup Id="DownloaderFiles" Directory="CommonDir">
+      <Component>
+        <File Source="!(bindpath.BIN)\Patterns CRI Chart.ocx" />
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Patterns OEM Chart.ocx" />
+      </Component>
+      <Component>
+        <File Source="!(bindpath.BIN)\Export.Entities.dll" />
+      </Component>
+    </ComponentGroup>
+
+
+    <ComponentGroup Id="Binaries" Directory="INSTALLFOLDER">
+      <ComponentRef Id="AboutBoxWrapper.dll"/>
+      <ComponentRef Id="PresentationFramework.dll"/>
+      <ComponentRef Id="PresentationFramework.Aero.dll"/>
+      <ComponentRef Id="PresentationCore.dll"/>
+      <ComponentRef Id="PeriGen.Patterns.ActiveXInterface.dll"/>
+      <ComponentRef Id="PeriGen.Patterns.Data.dll"/>
+      <ComponentRef Id="PeriGen.Patterns.Engine.dll"/>
+      <ComponentRef Id="PeriGen.Patterns.Engine.Data.dll"/>
+      <ComponentRef Id="PeriGen.Patterns.Helper.dll"/>
+      <ComponentRef Id="PeriGen.Patterns.Research.SQLHelper.dll"/>
+      <ComponentRef Id="PeriGen.Patterns.Settings.dll"/>
+      <ComponentRef Id="PeriGen.Patterns.Settings.Tool.exe"/>
+      <ComponentRef Id="Shortcuts"/>
+      <ComponentRef Id="PerigenSettingsToolShortcut"/>
+      <ComponentRef Id="Chalkboard.aspx" />
+      <ComponentRef Id="Chalkboard.xslt" />
+      <ComponentRef Id="CommonLogger.dll" />
+      <ComponentRef Id="Curve.aspx" />
+      <ComponentRef Id="CurveLoader.html" />
+      <ComponentRef Id="Devart.Data.Linq.dll" />
+      <ComponentRef Id="Devart.Data.SQLite.Linq.dll" />
+      <ComponentRef Id="Devart.Data.SQLite.dll" />
+      <ComponentRef Id="Devart.Data.dll" />
+      <ComponentRef Id="EncDecSettings.dll" />
+      <ComponentRef Id="Help.aspx" />
+      <ComponentRef Id="Help.aspx.cs" />
+      <ComponentRef Id="Help.aspx.designer.cs" />
+      <ComponentRef Id="Install.aspx" />
+      <ComponentRef Id="Logo_EmpoweringClinicians.png" />
+      <ComponentRef Id="Logo_Perigen.png" />
+      <ComponentRef Id="Patterns.aspx" />
+      <ComponentRef Id="PatternsDriver.dll" />
+      <ComponentRef Id="PeriCALM.Patterns.Curve.UI.Chart.xbap" />
+      <ComponentRef Id="PeriCALM_CURVE_User_Guide.pdf" />
+      <ComponentRef Id="PeriCALM_PATTERNS_User_Guide.pdf" />
+      <ComponentRef Id="PeriCALM_CheckList_User_Guide.pdf" />
+      <ComponentRef Id="PeriWatch_Cues_User_Guide.pdf" />
+      <ComponentRef Id="PeriCALMPatternsOEMChart.CAB" />
+      <ComponentRef Id="PeriGen.Patterns.Chalkboard.exe" />
+      <ComponentRef Id="PeriGen.Patterns.Chalkboard.exe.config" />
+      <ComponentRef Id="PeriGen.Patterns.Diagnostics.dll" />
+      <ComponentRef Id="PeriGen.Patterns.Engine.Registration.exe" />
+      <ComponentRef Id="PeriGen.Patterns.Engine.Registration.exe.config" />
+      <ComponentRef Id="PeriGen.Patterns.Service.exe" />
+      <ComponentRef Id="PeriGen.Patterns.Service.exe.config" />
+      <ComponentRef Id="PeriGen.Patterns.Service.psf" />
+      <ComponentRef Id="PeriGen.Patterns.Settings.Tool.exe.config" />
+      <ComponentRef Id="PeriGen.Patterns.WebSite.dll" />
+      <ComponentRef Id="PeriGenSettingsManager.dll" />
+      <ComponentRef Id="PerigenSettingsTool.exe" />
+      <ComponentRef Id="SerialShield.dll" />
+      <ComponentRef Id="Web.config" />
+      <ComponentRef Id="app.ico" />
+      <ComponentRef Id="Admin.Web.Config" />
+      <ComponentRef Id="default.html" />
+      <ComponentRef Id="get_adobe_reader.png" />
+      <ComponentRef Id="pdficon_small.png" />
+      <ComponentRef Id="sqlite3.dll" />
+      <ComponentRef Id="PeriGenLogger4.0.dll"/>
+      <ComponentRef Id="PeriCALMPatternsCRIChart.CAB"/>
+      <ComponentRef Id="Actions.xml"/>
+      <ComponentRef Id="ActionXmlConfig"/>
+      <ComponentRef Id="Perigen.Patterns.NnetControls.dll"/>
+      <ComponentRef Id="MessagingInterfaces.dll"/>
+      <ComponentRef Id="MessagingResponses.dll"/>
+      <ComponentRef Id="PatternsEngineBridge.dll"/>
+      <ComponentRef Id="Perigen.Patterns.Processor.exe"/>
+      <ComponentRef Id="Perigen.Patterns.Processor.exe.config"/>
+      <ComponentRef Id="PeriGen.Patterns.WPFLibrary.dll"/>
+      <ComponentRef Id="RestSharp.dll"/>
+      <ComponentRef Id="RestSharp.xml"/>
+      <ComponentRef Id="C1.WPF.4.dll.deploy"/>
+      <ComponentRef Id="C1.WPF.C1Chart.4.dll.deploy"/>
+      <ComponentRef Id="C1.WPF.C1Chart.Extended.4.dll.deploy"/>
+      <ComponentRef Id="C1.WPF.DateTimeEditors.4.dll.deploy"/>
+      <ComponentRef Id="PeriCALM.Patterns.Curve.UI.Chart.exe.config.deploy"/>
+      <ComponentRef Id="PeriCALM.Patterns.Curve.UI.Chart.exe.deploy"/>
+      <ComponentRef Id="PeriCALM.Patterns.Curve.UI.Chart.exe.manifest"/>
+      <!--TODO
+        <File Source="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe"/>
+        <File Source="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe.config"/>
+        -->
+
+    </ComponentGroup>
+  </Fragment>
+</Wix>

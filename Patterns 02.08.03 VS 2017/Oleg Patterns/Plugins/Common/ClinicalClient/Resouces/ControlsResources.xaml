@@ -1,0 +1,177 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:control="clr-namespace:PatternsCRIClient.Controls"
+                    xmlns:converter="clr-namespace:PatternsCRIClient.Converters"
+                    xmlns:src="clr-namespace:PatternsCRIClient.Data"
+                    xmlns:extsrc="clr-namespace:CRIEntities;assembly=CRIEntities"
+                    >
+    
+
+    <ControlTemplate x:Key="MenuArrowUp">     
+        <Canvas Background="Transparent">
+            <Path x:Name="Path_58" Width="15" Height="15" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="Gray" Data="F1 M 610.68,232.403L 592.412,214.134C 591.77,213.492 590.807,213.3 589.968,213.648C 589.131,213.995 588.584,214.812 588.584,215.72L 588.584,252.257C 588.584,253.164 589.131,253.981 589.968,254.328C 590.247,254.444 590.538,254.498 590.826,254.498C 591.41,254.498 591.983,254.272 592.412,253.844L 610.68,235.573C 611.098,235.156 611.338,234.578 611.338,233.988C 611.338,233.398 611.098,232.82 610.68,232.403 Z " RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>           
+        </Canvas>      
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="MenuArrowDown">
+        <Canvas Background="Transparent">
+            <Path x:Name="Path_58" Width="15" Height="15" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="Gray" Data="F1 M 610.68,232.403L 592.412,214.134C 591.77,213.492 590.807,213.3 589.968,213.648C 589.131,213.995 588.584,214.812 588.584,215.72L 588.584,252.257C 588.584,253.164 589.131,253.981 589.968,254.328C 590.247,254.444 590.538,254.498 590.826,254.498C 591.41,254.498 591.983,254.272 592.412,253.844L 610.68,235.573C 611.098,235.156 611.338,234.578 611.338,233.988C 611.338,233.398 611.098,232.82 610.68,232.403 Z " RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="MenuArrowUp2">
+        <Canvas Background="Transparent">
+            <Path Width="15" Height="15" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="Gray" Data="F1 M 66.1972,213.682L 62.3492,217.53L 76.1718,231.354L 39.7038,231.354L 39.7038,236.791L 76.1718,236.791L 62.3492,250.618L 66.1972,254.464L 82.7398,237.92L 86.5865,234.072L 66.1972,213.682 Z " RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>                
+        </Canvas>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="MenuArrowDown2">
+        <Canvas Background="Transparent">
+            <Path Width="15" Height="15" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="Gray" Data="F1 M 66.1972,213.682L 62.3492,217.53L 76.1718,231.354L 39.7038,231.354L 39.7038,236.791L 76.1718,236.791L 62.3492,250.618L 66.1972,254.464L 82.7398,237.92L 86.5865,234.072L 66.1972,213.682 Z " RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="LegendArrowUp">
+        <Canvas Background="Transparent">
+            <Path Width="6" Height="10" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#4D4D4D" Data="F1 M 189.88,318.612L 189.808,318.682L 189.672,318.546L 173.536,302.41L 157.659,302.41L 175.968,320.722L 181.732,326.486L 181.868,326.622L 176.178,332.316L 157.866,350.626L 173.744,350.626L 189.88,334.491L 197.819,326.551L 189.88,318.612 Z " RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="LegendArrowDown">
+        <Canvas Background="Transparent">
+            <Path Width="6" Height="10" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#4D4D4D" Data="F1 M 189.88,318.612L 189.808,318.682L 189.672,318.546L 173.536,302.41L 157.659,302.41L 175.968,320.722L 181.732,326.486L 181.868,326.622L 176.178,332.316L 157.866,350.626L 173.744,350.626L 189.88,334.491L 197.819,326.551L 189.88,318.612 Z " RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ArrowLeft">
+        <Canvas Background="Transparent">
+            <Path Width="10" Height="10" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#4D4D4D" Data="F1 M 189.88,318.612L 189.808,318.682L 189.672,318.546L 173.536,302.41L 157.659,302.41L 175.968,320.722L 181.732,326.486L 181.868,326.622L 176.178,332.316L 157.866,350.626L 173.744,350.626L 189.88,334.491L 197.819,326.551L 189.88,318.612 Z " RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ArrowRight">
+        <Canvas Background="Transparent">
+            <Path Width="10" Height="10" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#4D4D4D" Data="F1 M 189.88,318.612L 189.808,318.682L 189.672,318.546L 173.536,302.41L 157.659,302.41L 175.968,320.722L 181.732,326.486L 181.868,326.622L 176.178,332.316L 157.866,350.626L 173.744,350.626L 189.88,334.491L 197.819,326.551L 189.88,318.612 Z " RenderTransformOrigin="0.5,0.5">            
+            </Path>
+        </Canvas>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconButtonMinus">
+        <Canvas Width="15">
+            <Rectangle Width="15" Height="15" Fill="Black" Canvas.Top="0" Canvas.Left="0"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" />
+
+            <Line Name="line1"
+                X1="3" Y1="7"
+                X2="12" Y2="7"
+                Stroke="White"
+                StrokeThickness="1" 
+                Canvas.Top="5" Canvas.Left="5"/>
+        </Canvas>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconButtonPlus">
+        <Canvas Width="15">
+            <Rectangle Width="15" Height="15" Fill="Black" Canvas.Top="0" Canvas.Left="0"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" />
+
+            <Line Name="line1"
+                X1="3" Y1="7"
+                X2="12" Y2="7"
+                Stroke="White"
+                StrokeThickness="1" 
+                Canvas.Top="5" Canvas.Left="5"/>
+
+            <Line Name="line2"
+                X1="8" Y1="3"
+                X2="8" Y2="12"
+                Stroke="White"
+                StrokeThickness="1" 
+                Canvas.Top="5" Canvas.Left="5"/>
+        </Canvas>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="IconMenuPlus">
+        <Canvas Width="16" Height="16">
+
+            <Line Name="line1"
+                X1="0" Y1="8"
+                X2="16" Y2="8"
+                Stroke="Gray"
+                StrokeThickness="3" 
+                Canvas.Top="0" Canvas.Left="0"/>
+
+            <Line Name="line2"
+                X1="8" Y1="0"
+                X2="8" Y2="16"
+                Stroke="Gray"
+                StrokeThickness="3" 
+                Canvas.Top="0" Canvas.Left="0"/>
+        </Canvas>
+    </ControlTemplate>
+
+</ResourceDictionary>

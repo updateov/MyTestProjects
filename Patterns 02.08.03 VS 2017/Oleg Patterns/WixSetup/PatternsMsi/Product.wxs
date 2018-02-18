@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:fw="http://schemas.microsoft.com/wix/FirewallExtension"
+     xmlns:panelsw="http://schemas.panel-sw.co.il/wix/WixExtension"
+     xmlns:pg="http://schemas.perigen.com/wix/WixExtension">
+  
+  <Product Id="*"
+           Name="!(wix.PatternsProduct)"
+           Manufacturer="!(wix.PeriGen)"
+           Version="!(wix.PatternsVersion)"
+           Language="1033"
+           UpgradeCode="bdad90db-35cb-4d57-b496-e6f5d0cf2b72">
+    <Package InstallerVersion="300" Compressed="yes" InstallScope="perMachine" />
+    <pg:CustomUninstallKey Id="BundleComments" ProductCode="[BUNDLE_PRODUCT_CODE]" Name="Comments" Value="[BUNDLE_ARP_COMMENT]"><![CDATA[Not Installed]]></pg:CustomUninstallKey>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Upgrade Id="{970D810D-E130-45F1-AF8B-6DE0B8D28E30}">
+      <UpgradeVersion Minimum="0.0.0" Maximum="02.08.01" IncludeMaximum="yes" IncludeMinimum="yes" Property="CUES_UPGRADE_DETECTED" OnlyDetect="no"/>
+    </Upgrade>
+    <MediaTemplate CabinetTemplate="ptrn{0}.cab" />
+
+    <Feature Id="Core" Title="Patterns Core" Level="1" Absent="disallow">
+      <ComponentGroupRef Id="Binaries"/>
+      <ComponentGroupRef Id="DownloaderFiles"/>
+      <ComponentGroupRef Id="IIS"/>
+      <ComponentRef Id="Firewall" />
+      <ComponentRef Id="WindowsFeatures"/>
+      <ComponentRef Id="WindowsFeaturesWin601"/>
+
+      <MergeRef Id="Microsoft_VC100_ATL_$(sys.BUILDARCH)"/>
+      <MergeRef Id="Microsoft_VC100_CRT_$(sys.BUILDARCH)"/>
+      <MergeRef Id="Microsoft_VC100_MFC_$(sys.BUILDARCH)"/>
+      <MergeRef Id="Microsoft_VC100_MFCLOC_$(sys.BUILDARCH)"/>
+      <MergeRef Id="Microsoft_VC100_OpenMP_$(sys.BUILDARCH)"/>
+    </Feature>
+
+    <Feature Id="PatternsPluginsService" Level="1">
+      <ComponentGroupRef Id="PatternsPluginsServiceFiles" />
+    </Feature>
+
+    <Component Id="WindowsFeatures" Guid="" Directory="INSTALLFOLDER">
+      <CreateFolder/>
+      <panelsw:Dism Id="iis" EnableFeature="IIS" />
+      <panelsw:Dism Id="asp" EnableFeature="ASP" />
+    </Component>
+
+    <!-- DISM command line for Windows Server 2008 R2 -->
+    <?define DISM_CMDLINE=/Online /NoRestart /Quiet /LogLevel:2 "/LogPath:[MsiLogFileLocation]_dism.log" /Enable-Feature /FeatureName:IIS-WebServerRole /FeatureName:IIS-WebServer /FeatureName:IIS-CommonHttpFeatures /FeatureName:IIS-StaticContent /FeatureName:IIS-DefaultDocument /FeatureName:IIS-DirectoryBrowsing /FeatureName:IIS-HttpErrors /FeatureName:IIS-HttpRedirect /FeatureName:IIS-ApplicationDevelopment /FeatureName:IIS-ASP /FeatureName:IIS-CGI /FeatureName:IIS-ISAPIExtensions /FeatureName:IIS-ISAPIFilter /FeatureName:IIS-ServerSideIncludes /FeatureName:IIS-HealthAndDiagnostics /FeatureName:IIS-HttpLogging /FeatureName:IIS-LoggingLibraries /FeatureName:IIS-RequestMonitor /FeatureName:IIS-HttpTracing /FeatureName:IIS-CustomLogging /FeatureName:IIS-ODBCLogging /FeatureName:IIS-Security /FeatureName:IIS-BasicAuthentication /FeatureName:IIS-WindowsAuthentication /FeatureName:IIS-DigestAuthentication /FeatureName:IIS-ClientCertificateMappingAuthentication /FeatureName:IIS-IISCertificateMappingAuthentication /FeatureName:IIS-URLAuthorization /FeatureName:IIS-RequestFiltering /FeatureName:IIS-IPSecurity /FeatureName:IIS-Performance /FeatureName:IIS-HttpCompressionStatic /FeatureName:IIS-HttpCompressionDynamic /FeatureName:IIS-WebServerManagementTools /FeatureName:IIS-ManagementScriptingTools /FeatureName:IIS-IIS6ManagementCompatibility /FeatureName:IIS-Metabase /FeatureName:IIS-WMICompatibility /FeatureName:IIS-LegacyScripts /FeatureName:IIS-FTPServer /FeatureName:WAS-WindowsActivationService /FeatureName:WAS-ProcessModel /FeatureName:WAS-NetFxEnvironment /FeatureName:IIS-ISAPIExtensions /FeatureName:IIS-ISAPIFilter /FeatureName:IIS-NetFxExtensibility /FeatureName:IIS-ASPNET?>
+    <Component Id="WindowsFeaturesWin601" Guid="" Directory="INSTALLFOLDER">
+      <Condition><![CDATA[VersionNT64 = 601]]></Condition>
+      <CreateFolder/>
+      <panelsw:ExecOn Id="Dism" Command='"[WindowsFolder]Sysnative\Dism.exe" $(var.DISM_CMDLINE)' OnInstall="yes" BeforeStopServices="yes" Impersonate="no"/>
+    </Component>
+    <InstallExecuteSequence>
+      <Custom Action="DismSched" Before="StopServices"><![CDATA[VersionNT <> 601]]></Custom>
+    </InstallExecuteSequence>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="PeriGenFolder" Name="PeriGen">
+          <Directory Id="INSTALLFOLDER" Name="PeriCALM Patterns">
+            <Directory Id="ConfigFolder" Name="Config">
+              <Directory Id="CALMMetadataFolder" Name="CALMMetadata"/>
+            </Directory>
+            <Directory Id="DBsFolder" Name="DBs"/>
+            <Directory Id="HelpFolder" Name="Help"/>
+            <Directory Id="ResFolder" Name="res"/>
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="PmPatternsFolder" Name="PeriCALM Patterns" />
+      </Directory>
+    </Directory>
+
+    <DirectoryRef Id="TARGETDIR" DiskId="1">
+      <Merge Id="Microsoft_VC100_ATL_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)\Microsoft_VC100_ATL_$(sys.BUILDARCH).msm" Language="1033" />
+      <Merge Id="Microsoft_VC100_CRT_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)\Microsoft_VC100_CRT_$(sys.BUILDARCH).msm" Language="1033" />
+      <Merge Id="Microsoft_VC100_MFC_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)\Microsoft_VC100_MFC_$(sys.BUILDARCH).msm" Language="1033" />
+      <Merge Id="Microsoft_VC100_MFCLOC_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)Microsoft_VC100_MFCLOC_$(sys.BUILDARCH).msm" Language="1033" />
+      <Merge Id="Microsoft_VC100_OpenMP_$(sys.BUILDARCH)" SourceFile="!(bindpath.VS_MSM)Microsoft_VC100_OpenMP_$(sys.BUILDARCH).msm" Language="1033" />
+    </DirectoryRef>
+
+    <!-- Firewall -->
+    <Component Id="Firewall" Directory="INSTALLFOLDER" Guid="{E186633C-5095-4444-8E3D-B62A88F3DD08}">
+      <CreateFolder/>
+      <fw:FirewallException Id="Patterns" Name="PeriGen PeriCALM Patterns" Scope="any" Profile="all" File="PeriGen.Patterns.Service.exe" />
+      <fw:FirewallException Id="PatternsPODI" Name="PeriGen PeriCALM Patterns PODI" Port="7100" Protocol="tcp" Scope="any" Profile="all" />
+      <fw:FirewallException Id="PatternsWCF" Name="PeriGen PeriCALM Patterns WCF" Port="7802" Protocol="tcp" Scope="any" Profile="all" />
+      <fw:FirewallException Id="PatternsHTTPPort" Name="PeriGen PeriCALM Patterns HTTP Port" Port="91" Protocol="tcp" Scope="any" Profile="all" />
+      <fw:FirewallException Id="PatternsHTTPS" Name="PeriGen PeriCALM Patterns HTTPS" Port="92" Protocol="tcp" Scope="any" Profile="all" />
+    </Component>
+
+    <InstallExecuteSequence>
+      <ResolveSource After="CostInitialize"><![CDATA[Not Installed]]></ResolveSource>
+    </InstallExecuteSequence>
+  </Product>
+</Wix>

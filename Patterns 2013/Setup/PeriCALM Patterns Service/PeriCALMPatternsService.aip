@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="8.2" version="11.1" Modules="enterprise" RootPath="." Language="en" Id="{91D41554-2264-4376-8A1A-FFE22D34E19A}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiValidationComponent">
+    <ROW Table="File" Column="Sequence" MinValue="1" MaxValue="2147483647" Description="Sequence with respect to the media images; order must track cabinet order." Options="0" ColumnType="3" ColumnIndex="7" ColumnSize="4" MsiKey="File#Sequence"/>
+    <ROW Table="Media" Column="LastSequence" MinValue="0" MaxValue="2147483647" Description="File sequence number for the last file for this media." Options="0" ColumnType="3" ColumnIndex="1" ColumnSize="4" MsiKey="Media#LastSequence"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_MINDOTNETVERSION" MultiBuildValue="DefaultBuild:4.0" ValueLocId="-"/>
+    <ROW Property="AI_MINIISVERSION" MultiBuildValue="DefaultBuild:6.0" ValueLocId="-"/>
+    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:style8blue" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="ALLUSERS" Value="2" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPCOMMENTS" Value="PeriCALM Patterns Unofficial build" ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="info@perigen.com"/>
+    <ROW Property="ARPHELPLINK" Value="http://www.perigen.com/"/>
+    <ROW Property="ARPHELPTELEPHONE" Value="1-877-263-2256"/>
+    <ROW Property="ARPPRODUCTICON" Value="app.exe" Type="8"/>
+    <ROW Property="ARPURLINFOABOUT" Value="http://www.perigen.com/"/>
+    <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:3"/>
+    <ROW Property="Manufacturer" Value="PeriGen Inc." ValueLocId="*"/>
+    <ROW Property="ProductCode" Value="1033:{8A91F33D-B510-4797-8B39-53982AFEA615} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="PeriCALM Patterns [|ProductVersion]" ValueLocId="*"/>
+    <ROW Property="ProductVersion" Value="0.0.0.1" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{BDAD90DB-35CB-4D57-B496-E6F5D0CF2B72}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows NT 4.0, Windows NT 4.0 Service Pack 1, Windows NT 4.0 Service Pack 2, Windows NT 4.0 Service Pack 3, Windows NT 4.0 Service Pack 4, Windows NT 4.0 Service Pack 5, Windows NT 4.0 Service Pack 6, Windows 2000, Windows 2000 Service Pack 1, Windows 2000 Service Pack 2, Windows 2000 Service Pack 3, Windows 2000 Service Pack 4, Windows XP x86, Windows XP x86 Service Pack 1, Windows XP x86 Service Pack 2, Windows XP x86 Service Pack 3, Windows Server 2003 x86, Windows Server 2003 x86 Service Pack 1, Windows Vista x86, Windows Vista x86 Service Pack 1, Windows Vista x86 Service Pack 2, Windows Server 2008 x86, Windows 7 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT64" MultiBuildValue="DefaultBuild:Windows XP x64, Windows XP x64 Service Pack 1, Windows XP x64 Service Pack 2, Windows Server 2003 x64, Windows Server 2003 x64 Service Pack 1, Windows Vista x64, Windows Vista x64 Service Pack 1, Windows Vista x64 Service Pack 2, Windows Server 2008 x64, Windows 7 x64, Windows Server 2008 R2 x64" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT64Display" MultiBuildValue="DefaultBuild:Windows XP x64, Windows Server 2003 x64, Windows Server 2003 x64 Service Pack 1, Windows Vista x64, Windows Server 2008 x64, Windows 7 x64, Windows Server 2008 R2 x64" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNTDisplay" MultiBuildValue="DefaultBuild:Windows NT 4.0, Windows 2000, Windows XP x86, Windows Server 2003 x86, Windows Server 2003 x86 Service Pack 1, Windows Vista x86, Windows Server 2008 x86, Windows 7 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="ApplicationFiles_Dir" Directory_Parent="common_DIR" DefaultDir="Applic~1|Application Files"/>
+    <ROW Directory="PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116_Dir" Directory_Parent="ApplicationFiles_Dir" DefaultDir="PERICA~1.CHA|PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116"/>
+    <ROW Directory="PeriGenPeriCALMPatterns_Dir" Directory_Parent="ProgramMenuFolder" DefaultDir="PeriGe~1|PeriGen PeriCALM Patterns"/>
+    <ROW Directory="ProgramFilesFolder" Directory_Parent="TARGETDIR" DefaultDir="Progra~1|ProgramFilesFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="Progra~2|ProgramMenuFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="admin_DIR" Directory_Parent="website_DIR" DefaultDir="admin"/>
+    <ROW Directory="bin_DIR" Directory_Parent="website_DIR" DefaultDir="bin"/>
+    <ROW Directory="common_DIR" Directory_Parent="website_DIR" DefaultDir="common"/>
+    <ROW Directory="help_Dir" Directory_Parent="website_DIR" DefaultDir="help"/>
+    <ROW Directory="img_Dir" Directory_Parent="help_Dir" DefaultDir="img"/>
+    <ROW Directory="website_DIR" Directory_Parent="APPDIR" DefaultDir="website"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_CustomARPName" ComponentId="{2D59E813-4AE2-4DA3-B8C3-F6ED0A02E804}" Directory_="APPDIR" Attributes="0" Options="1"/>
+    <ROW Component="C1.WPF.4.dll.deploy" ComponentId="{26848B35-6413-4F8F-921E-9DE285B3D804}" Directory_="PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116_Dir" Attributes="0" KeyPath="C1.WPF.4.dll.deploy" Type="0"/>
+    <ROW Component="Chalkboard.aspx" ComponentId="{048CBFD7-8DC5-4CA0-939A-67665D6B653E}" Directory_="admin_DIR" Attributes="0" KeyPath="Chalkboard.xslt" Type="0"/>
+    <ROW Component="Default.aspx" ComponentId="{B7A98380-A5F3-4866-8F75-E567A44E88EA}" Directory_="common_DIR" Attributes="0" KeyPath="PeriCALMPatternsOEMChart.CAB" Type="0"/>
+    <ROW Component="Devart.Data.Linq.dll" ComponentId="{465363A7-E355-4929-A4ED-4ABFA1AD9924}" Directory_="APPDIR" Attributes="0" KeyPath="Devart.Data.Linq.dll"/>
+    <ROW Component="Devart.Data.SQLite.Linq.dll" ComponentId="{97E064DC-82D2-45DB-9A86-466C3BB9AD4C}" Directory_="APPDIR" Attributes="0" KeyPath="Devart.Data.SQLite.Linq.dll"/>
+    <ROW Component="Devart.Data.SQLite.dll" ComponentId="{DC4B237F-D953-4A54-875D-2804A3304BF9}" Directory_="APPDIR" Attributes="0" KeyPath="Devart.Data.SQLite.dll"/>
+    <ROW Component="Devart.Data.dll" ComponentId="{FCDA377B-63F7-4D80-9D8E-4ED3FDBC1D4E}" Directory_="APPDIR" Attributes="0" KeyPath="Devart.Data.dll"/>
+    <ROW Component="EncDecSettings.dll" ComponentId="{D30D0FA9-FF5E-45F6-B964-2238B6C0C29D}" Directory_="bin_DIR" Attributes="0" KeyPath="EncDecSettings.dll"/>
+    <ROW Component="EncDecSettings.dll_1" ComponentId="{F86309F4-6E67-4ECF-8F5C-ECEF829C6E8F}" Directory_="APPDIR" Attributes="0" KeyPath="EncDecSettings.dll_1"/>
+    <ROW Component="PatternsDriver.dll" ComponentId="{B17C947C-E735-4F9B-8777-E93A097A1586}" Directory_="APPDIR" Attributes="0" KeyPath="PatternsDriver.dll"/>
+    <ROW Component="PatternsRegistration.exe.config" ComponentId="{0E2EEC8E-4327-415A-8D31-9973D969AEAB}" Directory_="APPDIR" Attributes="0" KeyPath="PeriGen.Patterns.Service.exe.config" Type="0"/>
+    <ROW Component="PeriCALM.Patterns.Curve.UI.Chart.xbap" ComponentId="{DC9394EB-FF5D-4466-9904-289FB221457B}" Directory_="ApplicationFiles_Dir" Attributes="0" KeyPath="PeriCALM.Patterns.Curve.UI.Chart.xbap_1" Type="0"/>
+    <ROW Component="PeriGen.Patterns.Chalkboard.exe" ComponentId="{00E905E5-370E-4535-9DFD-7A41AC74C646}" Directory_="APPDIR" Attributes="0" KeyPath="PeriGen.Patterns.Chalkboard.exe"/>
+    <ROW Component="PeriGen.Patterns.Diagnostics.dll" ComponentId="{D1B8B97D-D13B-4A88-83FF-9771528A439E}" Directory_="APPDIR" Attributes="0" KeyPath="PeriGen.Patterns.Diagnostics.dll"/>
+    <ROW Component="PeriGen.Patterns.Engine.Registration.exe" ComponentId="{4039766D-90B1-4D9E-9F54-426E57F072D0}" Directory_="APPDIR" Attributes="0" KeyPath="PeriGen.Patterns.Engine.Registration.exe"/>
+    <ROW Component="PeriGen.Patterns.Service.exe" ComponentId="{4A650EA8-9530-417C-9375-F74225190D6F}" Directory_="APPDIR" Attributes="0" KeyPath="PeriGen.Patterns.Service.exe"/>
+    <ROW Component="PeriGen.Patterns.WebSite.dll" ComponentId="{E75A00D0-D4AE-4B58-84F0-0EA92EC6BD56}" Directory_="bin_DIR" Attributes="0" KeyPath="PeriGen.Patterns.WebSite.dll"/>
+    <ROW Component="PeriGen.PeriCALM.OutboundDataInterface.T" ComponentId="{4899C2FE-D297-4B60-A66C-CBC80C327380}" Directory_="APPDIR" Attributes="0" KeyPath="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe"/>
+    <ROW Component="PeriGenLogger4.0.dll" ComponentId="{D1610646-6F02-494C-84F4-3DE73E54A6E7}" Directory_="APPDIR" Attributes="0" KeyPath="PeriGenLogger4.0.dll"/>
+    <ROW Component="PeriGenPeriCALMPatterns" ComponentId="{E9152F9B-4D37-4B34-B329-3E20A1CC5DB0}" Directory_="PeriGenPeriCALMPatterns_Dir" Attributes="0"/>
+    <ROW Component="PeriGenSettingsManager.dll" ComponentId="{0063AC54-6FB5-4F7D-B329-878ED53F7EDC}" Directory_="APPDIR" Attributes="0" KeyPath="PeriGenSettingsManager.dll"/>
+    <ROW Component="PerigenSettingsTool.exe" ComponentId="{7C4375A9-B005-4FC6-A92A-5EFE3E259A51}" Directory_="APPDIR" Attributes="0" KeyPath="PerigenSettingsTool.exe"/>
+    <ROW Component="SerialShield.dll" ComponentId="{EADDDD4B-CD76-42C4-A33D-5229F267819A}" Directory_="APPDIR" Attributes="0" KeyPath="SerialShield.dll"/>
+    <ROW Component="Web.config" ComponentId="{4AA64B62-28A6-46A8-822B-0CAF96FDA529}" Directory_="website_DIR" Attributes="0" KeyPath="Web.config" Type="0"/>
+    <ROW Component="get_adobe_reader.png" ComponentId="{ED20E59B-0E9D-4D82-BB03-019DBD739DDC}" Directory_="img_Dir" Attributes="0" KeyPath="get_adobe_reader.png" Type="0"/>
+    <ROW Component="index.htm" ComponentId="{C1E3F746-9F2B-40A3-83D7-EEED13D5EC26}" Directory_="help_Dir" Attributes="0" KeyPath="Help.aspx" Type="0"/>
+    <ROW Component="sqlite3.dll" ComponentId="{2FF3AD2C-6D94-45F1-ADE9-9359D0356611}" Directory_="APPDIR" Attributes="0" KeyPath="sqlite3.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="0" Level="1" Directory_="APPDIR" Attributes="16" Components="AI_CustomARPName C1.WPF.4.dll.deploy Chalkboard.aspx Default.aspx Devart.Data.Linq.dll Devart.Data.SQLite.Linq.dll Devart.Data.SQLite.dll Devart.Data.dll EncDecSettings.dll EncDecSettings.dll_1 PatternsDriver.dll PatternsRegistration.exe.config PeriCALM.Patterns.Curve.UI.Chart.xbap PeriGen.Patterns.Chalkboard.exe PeriGen.Patterns.Diagnostics.dll PeriGen.Patterns.Engine.Registration.exe PeriGen.Patterns.Service.exe PeriGen.Patterns.WebSite.dll PeriGen.PeriCALM.OutboundDataInterface.T PeriGenLogger4.0.dll PeriGenPeriCALMPatterns PeriGenSettingsManager.dll PerigenSettingsTool.exe SerialShield.dll Web.config get_adobe_reader.png index.htm sqlite3.dll"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="C1.WPF.4.dll.deploy" Component_="C1.WPF.4.dll.deploy" FileName="C1WPF4~1.DEP|C1.WPF.4.dll.deploy" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116\C1.WPF.4.dll.deploy" SelfReg="false" NextFile="C1.WPF.C1Chart.4.dll.deploy"/>
+    <ROW File="C1.WPF.C1Chart.4.dll.deploy" Component_="C1.WPF.4.dll.deploy" FileName="C1WPFC~1.DEP|C1.WPF.C1Chart.4.dll.deploy" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116\C1.WPF.C1Chart.4.dll.deploy" SelfReg="false" NextFile="C1.WPF.C1Chart.Extended.4.dll.deploy"/>
+    <ROW File="C1.WPF.C1Chart.Extended.4.dll.deploy" Component_="C1.WPF.4.dll.deploy" FileName="C1WPFC~2.DEP|C1.WPF.C1Chart.Extended.4.dll.deploy" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116\C1.WPF.C1Chart.Extended.4.dll.deploy" SelfReg="false" NextFile="C1.WPF.DateTimeEditors.4.dll.deploy"/>
+    <ROW File="C1.WPF.DateTimeEditors.4.dll.deploy" Component_="C1.WPF.4.dll.deploy" FileName="C1WPFD~1.DEP|C1.WPF.DateTimeEditors.4.dll.deploy" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116\C1.WPF.DateTimeEditors.4.dll.deploy" SelfReg="false" NextFile="PeriCALM.Patterns.Curve.UI.Chart.exe.config.deploy"/>
+    <ROW File="Chalkboard.aspx" Component_="Chalkboard.aspx" FileName="Chalkb~1.asp|Chalkboard.aspx" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\admin\Chalkboard.aspx" SelfReg="false" NextFile="PeriCALMPatternsOEMChart.CAB"/>
+    <ROW File="Chalkboard.xslt" Component_="Chalkboard.aspx" FileName="Chalkb~1.xsl|Chalkboard.xslt" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\admin\Chalkboard.xslt" SelfReg="false" NextFile="PeriCALM.Patterns.Curve.UI.Chart.xbap"/>
+    <ROW File="Curve.aspx" Component_="Default.aspx" FileName="Curve~1.asp|Curve.aspx" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Curve.aspx" SelfReg="false" NextFile="sqlite3.dll"/>
+    <ROW File="CurveLoader.html" Component_="Default.aspx" FileName="CurveL~1.htm|CurveLoader.html" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\CurveLoader.html" SelfReg="false" NextFile="Help.aspx"/>
+    <ROW File="Devart.Data.Linq.dll" Component_="Devart.Data.Linq.dll" FileName="Devart~2.dll|Devart.Data.Linq.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files\Common Files\Devart\dotConnect\5.0\Net2\Common\Devart.Data.Linq.dll" SelfReg="false" NextFile="Devart.Data.SQLite.dll"/>
+    <ROW File="Devart.Data.SQLite.Linq.dll" Component_="Devart.Data.SQLite.Linq.dll" FileName="Devart~4.dll|Devart.Data.SQLite.Linq.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files\Common Files\Devart\dotConnect\5.0\Net2\Common\Devart.Data.SQLite.Linq.dll" SelfReg="false" NextFile="default.html"/>
+    <ROW File="Devart.Data.SQLite.dll" Component_="Devart.Data.SQLite.dll" FileName="Devart~3.dll|Devart.Data.SQLite.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files\Common Files\Devart\dotConnect\5.0\Net2\Common\Devart.Data.SQLite.dll" SelfReg="false" NextFile="Devart.Data.SQLite.Linq.dll"/>
+    <ROW File="Devart.Data.dll" Component_="Devart.Data.dll" FileName="Devart~1.dll|Devart.Data.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files\Common Files\Devart\dotConnect\5.0\Net2\Common\Devart.Data.dll" SelfReg="false" NextFile="Devart.Data.Linq.dll"/>
+    <ROW File="EncDecSettings.dll" Component_="EncDecSettings.dll" FileName="ENCDEC~1.DLL|EncDecSettings.dll" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\bin\EncDecSettings.dll" SelfReg="false" NextFile="PerigenSettingsTool.exe"/>
+    <ROW File="EncDecSettings.dll_1" Component_="EncDecSettings.dll_1" FileName="ENCDEC~1.DLL|EncDecSettings.dll" Attributes="0" SourcePath="..\..\Release\EncDecSettings.dll" SelfReg="false" NextFile="PeriGenLogger4.0.dll"/>
+    <ROW File="Help.aspx" Component_="index.htm" FileName="HELP~1.ASP|Help.aspx" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\Help.aspx" SelfReg="false" NextFile="Help.aspx.cs"/>
+    <ROW File="Help.aspx.cs" Component_="index.htm" FileName="HELPAS~1.CS|Help.aspx.cs" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\Help.aspx.cs" SelfReg="false" NextFile="Help.aspx.designer.cs"/>
+    <ROW File="Help.aspx.designer.cs" Component_="index.htm" FileName="HELPAS~2.CS|Help.aspx.designer.cs" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\Help.aspx.designer.cs" SelfReg="false" NextFile="get_adobe_reader.png"/>
+    <ROW File="Install.aspx" Component_="Default.aspx" FileName="Instal~1.asp|Install.aspx" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Install.aspx" SelfReg="false" NextFile="CurveLoader.html"/>
+    <ROW File="Logo_EmpoweringClinicians.png" Component_="get_adobe_reader.png" FileName="LOGO_E~1.PNG|Logo_EmpoweringClinicians.png" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\img\Logo_EmpoweringClinicians.png" SelfReg="false" NextFile="Logo_Perigen.png"/>
+    <ROW File="Logo_Perigen.png" Component_="get_adobe_reader.png" FileName="LOGO_P~1.PNG|Logo_Perigen.png" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\img\Logo_Perigen.png" SelfReg="false" NextFile="pdficon_small.png"/>
+    <ROW File="Patterns.aspx" Component_="Default.aspx" FileName="Patter~1.asp|Patterns.aspx" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Patterns.aspx" SelfReg="false" NextFile="SerialShield.dll"/>
+    <ROW File="PatternsDriver.dll" Component_="PatternsDriver.dll" FileName="Patter~1.dll|PatternsDriver.dll" Attributes="0" SourcePath="..\..\Release\PatternsDriver.dll" SelfReg="false" NextFile="PeriGen.Patterns.Chalkboard.exe"/>
+    <ROW File="PeriCALM.Patterns.Curve.UI.Chart.exe.config.deploy" Component_="C1.WPF.4.dll.deploy" FileName="PERICA~1.DEP|PeriCALM.Patterns.Curve.UI.Chart.exe.config.deploy" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116\PeriCALM.Patterns.Curve.UI.Chart.exe.config.deploy" SelfReg="false" NextFile="PeriCALM.Patterns.Curve.UI.Chart.exe.deploy"/>
+    <ROW File="PeriCALM.Patterns.Curve.UI.Chart.exe.deploy" Component_="C1.WPF.4.dll.deploy" FileName="PERICA~2.DEP|PeriCALM.Patterns.Curve.UI.Chart.exe.deploy" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116\PeriCALM.Patterns.Curve.UI.Chart.exe.deploy" SelfReg="false" NextFile="PeriCALM.Patterns.Curve.UI.Chart.exe.manifest"/>
+    <ROW File="PeriCALM.Patterns.Curve.UI.Chart.exe.manifest" Component_="C1.WPF.4.dll.deploy" FileName="PERICA~1.MAN|PeriCALM.Patterns.Curve.UI.Chart.exe.manifest" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Application Files\PeriCALM.Patterns.Curve.UI.Chart_02_06_00_116\PeriCALM.Patterns.Curve.UI.Chart.exe.manifest" SelfReg="false" NextFile="model10"/>
+    <ROW File="PeriCALM.Patterns.Curve.UI.Chart.xbap" Component_="Default.aspx" FileName="PeriCA~1.xba|PeriCALM.Patterns.Curve.UI.Chart.xbap" Attributes="0" SourcePath="..\..\Wrapper\PatternsCurveChart\bin\Release\app.publish\PeriCALM.Patterns.Curve.UI.Chart.xbap" SelfReg="false" NextFile="PeriCALM.Patterns.Curve.UI.Chart.xbap_1"/>
+    <ROW File="PeriCALM.Patterns.Curve.UI.Chart.xbap_1" Component_="PeriCALM.Patterns.Curve.UI.Chart.xbap" FileName="PeriCA~1.xba|PeriCALM.Patterns.Curve.UI.Chart.xbap" Attributes="0" SourcePath="..\..\Wrapper\PatternsCurveChart\bin\Release\app.publish\PeriCALM.Patterns.Curve.UI.Chart.xbap" SelfReg="false" NextFile="PeriGen.Patterns.Service.exe.config"/>
+    <ROW File="PeriCALMCURVEUserGuide.pdf" Component_="index.htm" FileName="PERICA~1.PDF|PeriCALM CURVE User Guide.pdf" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\PeriCALM CURVE User Guide.pdf" SelfReg="false" NextFile="PeriCALMPATTERNSUserGuide.pdf"/>
+    <ROW File="PeriCALMPATTERNSUserGuide.pdf" Component_="index.htm" FileName="PERICA~2.PDF|PeriCALM PATTERNS User Guide.pdf" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\PeriCALM PATTERNS User Guide.pdf" SelfReg="false" NextFile="PeriGen.Patterns.Service.psf"/>
+    <ROW File="PeriCALMPatternsOEMChart.CAB" Component_="Default.aspx" FileName="PeriCA~1.CAB|PeriCALMPatternsOEMChart.CAB" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\..\Release\PeriCALMPatternsOEMChart.CAB" SelfReg="false" NextFile="PeriGen.Patterns.Engine.Registration.exe"/>
+    <ROW File="PeriGen.Patterns.Chalkboard.exe" Component_="PeriGen.Patterns.Chalkboard.exe" FileName="PeriGe~2.exe|PeriGen.Patterns.Chalkboard.exe" Attributes="0" SourcePath="..\..\Release\Obfuscation\PeriGen.Patterns.Chalkboard.exe" SelfReg="false" NextFile="Web.config_1"/>
+    <ROW File="PeriGen.Patterns.Chalkboard.exe.config" Component_="PatternsRegistration.exe.config" FileName="PeriGe~5.con|PeriGen.Patterns.Chalkboard.exe.config" Attributes="0" SourcePath="..\..\Release\PeriGen.Patterns.Chalkboard.exe.config" SelfReg="false" NextFile="Devart.Data.dll"/>
+    <ROW File="PeriGen.Patterns.Diagnostics.dll" Component_="PeriGen.Patterns.Diagnostics.dll" FileName="PeriGe~1.dll|PeriGen.Patterns.Diagnostics.dll" Attributes="0" SourcePath="..\..\Release\PeriGen.Patterns.Diagnostics.dll" SelfReg="false" NextFile="Curve.aspx"/>
+    <ROW File="PeriGen.Patterns.Engine.Registration.exe" Component_="PeriGen.Patterns.Engine.Registration.exe" FileName="PeriGe~3.exe|PeriGen.Patterns.Engine.Registration.exe" Attributes="0" SourcePath="..\..\Release\Obfuscation\PeriGen.Patterns.Engine.Registration.exe" SelfReg="false" NextFile="PeriGen.Patterns.Diagnostics.dll"/>
+    <ROW File="PeriGen.Patterns.Engine.Registration.exe.config" Component_="PatternsRegistration.exe.config" FileName="PeriGe~2.con|PeriGen.Patterns.Engine.Registration.exe.config" Attributes="0" SourcePath="..\..\Release\PeriGen.Patterns.Engine.Registration.exe.config" SelfReg="false" NextFile="Web.config"/>
+    <ROW File="PeriGen.Patterns.Service.exe" Component_="PeriGen.Patterns.Service.exe" FileName="PeriGe~1.exe|PeriGen.Patterns.Service.exe" Attributes="0" SourcePath="..\..\Release\Obfuscation\PeriGen.Patterns.Service.exe" SelfReg="false" NextFile="Patterns.aspx"/>
+    <ROW File="PeriGen.Patterns.Service.exe.config" Component_="PatternsRegistration.exe.config" FileName="PeriGe~1.con|PeriGen.Patterns.Service.exe.config" Attributes="0" SourcePath="..\..\Release\PeriGen.Patterns.Service.exe.config" SelfReg="false" NextFile="PeriGen.Patterns.WebSite.dll"/>
+    <ROW File="PeriGen.Patterns.Service.psf" Component_="PatternsRegistration.exe.config" FileName="PERIGE~1.PSF|PeriGen.Patterns.Service.psf" Attributes="0" SourcePath="..\..\Release\PeriGen.Patterns.Service.psf" SelfReg="false" NextFile="EncDecSettings.dll"/>
+    <ROW File="PeriGen.Patterns.Settings.Tool.exe.config" Component_="PatternsRegistration.exe.config" FileName="PeriGe~4.con|PeriGen.Patterns.Settings.Tool.exe.config" Attributes="0" SourcePath="..\..\Release\PeriGen.Patterns.Settings.Tool.exe.config" SelfReg="false" NextFile="PeriGen.Patterns.Chalkboard.exe.config"/>
+    <ROW File="PeriGen.Patterns.WebSite.dll" Component_="PeriGen.Patterns.WebSite.dll" FileName="PeriGe~1.dll|PeriGen.Patterns.WebSite.dll" Attributes="0" SourcePath="..\..\Release\Obfuscation\PeriGen.Patterns.WebSite.dll" SelfReg="false" NextFile="Chalkboard.aspx"/>
+    <ROW File="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe" Component_="PeriGen.PeriCALM.OutboundDataInterface.T" FileName="PeriGe~5.exe|PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe" Attributes="0" SourcePath="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe" SelfReg="false" NextFile="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe.config"/>
+    <ROW File="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe.config" Component_="PatternsRegistration.exe.config" FileName="PeriGe~3.con|PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe.config" Attributes="0" SourcePath="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe.config" SelfReg="false" NextFile="PeriGen.Patterns.Settings.Tool.exe.config"/>
+    <ROW File="PeriGenLogger4.0.dll" Component_="PeriGenLogger4.0.dll" FileName="PERIGE~2.DLL|PeriGenLogger4.0.dll" Attributes="0" SourcePath="..\..\Release\PeriGenLogger4.0.dll" SelfReg="false" NextFile="PeriGenSettingsManager.dll"/>
+    <ROW File="PeriGenSettingsManager.dll" Component_="PeriGenSettingsManager.dll" FileName="PERIGE~3.DLL|PeriGenSettingsManager.dll" Attributes="0" SourcePath="..\..\Release\PeriGenSettingsManager.dll" SelfReg="false" NextFile="C1.WPF.4.dll.deploy"/>
+    <ROW File="PerigenSettingsTool.exe" Component_="PerigenSettingsTool.exe" FileName="PERIGE~4.EXE|PerigenSettingsTool.exe" Attributes="0" SourcePath="..\..\Release\PerigenSettingsTool.exe" SelfReg="false" NextFile="EncDecSettings.dll_1" DigSign="true"/>
+    <ROW File="SerialShield.dll" Component_="SerialShield.dll" FileName="Serial~1.dll|SerialShield.dll" Attributes="0" SourcePath="..\..\Release\SerialShield.dll" SelfReg="false" NextFile="PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe"/>
+    <ROW File="Web.config" Component_="Web.config" FileName="Web~1.con|Web.config" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\Web.config" SelfReg="false" NextFile="PeriGen.Patterns.Service.exe"/>
+    <ROW File="Web.config_1" Component_="Chalkboard.aspx" FileName="Web~1.con|Web.config" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\admin\Web.config" SelfReg="false" NextFile="PeriGen.Patterns.Engine.Registration.exe.config"/>
+    <ROW File="app.ico" Component_="Web.config" FileName="app.ico" Attributes="0" SourcePath="..\..\app.ico" SelfReg="false" NextFile="Chalkboard.xslt"/>
+    <ROW File="default.html" Component_="Web.config" FileName="defaul~1.htm|default.html" Attributes="0" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\default.html" SelfReg="false" NextFile="Install.aspx"/>
+    <ROW File="get_adobe_reader.png" Component_="get_adobe_reader.png" FileName="GET_AD~1.PNG|get_adobe_reader.png" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\img\get_adobe_reader.png" SelfReg="false" NextFile="Logo_EmpoweringClinicians.png"/>
+    <ROW File="model1" Component_="PatternsRegistration.exe.config" FileName="model1" Attributes="0" SourcePath="..\..\Release\model1" SelfReg="false"/>
+    <ROW File="model10" Component_="PatternsRegistration.exe.config" FileName="model10" Attributes="0" SourcePath="..\..\Release\model10" SelfReg="false" NextFile="model9"/>
+    <ROW File="model2" Component_="PatternsRegistration.exe.config" FileName="model2" Attributes="0" SourcePath="..\..\Release\model2" SelfReg="false" NextFile="model1"/>
+    <ROW File="model3" Component_="PatternsRegistration.exe.config" FileName="model3" Attributes="0" SourcePath="..\..\Release\model3" SelfReg="false" NextFile="model2"/>
+    <ROW File="model4" Component_="PatternsRegistration.exe.config" FileName="model4" Attributes="0" SourcePath="..\..\Release\model4" SelfReg="false" NextFile="model3"/>
+    <ROW File="model5" Component_="PatternsRegistration.exe.config" FileName="model5" Attributes="0" SourcePath="..\..\Release\model5" SelfReg="false" NextFile="model4"/>
+    <ROW File="model6" Component_="PatternsRegistration.exe.config" FileName="model6" Attributes="0" SourcePath="..\..\Release\model6" SelfReg="false" NextFile="model5"/>
+    <ROW File="model7" Component_="PatternsRegistration.exe.config" FileName="model7" Attributes="0" SourcePath="..\..\Release\model7" SelfReg="false" NextFile="model6"/>
+    <ROW File="model8" Component_="PatternsRegistration.exe.config" FileName="model8" Attributes="0" SourcePath="..\..\Release\model8" SelfReg="false" NextFile="model7"/>
+    <ROW File="model9" Component_="PatternsRegistration.exe.config" FileName="model9" Attributes="0" SourcePath="..\..\Release\model9" SelfReg="false" NextFile="model8"/>
+    <ROW File="pdficon_small.png" Component_="get_adobe_reader.png" FileName="PDFICO~1.PNG|pdficon_small.png" Attributes="1" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help\img\pdficon_small.png" SelfReg="false" NextFile="PeriCALMCURVEUserGuide.pdf"/>
+    <ROW File="sqlite3.dll" Component_="sqlite3.dll" FileName="sqlite3.dll" Attributes="0" SourcePath="..\..\Release\SQLite32\sqlite3.dll" SelfReg="false" NextFile="PatternsDriver.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPoolComponent">
+    <ROW AppPoolId="0" Name="PeriGenPatternsApplicationPool" Condition="1" Flags="4133" ManagedRuntimeVersion="v4.0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFileName="PeriCALM Patterns Service - Unofficial build Setup" Languages="en" InstallationType="4" ExtUI="true"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
+    <ROW TimeStampUrl="http://timestamp.comodoca.com/authenticode" SignOptions="7" SignTool="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FirewallExceptionComponent">
+    <ROW FirewallException="PeriGenPeriCALMOutboundDataInterface" DisplayName="PeriGen PeriCALM Patterns PODI" Enabled="1" Scope="*" Condition="1" Profiles="0" Port="7100" Protocol="TCP"/>
+    <ROW FirewallException="PeriGenPeriCALMPatterns" DisplayName="PeriGen PeriCALM Patterns" Enabled="1" Scope="*" Condition="((?PeriGen.Patterns.Service.exe=2) AND ($PeriGen.Patterns.Service.exe=3))" Profiles="0" AppPath="[#PeriGen.Patterns.Service.exe]"/>
+    <ROW FirewallException="PeriGenPeriCALMPatternsDataFeed" DisplayName="PeriGen PeriCALM Patterns WCF" Enabled="1" Scope="*" Condition="1" Profiles="0" Port="7802" Protocol="TCP"/>
+    <ROW FirewallException="PeriGenPeriCALMPatternsHTTPPort" DisplayName="PeriGen PeriCALM Patterns HTTP Port" Enabled="1" Scope="*" Condition="1" Profiles="0" Port="91" Protocol="TCP"/>
+    <ROW FirewallException="PeriGenPeriCALMPatternsHTTPS" DisplayName="PeriGen PeriCALM Patterns HTTPS" Enabled="1" Scope="*" Condition="1" Profiles="0" Port="92" Protocol="TCP"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.IIsCustomPropertiesComponent">
+    <ROW CustomPropertiesId="0" SectionName="system.webServer/directoryBrowse" Name="enabled" Type="boolean (True/False)" Content="True" Flags="1" TargetEntity="2" Order="0"/>
+    <ROW CustomPropertiesId="1" SectionName="system.webServer/staticContent" Name="enableDocFooter" Type="boolean (True/False)" Content="True" Flags="1" TargetEntity="2" Order="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_FwConfig" Description="Executing Windows Firewall configurations" Template="Configuring Windows Firewall rule: &quot;[1]&quot;" DescriptionLocId="ActionText.Description.AI_FwConfig" TemplateLocId="ActionText.Template.AI_FwConfig"/>
+    <ROW Action="AI_FwInstall" Description="Generating actions to configure Windows Firewall" DescriptionLocId="ActionText.Description.AI_FwInstall"/>
+    <ROW Action="AI_FwRemove" Description="Executing Windows Firewall configurations" Template="Configuring Windows Firewall rule:  &quot;[1]&quot;" DescriptionLocId="ActionText.Description.AI_FwRemove" TemplateLocId="ActionText.Template.AI_FwRemove"/>
+    <ROW Action="AI_FwRollback" Description="Rolling back Windows Firewall configurations." Template="Rolling back Windows Firewall configurations." DescriptionLocId="ActionText.Description.AI_FwRollback" TemplateLocId="ActionText.Template.AI_FwRollback"/>
+    <ROW Action="AI_FwUninstall" Description="Generating actions to configure Windows Firewall" DescriptionLocId="ActionText.Description.AI_FwUninstall"/>
+    <ROW Action="AI_IIsConfig" Description="Configuring Internet Information Services" Template="Installing &quot;[1]&quot;" DescriptionLocId="ActionText.Description.AI_IIsConfig" TemplateLocId="ActionText.Template.AI_IIsConfig"/>
+    <ROW Action="AI_IIsInstall" Description="Generating actions to configure Internet Information Services" DescriptionLocId="ActionText.Description.AI_IIsInstall"/>
+    <ROW Action="AI_IIsRemove" Description="Configuring Internet Information Services" Template="Removing &quot;[1]&quot;" DescriptionLocId="ActionText.Description.AI_IIsRemove" TemplateLocId="ActionText.Template.AI_IIsRemove"/>
+    <ROW Action="AI_IIsRollback" Description="Rolling back IIS configuration" Template="Restoring metabase configuration." DescriptionLocId="ActionText.Description.AI_IIsRollback" TemplateLocId="ActionText.Template.AI_IIsRollback"/>
+    <ROW Action="AI_IIsUninstall" Description="Generating actions to configure Internet Information Services" DescriptionLocId="ActionText.Description.AI_IIsUninstall"/>
+    <ROW Action="AI_XmlCommit" Description="Committing XML file configurations." Template="Committing XML file configurations." DescriptionLocId="ActionText.Description.AI_XmlCommit" TemplateLocId="ActionText.Template.AI_XmlCommit"/>
+    <ROW Action="AI_XmlConfig" Description="Executing XML file configurations" Template="Configuring XML file: &quot;[1]&quot;" DescriptionLocId="ActionText.Description.AI_XmlConfig" TemplateLocId="ActionText.Template.AI_XmlConfig"/>
+    <ROW Action="AI_XmlInstall" Description="Generating actions to configure XML files" DescriptionLocId="ActionText.Description.AI_XmlInstall"/>
+    <ROW Action="AI_XmlRemove" Description="Executing XML file configurations" Template="Configuring XML file: &quot;[1]&quot;" DescriptionLocId="ActionText.Description.AI_XmlRemove" TemplateLocId="ActionText.Template.AI_XmlRemove"/>
+    <ROW Action="AI_XmlRollback" Description="Rolling back XML file configurations." Template="Rolling back XML file configurations." DescriptionLocId="ActionText.Description.AI_XmlRollback" TemplateLocId="ActionText.Template.AI_XmlRollback"/>
+    <ROW Action="AI_XmlUninstall" Description="Generating actions to configure XML files" DescriptionLocId="ActionText.Description.AI_XmlUninstall"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_DOTNET40_SEARCH" Signature_="AI_DotNet40SearchSgn" Builds="DefaultBuild"/>
+    <ROW Property="AI_DOTNET451_SEARCH" Signature_="AI_DotNet451SearchSgn" Builds="DefaultBuild"/>
+    <ROW Property="AI_DOTNET45_SEARCH" Signature_="AI_DotNet45SearchSgn" Builds="DefaultBuild"/>
+    <ROW Property="AI_IISSEARCH" Signature_="AI_IISSearchSgn" Builds="DefaultBuild"/>
+    <ROW Property="AI_IISSEARCH_EX" Signature_="AI_IISSearchSgnEx" Builds="DefaultBuild"/>
+    <ROW Property="AI_IISSEARCH_SERVICE" Signature_="AI_IISSearchSgnService" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="NetFirewall.dll" SourcePath="&lt;AI_CUSTACTS&gt;NetFirewall.dll"/>
+    <ROW Name="PatternsInstallerCustomAction.CA.dll" SourcePath="..\..\Release\PatternsInstallerCustomAction.CA.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="iis.dll" SourcePath="&lt;AI_CUSTACTS&gt;iis.dll"/>
+    <ROW Name="xmlCfg.dll" SourcePath="&lt;AI_CUSTACTS&gt;xmlCfg.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="AdminBrowseDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="300" TextLocId="Control.Text.AdminBrowseDlg#Logo" MsiKey="AdminBrowseDlg#Logo"/>
+    <ROW Dialog_="AdminInstallPointDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="500" TextLocId="Control.Text.AdminInstallPointDlg#Logo" MsiKey="AdminInstallPointDlg#Logo"/>
+    <ROW Dialog_="BrowseDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="300" TextLocId="Control.Text.BrowseDlg#Logo" MsiKey="BrowseDlg#Logo"/>
+    <ROW Dialog_="CustomizeDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="600" TextLocId="Control.Text.CustomizeDlg#Logo" MsiKey="CustomizeDlg#Logo"/>
+    <ROW Dialog_="DiskCostDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="400" TextLocId="Control.Text.DiskCostDlg#Logo" MsiKey="DiskCostDlg#Logo"/>
+    <ROW Dialog_="ExitDialog" Control="ViewReadmeText" Type="Text" X="148" Y="140" Width="220" Height="20" Attributes="65538" Text="View readme file" Order="500" TextLocId="Control.Text.ExitDialog#ViewReadmeText" MsiKey="ExitDialog#ViewReadmeText"/>
+    <ROW Dialog_="ExitDialog" Control="ViewReadmeCheckBox" Type="CheckBox" X="135" Y="140" Width="10" Height="10" Attributes="2" Property="VIEWREADME" Order="600" MsiKey="ExitDialog#ViewReadmeCheckBox" Options="1"/>
+    <ROW Dialog_="ExitDialog" Control="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Attributes="196611" Text="Completed the [ProductName] [Wizard]" TextStyle="VerdanaBold13" Order="700" TextLocId="Control.Text.ExitDialog#Title" MsiKey="ExitDialog#Title"/>
+    <ROW Dialog_="ExitDialog" Control="LaunchProdText" Type="Text" X="148" Y="170" Width="220" Height="20" Attributes="65538" Text="Launch [ProductName]" Order="800" TextLocId="Control.Text.ExitDialog#LaunchProdText" MsiKey="ExitDialog#LaunchProdText"/>
+    <ROW Dialog_="ExitDialog" Control="LaunchProdCheckBox" Type="CheckBox" X="135" Y="170" Width="10" Height="10" Attributes="2" Property="RUNAPPLICATION" Order="900" MsiKey="ExitDialog#LaunchProdCheckBox" Options="1"/>
+    <ROW Dialog_="FilesInUse" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="600" TextLocId="Control.Text.FilesInUse#Logo" MsiKey="FilesInUse#Logo"/>
+    <ROW Dialog_="FolderDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="600" TextLocId="Control.Text.FolderDlg#Logo" MsiKey="FolderDlg#Logo"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="1200" TextLocId="Control.Text.MaintenanceTypeDlg#Logo" MsiKey="MaintenanceTypeDlg#Logo"/>
+    <ROW Dialog_="MsiRMFilesInUse" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="1100" TextLocId="Control.Text.MsiRMFilesInUse#Logo" MsiKey="MsiRMFilesInUse#Logo"/>
+    <ROW Dialog_="OutOfDiskDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="400" TextLocId="Control.Text.OutOfDiskDlg#Logo" MsiKey="OutOfDiskDlg#Logo"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="500" TextLocId="Control.Text.OutOfRbDiskDlg#Logo" MsiKey="OutOfRbDiskDlg#Logo"/>
+    <ROW Dialog_="ProgressDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="400" TextLocId="Control.Text.ProgressDlg#Logo" MsiKey="ProgressDlg#Logo"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="500" TextLocId="Control.Text.VerifyReadyDlg#Logo" MsiKey="VerifyReadyDlg#Logo"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="600" TextLocId="Control.Text.VerifyRemoveDlg#Logo" MsiKey="VerifyRemoveDlg#Logo"/>
+    <ROW Dialog_="VerifyRepairDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="PeriGen Inc." Order="500" TextLocId="Control.Text.VerifyRepairDlg#Logo" MsiKey="VerifyRepairDlg#Logo"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="301"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode = &quot;Remove&quot;" Ordering="299"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode = &quot;Repair&quot;" Ordering="399"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode = &quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode = &quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode = &quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode = &quot;Repair&quot;" Ordering="601"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="PeriGenPeriCALMPatterns_Dir" Component_="PeriGenPeriCALMPatterns" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DATA_SETTER_2" Type="51" Source="PatternsInstallerCustomAction.CA.dll" Target="[APPDIR];[ProductVersion]"/>
+    <ROW Action="AI_DATA_SETTER_3" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DATA_SETTER_4" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_FwConfig" Type="11265" Source="NetFirewall.dll" Target="OnFwConfig" WithoutSeq="true"/>
+    <ROW Action="AI_FwInstall" Type="1" Source="NetFirewall.dll" Target="OnFwInstall" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_FwRemove" Type="11265" Source="NetFirewall.dll" Target="OnFwRemove" WithoutSeq="true"/>
+    <ROW Action="AI_FwRollback" Type="11521" Source="NetFirewall.dll" Target="OnFwRollback" WithoutSeq="true"/>
+    <ROW Action="AI_FwUninstall" Type="1" Source="NetFirewall.dll" Target="OnFwUninstall" AdditionalSeq="AI_DATA_SETTER_1"/>
+    <ROW Action="AI_IIsConfig" Type="11265" Source="iis.dll" Target="OnIIsConfig" WithoutSeq="true"/>
+    <ROW Action="AI_IIsInstall" Type="1" Source="iis.dll" Target="OnIIsInstall"/>
+    <ROW Action="AI_IIsRemove" Type="11265" Source="iis.dll" Target="OnIIsRemove" WithoutSeq="true"/>
+    <ROW Action="AI_IIsRollback" Type="11521" Source="iis.dll" Target="OnIIsRollback" WithoutSeq="true"/>
+    <ROW Action="AI_IIsUninstall" Type="1" Source="iis.dll" Target="OnIIsUninstall"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="AI_XmlCommit" Type="11777" Source="xmlCfg.dll" Target="OnXmlCommit" WithoutSeq="true"/>
+    <ROW Action="AI_XmlConfig" Type="11265" Source="xmlCfg.dll" Target="OnXmlConfig" WithoutSeq="true"/>
+    <ROW Action="AI_XmlInstall" Type="1" Source="xmlCfg.dll" Target="OnXmlInstall" AdditionalSeq="AI_DATA_SETTER_3"/>
+    <ROW Action="AI_XmlRemove" Type="11265" Source="xmlCfg.dll" Target="OnXmlRemove" WithoutSeq="true"/>
+    <ROW Action="AI_XmlRollback" Type="11521" Source="xmlCfg.dll" Target="OnXmlRollback" WithoutSeq="true"/>
+    <ROW Action="AI_XmlUninstall" Type="1" Source="xmlCfg.dll" Target="OnXmlUninstall" AdditionalSeq="AI_DATA_SETTER_4"/>
+    <ROW Action="PatternsInstallerCustomAction.CA.dll" Type="1025" Source="PatternsInstallerCustomAction.CA.dll" Target="UpdateVersionInSettingsAction" AdditionalSeq="AI_DATA_SETTER_2"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder]PeriGen\PeriCALM Patterns"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]PeriGen\PeriCALM Patterns"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDrLocatorComponent">
+    <ROW Signature_="AI_IISSearchSgn" Path="[SystemFolder]inetsrv" Depth="0"/>
+    <ROW Signature_="AI_IISSearchSgnEx" Path="[SystemFolder]inetsrv" Depth="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="SystemFoldermsiexec.exe" SourcePath="&lt;AI_RES&gt;uninstall.ico" Index="0"/>
+    <ROW Name="app.exe" SourcePath="..\..\app.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="Not Installed" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="51"/>
+    <ROW Action="AI_IIsInstall" Condition="(VersionNT &gt;= 500) AND (NOT Installed)" Sequence="6509"/>
+    <ROW Action="AI_IIsUninstall" Condition="(VersionNT &gt;= 500) AND (REMOVE=&quot;ALL&quot;)" Sequence="1697"/>
+    <ROW Action="AI_FwInstall" Condition="(VersionNT &gt;= 501) AND (REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5849"/>
+    <ROW Action="AI_FwUninstall" Condition="(VersionNT &gt;= 501) AND (REMOVE=&quot;ALL&quot;)" Sequence="1699"/>
+    <ROW Action="AI_DATA_SETTER" Condition="(VersionNT &gt;= 501) AND (REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5848"/>
+    <ROW Action="AI_DATA_SETTER_1" Condition="(VersionNT &gt;= 501) AND (REMOVE=&quot;ALL&quot;)" Sequence="1698"/>
+    <ROW Action="PatternsInstallerCustomAction.CA.dll" Condition="( NOT Installed )" Sequence="6402"/>
+    <ROW Action="AI_DATA_SETTER_2" Condition="( NOT Installed )" Sequence="6401"/>
+    <ROW Action="AI_XmlInstall" Condition="(REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5102"/>
+    <ROW Action="AI_DATA_SETTER_3" Condition="(REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5101"/>
+    <ROW Action="AI_XmlUninstall" Condition="(REMOVE)" Sequence="3102"/>
+    <ROW Action="AI_DATA_SETTER_4" Condition="(REMOVE)" Sequence="3101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_DpiContentScale" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="( Version9X OR ( NOT VersionNT64 ) OR ( VersionNT64 AND ((VersionNT64 &lt;&gt; 502) OR (((VersionNT64 = 502) AND (ServicePackLevel &gt;= 1)) OR (MsiNTProductType &lt;&gt; 1))) AND ((VersionNT64 &lt;&gt; 502) OR (((VersionNT64 = 502) AND (ServicePackLevel &lt;&gt; 1)) OR (MsiNTProductType &lt;&gt; 1))) AND ((VersionNT64 &lt;&gt; 502) OR (((VersionNT64 = 502) AND (ServicePackLevel &lt;&gt; 2)) OR (MsiNTProductType &lt;&gt; 1))) AND ((VersionNT64 &lt;&gt; 502) OR ((VersionNT64 = 502) AND ((MsiNTProductType = 1) OR (ServicePackLevel &gt;= 1)))) AND ((VersionNT64 &lt;&gt; 502) OR ((VersionNT64 = 502) AND ((MsiNTProductType = 1) OR (ServicePackLevel &lt;&gt; 1)))) AND ((VersionNT64 &lt;&gt; 600) OR (((VersionNT64 = 600) AND (ServicePackLevel &gt;= 1)) OR (MsiNTProductType &lt;&gt; 1))) AND ((VersionNT64 &lt;&gt; 600) OR (((VersionNT64 = 600) AND (ServicePackLevel &lt;&gt; 1)) OR (MsiNTProductType &lt;&gt; 1))) AND ((VersionNT64 &lt;&gt; 600) OR (((VersionNT64 = 600) AND (ServicePackLevel &lt;&gt; 2)) OR (MsiNTProductType &lt;&gt; 1))) AND ((VersionNT64 &lt;&gt; 600) OR ((VersionNT64 = 600) AND (MsiNTProductType = 1))) AND ((VersionNT64 &lt;&gt; 601) OR ((VersionNT64 = 601) AND ((ServicePackLevel &gt;= 1) OR (MsiNTProductType &lt;&gt; 1)))) AND ((VersionNT64 &lt;&gt; 601) OR ((VersionNT64 = 601) AND ((ServicePackLevel &gt;= 1) OR (MsiNTProductType = 1)))) ) )" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT64Display]" DescriptionLocId="AI.LaunchCondition.NoSpecificNT64" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="( Version9X OR VersionNT64 OR ( VersionNT AND ((VersionNT &lt;&gt; 500) OR ((VersionNT = 500) AND (ServicePackLevel &gt;= 1))) AND ((VersionNT &lt;&gt; 500) OR ((VersionNT = 500) AND (ServicePackLevel &lt;&gt; 1))) AND ((VersionNT &lt;&gt; 500) OR ((VersionNT = 500) AND (ServicePackLevel &lt;&gt; 2))) AND ((VersionNT &lt;&gt; 500) OR ((VersionNT = 500) AND (ServicePackLevel &lt;&gt; 3))) AND ((VersionNT &lt;&gt; 500) OR ((VersionNT = 500) AND (ServicePackLevel &lt;&gt; 4))) AND (((VersionNT &lt;&gt; 501) OR ((VersionNT = 501) AND (ServicePackLevel &gt;= 1))) OR VersionNT64) AND (((VersionNT &lt;&gt; 501) OR ((VersionNT = 501) AND (ServicePackLevel &lt;&gt; 1))) OR VersionNT64) AND (((VersionNT &lt;&gt; 501) OR ((VersionNT = 501) AND (ServicePackLevel &lt;&gt; 2))) OR VersionNT64) AND (((VersionNT &lt;&gt; 501) OR ((VersionNT = 501) AND (ServicePackLevel &lt;&gt; 3))) OR VersionNT64) AND (((VersionNT &lt;&gt; 502) OR ((VersionNT = 502) AND (ServicePackLevel &gt;= 1))) OR VersionNT64) AND (((VersionNT &lt;&gt; 502) OR ((VersionNT = 502) AND (ServicePackLevel &lt;&gt; 1))) OR VersionNT64) AND (((VersionNT &lt;&gt; 600) OR (((VersionNT = 600) AND (ServicePackLevel &gt;= 1)) OR (MsiNTProductType &lt;&gt; 1))) OR VersionNT64) AND (((VersionNT &lt;&gt; 600) OR (((VersionNT = 600) AND (ServicePackLevel &lt;&gt; 1)) OR (MsiNTProductType &lt;&gt; 1))) OR VersionNT64) AND (((VersionNT &lt;&gt; 600) OR (((VersionNT = 600) AND (ServicePackLevel &lt;&gt; 2)) OR (MsiNTProductType &lt;&gt; 1))) OR VersionNT64) AND (((VersionNT &lt;&gt; 600) OR ((VersionNT = 600) AND ((MsiNTProductType = 1) OR ((WindowsBuild &lt;&gt; 6001) AND (WindowsBuild &lt;&gt; 6002))))) OR VersionNT64) AND ((VersionNT &lt;&gt; 601) OR ((VersionNT = 601) AND (ServicePackLevel &gt;= 1)) OR VersionNT64) ) )" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNTDisplay]" DescriptionLocId="AI.LaunchCondition.NoSpecificNT" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(AI_DOTNET40_SEARCH = &quot;#1&quot;) OR (AI_DOTNET45_SEARCH &gt;= &quot;4.5&quot;) OR (AI_DOTNET451_SEARCH = &quot;#378758&quot;) OR (AI_DOTNET451_SEARCH = &quot;#378675&quot;)" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_MINDOTNETVERSION]" DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(AI_IISSEARCH OR AI_IISSEARCH_EX) AND AI_IISSEARCH_SERVICE" Description="[ProductName] cannot be installed on systems with Internet Information Services version lower than [AI_MINIISVERSION]" DescriptionLocId="AI.LaunchCondition.IIS" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT40Display]" DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="Privileged" Description="[ProductName] requires administrative privileges to install." DescriptionLocId="AI.LaunchCondition.Privileged" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
+    <ROW Module="Microsoft_VC100_ATL_x86.msm" Path="..\..\..\..\..\..\Program Files\Common Files\Merge Modules\Microsoft_VC100_ATL_x86.msm" Feature="MainFeature" Directory="APPDIR"/>
+    <ROW Module="Microsoft_VC100_CRT_x86.msm" Path="..\..\..\..\..\..\Program Files\Common Files\Merge Modules\Microsoft_VC100_CRT_x86.msm" Feature="MainFeature" Directory="APPDIR"/>
+    <ROW Module="Microsoft_VC100_MFC_x86.msm" Path="..\..\..\..\..\..\Program Files\Common Files\Merge Modules\Microsoft_VC100_MFC_x86.msm" Feature="MainFeature" Directory="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_DotNet40SearchSgn" Root="2" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Install" Type="2"/>
+    <ROW Signature_="AI_DotNet451SearchSgn" Root="2" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Release" Type="2"/>
+    <ROW Signature_="AI_DotNet45SearchSgn" Root="2" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Version" Type="2"/>
+    <ROW Signature_="AI_IISSearchSgnService" Root="2" Key="SYSTEM\CurrentControlSet\Services\W3SVC" Name="DisplayName" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiServCtrlComponent">
+    <ROW ServiceControl="ServiceName" Name="PeriCALMPatternsService" Event="170" Wait="1" Component_="PeriGen.Patterns.Service.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiServInstComponent">
+    <ROW ServiceInstall="PeriGen.Patterns.Service.exe" Name="PeriCALMPatternsService" DisplayName="CALM Patterns Service" ServiceType="16" StartType="2" ErrorControl="32769" Dependencies="Eventlog" Component_="PeriGen.Patterns.Service.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="PeriCALMPatternsRegistration" Directory_="PeriGenPeriCALMPatterns_Dir" Name="PeriCA~2|PeriCALM Patterns Registration" Component_="PeriGen.Patterns.Engine.Registration.exe" Target="[#PeriGen.Patterns.Engine.Registration.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="PeriCALmPatternsSettings" Directory_="PeriGenPeriCALMPatterns_Dir" Name="PERICA~4|PeriCALM Patterns Settings" Component_="PerigenSettingsTool.exe" Target="[#PerigenSettingsTool.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="PeriGen_Patterns_Chalkboard" Directory_="PeriGenPeriCALMPatterns_Dir" Name="PeriCA~1|PeriCALM Patterns Chalkboard" Component_="PeriGen.Patterns.Chalkboard.exe" Target="[#PeriGen.Patterns.Chalkboard.exe]" Arguments="&quot;http://[ComputerName]:91/admin/Chalkboard.aspx&quot;" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="ShortcuttoPeriGen.PeriCALM.OutboundDataInterface.TestTool.exe" Directory_="PeriGenPeriCALMPatterns_Dir" Name="PeriCA~5|PeriCALM Outbound Data Interface Test Tool" Component_="PeriGen.PeriCALM.OutboundDataInterface.T" Target="[#PeriGen.PeriCALM.OutboundDataInterface.TestTool.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="Uninstall" Directory_="PeriGenPeriCALMPatterns_Dir" Name="Uninst~1|Uninstall PeriCALM Patterns" Component_="SerialShield.dll" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiSignatureComponent">
+    <ROW Signature="AI_IISSearchSgn" FileName="inetinfo.exe" MinVersion="[|AI_MINIISVERSION]"/>
+    <ROW Signature="AI_IISSearchSgnEx" FileName="w3wp.exe" MinVersion="[|AI_MINIISVERSION]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMax="[|ProductVersion]" Attributes="1025" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="ApplicationFiles_Dir" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\common\Application Files" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6"/>
+    <ROW Directory_="help_Dir" SourcePath="..\..\Wrapper\PeriGen.Patterns.WebSite\help" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.WebApplicationsComponent">
+    <ROW WebSiteId="1" Root="APPDIR" Condition="1" AccessFlags="49769" AccessPerm="513" DocumentList="index.html, index.htm, default.htm" WebApplication="Default Web Site" ServerBindings=":80:" AccessSSLFlags="0" ConnectionTimeout="-1" MaxConcurrentRequests="-1" MaxRequests="-1" TimeLimit="-1"/>
+    <ROW WebSiteId="2" Root="website_DIR" Condition="1" AccessFlags="1098345" AccessPerm="513" DocumentList="default.html" AppPool="0" AspNetVers="4.0.30319" WebApplication="PeriGenPatternsWeb" ServerBindings=":91:" AccessSSLFlags="0" ConnectionTimeout="-1" MaxConcurrentRequests="-1" MaxRequests="-1" TimeLimit="-1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.XmlAttributeComponent">
+    <ROW XmlAttribute="xmlnsxsd" XmlElement="Actions" Name="xmlns:xsd" Flags="14" Order="1" Value="http://www.w3.org/2001/XMLSchema"/>
+    <ROW XmlAttribute="xmlnsxsi" XmlElement="Actions" Name="xmlns:xsi" Flags="14" Order="0" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.XmlElementComponent">
+    <ROW XmlElement="Actions" Name="Actions" Order="0" Flags="30"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.XmlFileComponent">
+    <ROW XmlFile="Actions.xml" FileName="Actions.xml" DirProperty="common_DIR" Component="Default.aspx" RootElement="Actions" Flags="89" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
+  </COMPONENT>
+</DOCUMENT>

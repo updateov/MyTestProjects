@@ -1,0 +1,51 @@
+// LMSPatternsChart.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (LMSPatternsChart.tlb) that will become a resource in
+// LMSPatternsChart.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(46787600-69FD-4389-8F44-6FBCDA4F61AB), version(1.0),
+  helpfile("LMSPatternsChart.hlp"),
+  helpstring("CRIPatternsChart ActiveX Control module"),
+  control ]
+library CRIPatternsChartLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CLMSPatternsChartCtrl
+
+	[ uuid(41681E08-E263-42D9-A359-843CBD340543),
+	  helpstring("Dispatch interface for CRIPatternsChart Control")]
+	dispinterface _DCRIPatternsChart
+	{
+		properties:
+			[id(1) , helpstring("property ConnectionData")] BSTR ConnectionData;
+		methods:
+	};
+
+	//  Event dispatch interface for CLMSPatternsChartCtrl
+
+	[ uuid(1A73C536-B666-4FDC-9D96-897242EE3048),
+	  helpstring("Event interface for CRIPatternsChart Control") ]
+	dispinterface _DCRIPatternsChartEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CRIPatternsChartCtrl
+
+	[ uuid(822D5CDC-3062-4C71-8FA5-7156E38B2F1C),
+	  helpstring("CRIPatternsChart Control"), control ]
+	coclass CRIPatternsChart
+	{
+		[default] dispinterface _DCRIPatternsChart;
+		[default, source] dispinterface _DCRIPatternsChartEvents;
+	};
+
+};

@@ -1,0 +1,12 @@
+[version]
+    signature="$CHICAGO$"
+    AdvancedINF=2.0
+ 
+[Deployment]
+    InstallScope=user 
+
+[Setup Hooks]
+    hook1=hook1
+
+[hook1]
+    run="%windir%\system32\mspaint.exe"

@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="Metro_Style_Web_Browser.MainPage"
+    IsTabStop="false"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Metro_Style_Web_Browser"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid        
+        Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <GridView HorizontalAlignment="Left" Margin="0,76,0,0" VerticalAlignment="Top" Width="1356" Height="692">
+            <WebView Name="wv1" Height="682" Width="1356"/>
+        </GridView>
+        <Button Name="newB" Content="New" FontSize="20" HorizontalAlignment="Left" Margin="1065,10,0,0" VerticalAlignment="Top" Height="44" Width="93" PointerMoved="pointerMovedEvent" PointerExited="pointerExitedEvent" Click="newB_Click"/>
+        <Button Name="goB" Content="Go" FontSize="20" HorizontalAlignment="Left" Margin="967,10,0,0" VerticalAlignment="Top" Height="44" Width="93" PointerMoved="pointerMovedEvent" PointerExited="pointerExitedEvent" Click="goB_Click"/>
+        <TextBox Name="tb" FontSize="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="www.google.com" VerticalAlignment="Top" Width="952" Height="44" Foreground="#FF3E3EA4"/>
+        <Button Name="exitB" Content="Exit" FontSize="20" HorizontalAlignment="Left" Margin="1261,10,0,0" VerticalAlignment="Top" Height="44" Width="93" PointerMoved="pointerMovedEvent" PointerExited="pointerExitedEvent" Click="exitB_Click"/>
+        <Button x:Name="helpB" Content="Help" FontSize="20" HorizontalAlignment="Left" Margin="1163,10,0,0" VerticalAlignment="Top" Height="44" Width="93" PointerMoved="pointerMovedEvent" PointerExited="pointerExitedEvent" Click="helpB_Click"/>
+
+    </Grid>
+</Page>

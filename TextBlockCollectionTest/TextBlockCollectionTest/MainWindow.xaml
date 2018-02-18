@@ -1,0 +1,29 @@
+﻿<Window x:Class="TextBlockCollectionTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TextBlockCollectionTest"
+        Title="MainWindow" Height="350" Width="425">
+    <StackPanel>
+        <TextBlock Text="hjkgjgyughk uihguihuhuh trhtrehrehtrfg,jh,hj.,jh,jh,hj,hj,hj,hjg,jh,hj,hj,hdtvb uhuihui" 
+                   TextTrimming="CharacterEllipsis">
+            <TextBlock.Resources>
+                <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="local:TextBlockUtils.AutoTooltip" Value="true"/>
+                        </Trigger>
+                        <!--<Trigger Property="local:TextBlockUtils.AutoTooltip" Value="True">
+                            <Setter Property="Background" Value="Pink" />
+                        </Trigger>-->
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Resources>
+            <TextBlock.ToolTip>
+                <ToolTip/>
+                <!--<ToolTip DataContext="{Binding Path=PlacementTarget, RelativeSource={x:Static RelativeSource.Self}}"/>-->
+                    <!--<TextBlock Text="bla"/>-->
+                <!--</ToolTip>-->
+            </TextBlock.ToolTip>
+      </TextBlock>
+    </StackPanel>
+</Window>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Patterns">
+      <UniqueIdentifier>{9df4dc37-ba4a-44bb-9d3d-6ad7c7f5e973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Patterns - GUI">
+      <UniqueIdentifier>{9f1f7dfe-8cd9-4d79-a1a3-9c37934b71ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Compare">
+      <UniqueIdentifier>{c95719c9-78fd-4904-8a2c-6421877e1bf6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PatternsTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternsTestDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternsTracingDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, conductor.cpp">
+      <Filter>Patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, config.cpp">
+      <Filter>Patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, fetus.cpp">
+      <Filter>Patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, input adapter.cpp">
+      <Filter>Patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, samples.cpp">
+      <Filter>Patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns\patterns, subscription.cpp">
+      <Filter>Patterns</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Gui\patterns gui, patient list control.cpp">
+      <Filter>Patterns - GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Gui\patterns gui, services.cpp">
+      <Filter>Patterns - GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Gui\patterns gui, tracing, debug.cpp">
+      <Filter>Patterns - GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Gui\patterns gui, tracing.cpp">
+      <Filter>Patterns - GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Gui\patterns gui, viewer input adapter.cpp">
+      <Filter>Patterns - GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Patterns Compare\FhrPartsCompare.cpp">
+      <Filter>Compare</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PatternsTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternsTestDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternsTracingDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns\patterns, conductor.h">
+      <Filter>Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns\patterns, config.h">
+      <Filter>Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns\patterns, fetus.h">
+      <Filter>Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns\patterns, input adapter.h">
+      <Filter>Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns\patterns, samples.h">
+      <Filter>Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns\patterns, subscription.h">
+      <Filter>Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns Gui\patterns gui, double buffer.h">
+      <Filter>Patterns - GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns Gui\patterns gui, patient list control.h">
+      <Filter>Patterns - GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns Gui\patterns gui, services.h">
+      <Filter>Patterns - GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns Gui\patterns gui, tracing.h">
+      <Filter>Patterns - GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns Gui\patterns gui, viewer input adapter.h">
+      <Filter>Patterns - GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Patterns Compare\FhrPartsCompare.h">
+      <Filter>Compare</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\patterns.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="PatternsTest.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PatternsTest.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\Patterns Gui\patterns gui, tracing.rc">
+      <Filter>Patterns - GUI</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

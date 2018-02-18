@@ -1,0 +1,26 @@
+﻿<Window x:Class="GUICustomizationExtractor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="218.896" Width="725" Icon="app.ico">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5, 10, 5, 0" VerticalAlignment="Center">
+            <TextBlock Text="Choose File:" Margin="10, 0" Height="20"/>
+            <TextBox Name="m_textInBoxPath" Height="20" Width="575" Margin="0, 0, 10, 0" TextChanged="m_textBox_TextChanged"/>
+            <Button Name="m_buttonBrowseSourceFile" Content="..." Margin="0, 0, 10, 0" Width="25" Height="25" Click="m_buttonBrowseSourceFile_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5, 4, 5, 5" VerticalAlignment="Center">
+            <TextBlock Text="Select dialog to extract:" Margin="334, 0, 10, 0" Height="20"/>
+            <ComboBox Name="m_comboBoxDialogName" Margin="10, 0, 45, 0" Width="180" Height="25" SelectionChanged="m_comboBoxDialogName_SelectionChanged">
+                <ComboBoxItem Name="LMSAddAnnotationDialog">Add Annotation Dialog</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5, 0, 5, 5" VerticalAlignment="Center">
+            <TextBlock Text="Choose File:" Height="20" Margin="10, 0" />
+            <TextBox Name="m_textBoxOutPath" Height="20" Width="575" Margin="0, 0, 10, 0" TextChanged="m_textBox_TextChanged"/>
+            <Button Name="m_buttonBrowseDestinationFile" Content="..." Margin="0, 0, 10, 0" Height="25" Width="25" Click="m_buttonBrowseDestinationFile_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5, 0, 5, 5" Height="40" HorizontalAlignment="Right">
+            <Button Name="m_buttonExtract" Content="Extract" Margin="10, 5, 5, 5" Width="50" Height="25" IsEnabled="False" Click="m_buttonExtract_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

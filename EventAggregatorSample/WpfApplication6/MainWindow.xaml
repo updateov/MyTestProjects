@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfApplication6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="5" Content="Expand" Click="Button_Click"/>
+            <Button Margin="5" Content="Collapse" x:Name="buttonCollapse" Click="buttonCollapse_Click"/>
+        </StackPanel>
+        <ItemsControl ItemsSource="{Binding}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Expander IsExpanded="{Binding Expand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="{Binding Model.Header}" Content="{Binding Model.Content}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</Window>

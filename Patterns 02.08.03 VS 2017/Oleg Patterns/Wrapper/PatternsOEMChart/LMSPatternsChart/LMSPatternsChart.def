@@ -1,0 +1,9 @@
+; LMSPatternsChart.def : Declares the module parameters.
+
+LIBRARY      "Patterns OEM Chart.ocx"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer PRIVATE

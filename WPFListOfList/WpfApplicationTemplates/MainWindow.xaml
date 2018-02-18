@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApplicationTemplates.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplicationTemplates"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type local:ViewModelInteger}">
+                <TextBox Width="100" Text="{Binding Val}"/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ViewModelFloat}">
+                <ComboBox Width="100" ItemsSource="{Binding ListVal}"/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ViewModelBool}">
+                <CheckBox Width="100" Content="{Binding Name}" IsChecked="{Binding Checked}"/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ViewModelSeparator}">
+                <Separator Width="100"/>
+            </DataTemplate>
+
+            <DataTemplate x:Key="TheTemplate">
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding ItemName}"/>
+                        <ContentPresenter Content="{Binding}"/>
+                    </StackPanel>
+                    <Rectangle Fill="BlanchedAlmond" Width="100" Height="50" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </DataTemplate>
+
+        </Grid.Resources>
+
+        <ItemsControl ItemsSource="{Binding}" Margin="10" ItemTemplate="{StaticResource TheTemplate}"/>
+    </Grid>
+</Window>

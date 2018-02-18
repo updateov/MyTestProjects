@@ -1,0 +1,96 @@
+﻿<Window x:Class="PatientTooltip.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="229.388" Width="320" ResizeMode="NoResize">
+    <Window.Resources>
+        <!--Title Small Font-->
+        <Style x:Key="FramePatternsSmallStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+
+        <!--Title Medium Font-->
+        <Style x:Key="FramePatternsMediumStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+
+        <!--Title Big Font-->
+        <Style x:Key="FramePatternsBigStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+    </Window.Resources>
+    <Grid Width="Auto" Height="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Width="Auto" LastChildFill="False">
+            <TextBlock DockPanel.Dock="Left"  VerticalAlignment="Center" Margin="10,0,10,0" Style="{StaticResource FramePatternsMediumStyle}">
+                <Run Text="Bed Name"/>
+                <Run Text=","/>
+                <Run Text="Patient name"/>
+            </TextBlock>
+            <Button x:Name="buttonDischarge" Content="D'charge" VerticalAlignment="Center" DockPanel.Dock="Right" Margin="0,0,10,0"/>
+            <Button x:Name="buttonEdit" Content="Edit" DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        </DockPanel>
+        <Separator Grid.Row="1"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,0,0,0">
+            <!--<TextBlock Text="GA: 37 + 2" VerticalAlignment="Center" Margin="10,0,0,0" Style="{StaticResource FramePatternsSmallStyle}"/>
+            <TextBlock Text="Fetuses: 1" VerticalAlignment="Center" Margin="10,0,0,0" Style="{StaticResource FramePatternsSmallStyle}"/>-->
+            <TextBlock FontSize="16">
+                <Run Text="GA: "/>
+                <Run Text="37 + 2" FontWeight="Bold"/>
+                <Run Text=", Fetuses: "/>
+                <Run Text="1" FontWeight="Bold"/>
+            </TextBlock>
+        </StackPanel>
+
+        <Canvas Grid.Row="3" Height="18" Width="18" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="14,0,5,0">
+            <ContentControl/>
+            <!-- Template="{Binding SelectedPatient.CRIStatus, ElementName=mainWindow, Converter={StaticResource CRIStatusToFrameIconConverter}}"/>-->
+        </Canvas>
+
+        <Grid Grid.Row="4" x:Name="panelHistory" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Positive at:..." Margin="20,0,0,0" Style="{StaticResource FramePatternsSmallStyle}"/>
+            <TextBlock Grid.Row="1" Text="Past Positive CRI - not reviewed:" Margin="20,0,0,0" Style="{StaticResource FramePatternsSmallStyle}"/>
+            <ListBox Grid.Row="2" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="15,0,10,0" BorderBrush="Transparent" BorderThickness="0" VerticalAlignment="Stretch">
+                <ListBox.Items>
+                    <ListBoxItem>
+                        <TextBlock Text="Positive at: 20:45 Duration: 22 min" Style="{StaticResource FramePatternsSmallStyle}"/>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <TextBlock Text="Positive at: 20:45 Duration: 22 min" Style="{StaticResource FramePatternsSmallStyle}"/>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <TextBlock Text="Positive at: 20:45 Duration: 22 min" Style="{StaticResource FramePatternsSmallStyle}"/>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <TextBlock Text="Positive at: 20:45 Duration: 22 min" Style="{StaticResource FramePatternsSmallStyle}"/>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <TextBlock Text="Positive at: 20:45 Duration: 22 min" Style="{StaticResource FramePatternsSmallStyle}"/>
+                    </ListBoxItem>
+                </ListBox.Items>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,11 @@
+﻿<Window x:Class="LostFocusTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <ListBox Focusable="True">
+        <TextBox Text="sdfblnszbdf0" Width="80" HorizontalAlignment="Left" Margin="3"/>
+        <TextBox Text="sdfblnszbdf1" Width="80" HorizontalAlignment="Left" Margin="3"/>
+        <TextBox Text="sdfblnszbdf2" Width="80" HorizontalAlignment="Left" Margin="3"/>
+        <TextBox Text="sdfblnszbdf3" Width="80" HorizontalAlignment="Left" Margin="3"/>
+    </ListBox>
+</Window>

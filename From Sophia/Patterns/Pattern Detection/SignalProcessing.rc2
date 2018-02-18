@@ -1,0 +1,75 @@
+//
+// SignalProcessing.RC2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Add manually edited resources here...
+
+all_v5h\v5h_NN_Topology.txt Topology "all_v5h\\v5h_NN_Topology.txt"
+all_v5i\v5i_NN_Topology.txt Topology "all_v5i\\v5i_NN_Topology.txt"
+
+
+all_v5i\arbiter_v5i_1x1_RR0.txt NeuralNet "all_v5i\\arbiter_v5i_1x1_RR0.txt"
+
+all_v5i\b_expert_number_1.txt NeuralNet "all_v5i\\b_expert_number_1.txt"
+all_v5i\b_expert_number_2.txt NeuralNet "all_v5i\\b_expert_number_2.txt"
+all_v5i\b_expert_number_3.txt NeuralNet "all_v5i\\b_expert_number_3.txt"
+all_v5i\n_expert_number_1.txt NeuralNet "all_v5i\\n_expert_number_1.txt"
+all_v5i\n_expert_number_2.txt NeuralNet "all_v5i\\n_expert_number_2.txt"
+all_v5i\n_expert_number_3.txt NeuralNet "all_v5i\\n_expert_number_3.txt"
+
+all_v5h\arbiter_v5h_1x1_RR0.txt NeuralNet "all_v5h\\arbiter_v5h_1x1_RR0.txt"
+
+all_v5h\b_expert_number_1.txt NeuralNet "all_v5h\\b_expert_number_1.txt"
+all_v5h\b_expert_number_2.txt NeuralNet "all_v5h\\b_expert_number_2.txt"
+all_v5h\b_expert_number_3.txt NeuralNet "all_v5h\\b_expert_number_3.txt"
+all_v5h\n_expert_number_1.txt NeuralNet "all_v5h\\n_expert_number_1.txt"
+all_v5h\n_expert_number_2.txt NeuralNet "all_v5h\\n_expert_number_2.txt"
+all_v5h\n_expert_number_3.txt NeuralNet "all_v5h\\n_expert_number_3.txt"
+
+AccelNN\Accel_NN_Topology.txt Topology "AccelNN\\Accel_NN_Topology.txt"
+DecelNN\Decel_NN_Topology.txt Topology "DecelNN\\Decel_NN_Topology.txt"
+AccelNN2\Accel_NN_Topology.txt Topology "AccelNN2\\Accel_NN_Topology.txt"
+DecelNN2\Decel_NN_Topology.txt Topology "DecelNN2\\Decel_NN_Topology.txt"
+
+AccelNN\nnet_6x4_RR1_NN5.txt NeuralNet "AccelNN\\nnet_6x4_RR1_NN5.txt"
+AccelNN\nnet_6x4_RR2_NN15.txt NeuralNet "AccelNN\\nnet_6x4_RR2_NN15.txt"
+AccelNN\nnet_6x4_RR3_NN12.txt NeuralNet "AccelNN\\nnet_6x4_RR3_NN12.txt"
+AccelNN\nnet_6x4_RR4_NN11.txt NeuralNet "AccelNN\\nnet_6x4_RR4_NN11.txt"
+AccelNN\nnet_6x4_RR5_NN1.txt NeuralNet "AccelNN\\nnet_6x4_RR5_NN1.txt"
+AccelNN\nnet_6x4_RR6_NN3.txt NeuralNet "AccelNN\\nnet_6x4_RR6_NN3.txt"
+AccelNN\nnet_6x4_RR7_NN4.txt NeuralNet "AccelNN\\nnet_6x4_RR7_NN4.txt"
+AccelNN\nnet_6x4_RR8_NN15.txt NeuralNet "AccelNN\\nnet_6x4_RR8_NN15.txt"
+
+AccelNN2\nnet_6x4_RR1_NN9.txt NeuralNet "AccelNN2\\nnet_6x4_RR1_NN9.txt"
+AccelNN2\nnet_6x4_RR2_NN1.txt NeuralNet "AccelNN2\\nnet_6x4_RR2_NN1.txt"
+AccelNN2\nnet_6x4_RR3_NN14.txt NeuralNet "AccelNN2\\nnet_6x4_RR3_NN14.txt"
+AccelNN2\nnet_6x4_RR4_NN16.txt NeuralNet "AccelNN2\\nnet_6x4_RR4_NN16.txt"
+AccelNN2\nnet_6x4_RR5_NN10.txt NeuralNet "AccelNN2\\nnet_6x4_RR5_NN10.txt"
+AccelNN2\nnet_6x4_RR6_NN7.txt NeuralNet "AccelNN2\\nnet_6x4_RR6_NN7.txt"
+AccelNN2\nnet_6x4_RR7_NN8.txt NeuralNet "AccelNN2\\nnet_6x4_RR7_NN8.txt"
+AccelNN2\nnet_6x4_RR8_NN8.txt NeuralNet "AccelNN2\\nnet_6x4_RR8_NN8.txt"
+
+DecelNN\nnet_6x4_RR1_NN11.txt NeuralNet "DecelNN\\nnet_6x4_RR1_NN11.txt"
+DecelNN\nnet_6x4_RR2_NN11.txt NeuralNet "DecelNN\\nnet_6x4_RR2_NN11.txt"
+DecelNN\nnet_6x4_RR3_NN16.txt NeuralNet "DecelNN\\nnet_6x4_RR3_NN16.txt"
+DecelNN\nnet_6x4_RR4_NN6.txt NeuralNet "DecelNN\\nnet_6x4_RR4_NN6.txt"
+DecelNN\nnet_6x4_RR5_NN15.txt NeuralNet "DecelNN\\nnet_6x4_RR5_NN15.txt"
+DecelNN\nnet_6x4_RR6_NN4.txt NeuralNet "DecelNN\\nnet_6x4_RR6_NN4.txt"
+DecelNN\nnet_6x4_RR7_NN13.txt NeuralNet "DecelNN\\nnet_6x4_RR7_NN13.txt"
+DecelNN\nnet_6x4_RR8_NN9.txt NeuralNet "DecelNN\\nnet_6x4_RR8_NN9.txt"
+
+DecelNN2\nnet_6x4_RR1_NN12.txt NeuralNet "DecelNN2\\nnet_6x4_RR1_NN12.txt"
+DecelNN2\nnet_6x4_RR2_NN6.txt NeuralNet "DecelNN2\\nnet_6x4_RR2_NN6.txt"
+DecelNN2\nnet_6x4_RR3_NN13.txt NeuralNet "DecelNN2\\nnet_6x4_RR3_NN13.txt"
+DecelNN2\nnet_6x4_RR4_NN8.txt NeuralNet "DecelNN2\\nnet_6x4_RR4_NN8.txt"
+DecelNN2\nnet_6x4_RR5_NN3.txt NeuralNet "DecelNN2\\nnet_6x4_RR5_NN3.txt"
+DecelNN2\nnet_6x4_RR6_NN6.txt NeuralNet "DecelNN2\\nnet_6x4_RR6_NN6.txt"
+DecelNN2\nnet_6x4_RR7_NN8.txt NeuralNet "DecelNN2\\nnet_6x4_RR7_NN8.txt"
+DecelNN2\nnet_6x4_RR8_NN7.txt NeuralNet "DecelNN2\\nnet_6x4_RR8_NN7.txt"
+

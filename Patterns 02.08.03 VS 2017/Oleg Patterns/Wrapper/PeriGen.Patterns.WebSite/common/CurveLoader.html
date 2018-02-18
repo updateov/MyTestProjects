@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+<style type="text/css"> 
+html {height:100%}
+body {
+margin:0;
+height:100%;
+overflow:hidden
+}
+</style>
+
+    <title></title>
+	<script language="javascript" type="text/javascript">     
+     function Init() 
+	 {
+	 	url = window.location.search;
+        var el = window.document.getElementById("ifrm");
+        targetUrl = 'PeriCALM.Patterns.Curve.UI.Chart.xbap' + url;
+        el.setAttribute("src", targetUrl);
+      }
+	</script>
+</head>
+<body>
+	<iframe id='ifrm' frameborder="0" marginwidth="0" marginheight="0" scrolling="no" onload="Init();"  style="width:100%;height:100%" />
+</body>
+</html>

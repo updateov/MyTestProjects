@@ -1,0 +1,25 @@
+﻿<Application x:Class="PatternsCRIClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:src="clr-namespace:PatternsCRIClient"
+             StartupUri="Screens\MainWindow.xaml"
+             >
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/PresentationFramework.Aero;component/themes/Aero.NormalColor.xaml"/>
+                <ResourceDictionary Source="Resouces\Converters.xaml" />
+                <ResourceDictionary Source="Resouces\StringResources.xaml" />
+                <ResourceDictionary Source="Resouces\DatePickerStyle.xaml" />
+                <ResourceDictionary Source="Resouces\ControlsResources.xaml" />
+                <ResourceDictionary Source="Resouces\PopupStyle.xaml" />
+                <ResourceDictionary Source="Resouces\ComboBoxStyle.xaml" />
+                <ResourceDictionary Source="Resouces\CheckBoxStyle.xaml" />
+                <ResourceDictionary Source="Resouces\ScrollBarStyle.xaml" />
+                <ResourceDictionary Source="Images\ImagesAndStyles.xaml" />
+           </ResourceDictionary.MergedDictionaries>             
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

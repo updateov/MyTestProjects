@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F95B8F50-04D7-45EC-A113-C5960FC4F5AF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Torch</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\src\LICENSE" />
+    <None Include="..\src\README" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Allocator.cpp" />
+    <ClCompile Include="..\src\Bagging.cpp" />
+    <ClCompile Include="..\src\BayesClassifier.cpp" />
+    <ClCompile Include="..\src\BayesClassifierMachine.cpp" />
+    <ClCompile Include="..\src\BeamSearchDecoder.cpp" />
+    <ClCompile Include="..\src\Boosting.cpp" />
+    <ClCompile Include="..\src\BoostingMeasurer.cpp" />
+    <ClCompile Include="..\src\ClassExampleMeasurer.cpp" />
+    <ClCompile Include="..\src\ClassFormat.cpp" />
+    <ClCompile Include="..\src\ClassFormatDataSet.cpp" />
+    <ClCompile Include="..\src\ClassMeasurer.cpp" />
+    <ClCompile Include="..\src\ClassNLLCriterion.cpp" />
+    <ClCompile Include="..\src\ClassNLLMeasurer.cpp" />
+    <ClCompile Include="..\src\CmdLine.cpp" />
+    <ClCompile Include="..\src\CmdOption.cpp" />
+    <ClCompile Include="..\src\ConnectedMachine.cpp" />
+    <ClCompile Include="..\src\Criterion.cpp" />
+    <ClCompile Include="..\src\DataSet.cpp" />
+    <ClCompile Include="..\src\DecoderBatchTest.cpp" />
+    <ClCompile Include="..\src\DecoderSingleTest.cpp" />
+    <ClCompile Include="..\src\DecodingHMM.cpp" />
+    <ClCompile Include="..\src\DecodingHypothesis.cpp" />
+    <ClCompile Include="..\src\DiagonalGMM.cpp" />
+    <ClCompile Include="..\src\DiskDataSet.cpp" />
+    <ClCompile Include="..\src\DiskHTKDataSet.cpp" />
+    <ClCompile Include="..\src\DiskMatDataSet.cpp" />
+    <ClCompile Include="..\src\DiskXFile.cpp" />
+    <ClCompile Include="..\src\Distribution.cpp" />
+    <ClCompile Include="..\src\EditDistance.cpp" />
+    <ClCompile Include="..\src\EditDistanceMeasurer.cpp" />
+    <ClCompile Include="..\src\EMTrainer.cpp" />
+    <ClCompile Include="..\src\ExampleFrameSelectorDataSet.cpp" />
+    <ClCompile Include="..\src\Exp.cpp" />
+    <ClCompile Include="..\src\FileListCmdOption.cpp" />
+    <ClCompile Include="..\src\FrameSeg.cpp" />
+    <ClCompile Include="..\src\FrameSegMeasurer.cpp" />
+    <ClCompile Include="..\src\FrameSelectorDataSet.cpp" />
+    <ClCompile Include="..\src\general.cpp" />
+    <ClCompile Include="..\src\GradientMachine.cpp" />
+    <ClCompile Include="..\src\Grammar.cpp" />
+    <ClCompile Include="..\src\HMM.cpp" />
+    <ClCompile Include="..\src\HTKDataSet.cpp" />
+    <ClCompile Include="..\src\InputsSelect.cpp" />
+    <ClCompile Include="..\src\IOAscii.cpp" />
+    <ClCompile Include="..\src\IOBin.cpp" />
+    <ClCompile Include="..\src\IOBufferize.cpp" />
+    <ClCompile Include="..\src\IOHTK.cpp" />
+    <ClCompile Include="..\src\IOHTKTarget.cpp" />
+    <ClCompile Include="..\src\IOMemBin.cpp" />
+    <ClCompile Include="..\src\IOMulti.cpp" />
+    <ClCompile Include="..\src\IOSequence.cpp" />
+    <ClCompile Include="..\src\IOSequenceArray.cpp" />
+    <ClCompile Include="..\src\IOSub.cpp" />
+    <ClCompile Include="..\src\Kernel.cpp" />
+    <ClCompile Include="..\src\KFold.cpp" />
+    <ClCompile Include="..\src\KMeans.cpp" />
+    <ClCompile Include="..\src\KNN.cpp" />
+    <ClCompile Include="..\src\LanguageModel.cpp" />
+    <ClCompile Include="..\src\LexiconInfo.cpp" />
+    <ClCompile Include="..\src\Linear.cpp" />
+    <ClCompile Include="..\src\LinearLexicon.cpp" />
+    <ClCompile Include="..\src\LMCache.cpp" />
+    <ClCompile Include="..\src\LMCacheEntry.cpp" />
+    <ClCompile Include="..\src\LMInteriorLevelWordEntry.cpp" />
+    <ClCompile Include="..\src\LMInteriorLevelWordList.cpp" />
+    <ClCompile Include="..\src\LMNGram.cpp" />
+    <ClCompile Include="..\src\LogMixer.cpp" />
+    <ClCompile Include="..\src\LogRBF.cpp" />
+    <ClCompile Include="..\src\LogSigmoid.cpp" />
+    <ClCompile Include="..\src\LogSoftMax.cpp" />
+    <ClCompile Include="..\src\log_add.cpp" />
+    <ClCompile Include="..\src\Machine.cpp" />
+    <ClCompile Include="..\src\MAPDiagonalGMM.cpp" />
+    <ClCompile Include="..\src\MAPHMM.cpp" />
+    <ClCompile Include="..\src\Mat.cpp" />
+    <ClCompile Include="..\src\MatDataSet.cpp" />
+    <ClCompile Include="..\src\Mat_operations.cpp" />
+    <ClCompile Include="..\src\MeanVarNorm.cpp" />
+    <ClCompile Include="..\src\Measurer.cpp" />
+    <ClCompile Include="..\src\MemCmdLine.cpp" />
+    <ClCompile Include="..\src\MemMatDataSet.cpp" />
+    <ClCompile Include="..\src\MemoryDataSet.cpp" />
+    <ClCompile Include="..\src\MemoryXFile.cpp" />
+    <ClCompile Include="..\src\Mixer.cpp" />
+    <ClCompile Include="..\src\MLP.cpp" />
+    <ClCompile Include="..\src\MSECriterion.cpp" />
+    <ClCompile Include="..\src\MSEMeasurer.cpp" />
+    <ClCompile Include="..\src\MultiClassFormat.cpp" />
+    <ClCompile Include="..\src\MultiCriterion.cpp" />
+    <ClCompile Include="..\src\Multinomial.cpp" />
+    <ClCompile Include="..\src\mx_givens.cpp" />
+    <ClCompile Include="..\src\mx_hessenberg.cpp" />
+    <ClCompile Include="..\src\mx_householder.cpp" />
+    <ClCompile Include="..\src\mx_low_level.cpp" />
+    <ClCompile Include="..\src\mx_lu_factor.cpp" />
+    <ClCompile Include="..\src\mx_solve.cpp" />
+    <ClCompile Include="..\src\mx_sym_eig.cpp" />
+    <ClCompile Include="..\src\NLLCriterion.cpp" />
+    <ClCompile Include="..\src\NLLMeasurer.cpp" />
+    <ClCompile Include="..\src\NPTrainer.cpp" />
+    <ClCompile Include="..\src\NullXFile.cpp" />
+    <ClCompile Include="..\src\Object.cpp" />
+    <ClCompile Include="..\src\OneHotClassFormat.cpp" />
+    <ClCompile Include="..\src\OutputMeasurer.cpp" />
+    <ClCompile Include="..\src\Parameters.cpp" />
+    <ClCompile Include="..\src\ParzenDistribution.cpp" />
+    <ClCompile Include="..\src\ParzenMachine.cpp" />
+    <ClCompile Include="..\src\Perm.cpp" />
+    <ClCompile Include="..\src\Perm_operations.cpp" />
+    <ClCompile Include="..\src\PhoneInfo.cpp" />
+    <ClCompile Include="..\src\PhoneModels.cpp" />
+    <ClCompile Include="..\src\PipeXFile.cpp" />
+    <ClCompile Include="..\src\PreProcessing.cpp" />
+    <ClCompile Include="..\src\QCCache.cpp" />
+    <ClCompile Include="..\src\QCMachine.cpp" />
+    <ClCompile Include="..\src\QCTrainer.cpp" />
+    <ClCompile Include="..\src\Random.cpp" />
+    <ClCompile Include="..\src\SaturationMeasurer.cpp" />
+    <ClCompile Include="..\src\Sequence.cpp" />
+    <ClCompile Include="..\src\Sigmoid.cpp" />
+    <ClCompile Include="..\src\SimpleDecoderSpeechHMM.cpp" />
+    <ClCompile Include="..\src\SoftMax.cpp" />
+    <ClCompile Include="..\src\SoftPlus.cpp" />
+    <ClCompile Include="..\src\SpatialConvolution.cpp" />
+    <ClCompile Include="..\src\SpatialSubSampling.cpp" />
+    <ClCompile Include="..\src\SpeechHMM.cpp" />
+    <ClCompile Include="..\src\SpeechMLP.cpp" />
+    <ClCompile Include="..\src\SpeechMLPDistr.cpp" />
+    <ClCompile Include="..\src\Stack.cpp" />
+    <ClCompile Include="..\src\StochasticGradient.cpp" />
+    <ClCompile Include="..\src\string_stuff.cpp" />
+    <ClCompile Include="..\src\string_utils.cpp" />
+    <ClCompile Include="..\src\SumMachine.cpp" />
+    <ClCompile Include="..\src\SVM.cpp" />
+    <ClCompile Include="..\src\SVMCache.cpp" />
+    <ClCompile Include="..\src\SVMClassification.cpp" />
+    <ClCompile Include="..\src\SVMRegression.cpp" />
+    <ClCompile Include="..\src\TableLookupDistribution.cpp" />
+    <ClCompile Include="..\src\Tanh.cpp" />
+    <ClCompile Include="..\src\TemporalConvolution.cpp" />
+    <ClCompile Include="..\src\TemporalMean.cpp" />
+    <ClCompile Include="..\src\TemporalSubSampling.cpp" />
+    <ClCompile Include="..\src\TimeMeasurer.cpp" />
+    <ClCompile Include="..\src\Timer.cpp" />
+    <ClCompile Include="..\src\Trainer.cpp" />
+    <ClCompile Include="..\src\TwoClassFormat.cpp" />
+    <ClCompile Include="..\src\Vec.cpp" />
+    <ClCompile Include="..\src\Vocabulary.cpp" />
+    <ClCompile Include="..\src\WeightedMSECriterion.cpp" />
+    <ClCompile Include="..\src\WeightedSumMachine.cpp" />
+    <ClCompile Include="..\src\WordChainElemPool.cpp" />
+    <ClCompile Include="..\src\WordSeg.cpp" />
+    <ClCompile Include="..\src\WordSegMeasurer.cpp" />
+    <ClCompile Include="..\src\XFile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Allocator.h" />
+    <ClInclude Include="..\src\Bagging.h" />
+    <ClInclude Include="..\src\BayesClassifier.h" />
+    <ClInclude Include="..\src\BayesClassifierMachine.h" />
+    <ClInclude Include="..\src\BeamSearchDecoder.h" />
+    <ClInclude Include="..\src\Boosting.h" />
+    <ClInclude Include="..\src\BoostingMeasurer.h" />
+    <ClInclude Include="..\src\ClassExampleMeasurer.h" />
+    <ClInclude Include="..\src\ClassFormat.h" />
+    <ClInclude Include="..\src\ClassFormatDataSet.h" />
+    <ClInclude Include="..\src\ClassMeasurer.h" />
+    <ClInclude Include="..\src\ClassNLLCriterion.h" />
+    <ClInclude Include="..\src\ClassNLLMeasurer.h" />
+    <ClInclude Include="..\src\CmdLine.h" />
+    <ClInclude Include="..\src\CmdOption.h" />
+    <ClInclude Include="..\src\ConnectedMachine.h" />
+    <ClInclude Include="..\src\Criterion.h" />
+    <ClInclude Include="..\src\DataSet.h" />
+    <ClInclude Include="..\src\DecoderBatchTest.h" />
+    <ClInclude Include="..\src\DecoderSingleTest.h" />
+    <ClInclude Include="..\src\DecodingHMM.h" />
+    <ClInclude Include="..\src\DecodingHypothesis.h" />
+    <ClInclude Include="..\src\DiagonalGMM.h" />
+    <ClInclude Include="..\src\DiskDataSet.h" />
+    <ClInclude Include="..\src\DiskHTKDataSet.h" />
+    <ClInclude Include="..\src\DiskMatDataSet.h" />
+    <ClInclude Include="..\src\DiskXFile.h" />
+    <ClInclude Include="..\src\Distribution.h" />
+    <ClInclude Include="..\src\EditDistance.h" />
+    <ClInclude Include="..\src\EditDistanceMeasurer.h" />
+    <ClInclude Include="..\src\EMTrainer.h" />
+    <ClInclude Include="..\src\ExampleFrameSelectorDataSet.h" />
+    <ClInclude Include="..\src\Exp.h" />
+    <ClInclude Include="..\src\FileListCmdOption.h" />
+    <ClInclude Include="..\src\FrameSeg.h" />
+    <ClInclude Include="..\src\FrameSegMeasurer.h" />
+    <ClInclude Include="..\src\FrameSelectorDataSet.h" />
+    <ClInclude Include="..\src\general.h" />
+    <ClInclude Include="..\src\GradientMachine.h" />
+    <ClInclude Include="..\src\Grammar.h" />
+    <ClInclude Include="..\src\HMM.h" />
+    <ClInclude Include="..\src\HTKDataSet.h" />
+    <ClInclude Include="..\src\InputsSelect.h" />
+    <ClInclude Include="..\src\IOAscii.h" />
+    <ClInclude Include="..\src\IOBin.h" />
+    <ClInclude Include="..\src\IOBufferize.h" />
+    <ClInclude Include="..\src\IOHTK.h" />
+    <ClInclude Include="..\src\IOHTKTarget.h" />
+    <ClInclude Include="..\src\IOMemBin.h" />
+    <ClInclude Include="..\src\IOMulti.h" />
+    <ClInclude Include="..\src\IOSequence.h" />
+    <ClInclude Include="..\src\IOSequenceArray.h" />
+    <ClInclude Include="..\src\IOSub.h" />
+    <ClInclude Include="..\src\Kernel.h" />
+    <ClInclude Include="..\src\KFold.h" />
+    <ClInclude Include="..\src\KMeans.h" />
+    <ClInclude Include="..\src\KNN.h" />
+    <ClInclude Include="..\src\LanguageModel.h" />
+    <ClInclude Include="..\src\LexiconInfo.h" />
+    <ClInclude Include="..\src\Linear.h" />
+    <ClInclude Include="..\src\LinearLexicon.h" />
+    <ClInclude Include="..\src\List.h" />
+    <ClInclude Include="..\src\LMCache.h" />
+    <ClInclude Include="..\src\LMCacheEntry.h" />
+    <ClInclude Include="..\src\LMInteriorLevelWordEntry.h" />
+    <ClInclude Include="..\src\LMInteriorLevelWordList.h" />
+    <ClInclude Include="..\src\LMNGram.h" />
+    <ClInclude Include="..\src\LogMixer.h" />
+    <ClInclude Include="..\src\LogRBF.h" />
+    <ClInclude Include="..\src\LogSigmoid.h" />
+    <ClInclude Include="..\src\LogSoftMax.h" />
+    <ClInclude Include="..\src\log_add.h" />
+    <ClInclude Include="..\src\Machine.h" />
+    <ClInclude Include="..\src\MAPDiagonalGMM.h" />
+    <ClInclude Include="..\src\MAPHMM.h" />
+    <ClInclude Include="..\src\Mat.h" />
+    <ClInclude Include="..\src\MatDataSet.h" />
+    <ClInclude Include="..\src\matrix.h" />
+    <ClInclude Include="..\src\Mat_operations.h" />
+    <ClInclude Include="..\src\MeanVarNorm.h" />
+    <ClInclude Include="..\src\Measurer.h" />
+    <ClInclude Include="..\src\MemCmdLine.h" />
+    <ClInclude Include="..\src\MemMatDataSet.h" />
+    <ClInclude Include="..\src\MemoryDataSet.h" />
+    <ClInclude Include="..\src\MemoryXFile.h" />
+    <ClInclude Include="..\src\Mixer.h" />
+    <ClInclude Include="..\src\MLP.h" />
+    <ClInclude Include="..\src\MSECriterion.h" />
+    <ClInclude Include="..\src\MSEMeasurer.h" />
+    <ClInclude Include="..\src\MultiClassFormat.h" />
+    <ClInclude Include="..\src\MultiCriterion.h" />
+    <ClInclude Include="..\src\Multinomial.h" />
+    <ClInclude Include="..\src\mx_givens.h" />
+    <ClInclude Include="..\src\mx_hessenberg.h" />
+    <ClInclude Include="..\src\mx_householder.h" />
+    <ClInclude Include="..\src\mx_low_level.h" />
+    <ClInclude Include="..\src\mx_lu_factor.h" />
+    <ClInclude Include="..\src\mx_solve.h" />
+    <ClInclude Include="..\src\mx_sym_eig.h" />
+    <ClInclude Include="..\src\NLLCriterion.h" />
+    <ClInclude Include="..\src\NLLMeasurer.h" />
+    <ClInclude Include="..\src\NPTrainer.h" />
+    <ClInclude Include="..\src\NullXFile.h" />
+    <ClInclude Include="..\src\Object.h" />
+    <ClInclude Include="..\src\OneHotClassFormat.h" />
+    <ClInclude Include="..\src\OutputMeasurer.h" />
+    <ClInclude Include="..\src\Parameters.h" />
+    <ClInclude Include="..\src\ParzenDistribution.h" />
+    <ClInclude Include="..\src\ParzenMachine.h" />
+    <ClInclude Include="..\src\Perm.h" />
+    <ClInclude Include="..\src\Perm_operations.h" />
+    <ClInclude Include="..\src\PhoneInfo.h" />
+    <ClInclude Include="..\src\PhoneModels.h" />
+    <ClInclude Include="..\src\PipeXFile.h" />
+    <ClInclude Include="..\src\PreProcessing.h" />
+    <ClInclude Include="..\src\QCCache.h" />
+    <ClInclude Include="..\src\QCMachine.h" />
+    <ClInclude Include="..\src\QCTrainer.h" />
+    <ClInclude Include="..\src\Random.h" />
+    <ClInclude Include="..\src\SaturationMeasurer.h" />
+    <ClInclude Include="..\src\Sequence.h" />
+    <ClInclude Include="..\src\Sigmoid.h" />
+    <ClInclude Include="..\src\SimpleDecoderSpeechHMM.h" />
+    <ClInclude Include="..\src\SoftMax.h" />
+    <ClInclude Include="..\src\SoftPlus.h" />
+    <ClInclude Include="..\src\SpatialConvolution.h" />
+    <ClInclude Include="..\src\SpatialSubSampling.h" />
+    <ClInclude Include="..\src\SpeechHMM.h" />
+    <ClInclude Include="..\src\SpeechMLP.h" />
+    <ClInclude Include="..\src\SpeechMLPDistr.h" />
+    <ClInclude Include="..\src\Stack.h" />
+    <ClInclude Include="..\src\StochasticGradient.h" />
+    <ClInclude Include="..\src\string_stuff.h" />
+    <ClInclude Include="..\src\string_utils.h" />
+    <ClInclude Include="..\src\SumMachine.h" />
+    <ClInclude Include="..\src\SVM.h" />
+    <ClInclude Include="..\src\SVMCache.h" />
+    <ClInclude Include="..\src\SVMClassification.h" />
+    <ClInclude Include="..\src\SVMRegression.h" />
+    <ClInclude Include="..\src\TableLookupDistribution.h" />
+    <ClInclude Include="..\src\Tanh.h" />
+    <ClInclude Include="..\src\TemporalConvolution.h" />
+    <ClInclude Include="..\src\TemporalMean.h" />
+    <ClInclude Include="..\src\TemporalSubSampling.h" />
+    <ClInclude Include="..\src\TimeMeasurer.h" />
+    <ClInclude Include="..\src\Timer.h" />
+    <ClInclude Include="..\src\Trainer.h" />
+    <ClInclude Include="..\src\TwoClassFormat.h" />
+    <ClInclude Include="..\src\Vec.h" />
+    <ClInclude Include="..\src\Vocabulary.h" />
+    <ClInclude Include="..\src\WeightedMSECriterion.h" />
+    <ClInclude Include="..\src\WeightedSumMachine.h" />
+    <ClInclude Include="..\src\WordChainElemPool.h" />
+    <ClInclude Include="..\src\WordSeg.h" />
+    <ClInclude Include="..\src\WordSegMeasurer.h" />
+    <ClInclude Include="..\src\XFile.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

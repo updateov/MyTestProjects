@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "PatternsMsi", "PatternsMsi\PatternsMsi.wixproj", "{FD025F64-C265-4D43-BABF-380ED16BFE8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E67CD673-B03C-4778-AC59-E7381B022C39}"
+	ProjectSection(SolutionItems) = preProject
+		HarvestPayloads.xslt = HarvestPayloads.xslt
+		Patterns.props = Patterns.props
+		Patterns.user.props = Patterns.user.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternsBA", "PatternsBA\PatternsBA.csproj", "{41F986AF-D795-4563-AF95-02FDFB1659D4}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Patterns_Setup", "Patterns_Setup\Patterns_Setup.wixproj", "{DD2F0956-79D8-4D82-9C79-FC7E5498696E}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "PluginsMsi", "PluginsMsi\PluginsMsi.wixproj", "{C2758A58-4346-417D-AF81-000332F96D76}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "CuesPatterns_Setup", "Patterns_Setup\CuesPatterns_Setup.wixproj", "{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "PatternsPrerequisites", "PatternsPrerequisites\PatternsPrerequisites.wixproj", "{FAE8F8D1-550E-474C-9F46-60ABE3B2013F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD025F64-C265-4D43-BABF-380ED16BFE8D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{FD025F64-C265-4D43-BABF-380ED16BFE8D}.Debug|Any CPU.Build.0 = Debug|x86
+		{FD025F64-C265-4D43-BABF-380ED16BFE8D}.Debug|x86.ActiveCfg = Debug|x86
+		{FD025F64-C265-4D43-BABF-380ED16BFE8D}.Debug|x86.Build.0 = Debug|x86
+		{FD025F64-C265-4D43-BABF-380ED16BFE8D}.Release|Any CPU.ActiveCfg = Release|x86
+		{FD025F64-C265-4D43-BABF-380ED16BFE8D}.Release|Any CPU.Build.0 = Release|x86
+		{FD025F64-C265-4D43-BABF-380ED16BFE8D}.Release|x86.ActiveCfg = Release|x86
+		{FD025F64-C265-4D43-BABF-380ED16BFE8D}.Release|x86.Build.0 = Release|x86
+		{41F986AF-D795-4563-AF95-02FDFB1659D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F986AF-D795-4563-AF95-02FDFB1659D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F986AF-D795-4563-AF95-02FDFB1659D4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{41F986AF-D795-4563-AF95-02FDFB1659D4}.Debug|x86.Build.0 = Debug|Any CPU
+		{41F986AF-D795-4563-AF95-02FDFB1659D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F986AF-D795-4563-AF95-02FDFB1659D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41F986AF-D795-4563-AF95-02FDFB1659D4}.Release|x86.ActiveCfg = Release|Any CPU
+		{41F986AF-D795-4563-AF95-02FDFB1659D4}.Release|x86.Build.0 = Release|Any CPU
+		{DD2F0956-79D8-4D82-9C79-FC7E5498696E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{DD2F0956-79D8-4D82-9C79-FC7E5498696E}.Debug|Any CPU.Build.0 = Debug|x86
+		{DD2F0956-79D8-4D82-9C79-FC7E5498696E}.Debug|x86.ActiveCfg = Debug|x86
+		{DD2F0956-79D8-4D82-9C79-FC7E5498696E}.Debug|x86.Build.0 = Debug|x86
+		{DD2F0956-79D8-4D82-9C79-FC7E5498696E}.Release|Any CPU.ActiveCfg = Release|x86
+		{DD2F0956-79D8-4D82-9C79-FC7E5498696E}.Release|Any CPU.Build.0 = Release|x86
+		{DD2F0956-79D8-4D82-9C79-FC7E5498696E}.Release|x86.ActiveCfg = Release|x86
+		{DD2F0956-79D8-4D82-9C79-FC7E5498696E}.Release|x86.Build.0 = Release|x86
+		{C2758A58-4346-417D-AF81-000332F96D76}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C2758A58-4346-417D-AF81-000332F96D76}.Debug|Any CPU.Build.0 = Debug|x86
+		{C2758A58-4346-417D-AF81-000332F96D76}.Debug|x86.ActiveCfg = Debug|x86
+		{C2758A58-4346-417D-AF81-000332F96D76}.Debug|x86.Build.0 = Debug|x86
+		{C2758A58-4346-417D-AF81-000332F96D76}.Release|Any CPU.ActiveCfg = Release|x86
+		{C2758A58-4346-417D-AF81-000332F96D76}.Release|Any CPU.Build.0 = Release|x86
+		{C2758A58-4346-417D-AF81-000332F96D76}.Release|x86.ActiveCfg = Release|x86
+		{C2758A58-4346-417D-AF81-000332F96D76}.Release|x86.Build.0 = Release|x86
+		{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}.Debug|Any CPU.Build.0 = Debug|x86
+		{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}.Debug|x86.ActiveCfg = Debug|x86
+		{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}.Debug|x86.Build.0 = Debug|x86
+		{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}.Release|Any CPU.ActiveCfg = Release|x86
+		{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}.Release|Any CPU.Build.0 = Release|x86
+		{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}.Release|x86.ActiveCfg = Release|x86
+		{B22C5887-5B3E-4E8E-8916-2100DA23C3BF}.Release|x86.Build.0 = Release|x86
+		{FAE8F8D1-550E-474C-9F46-60ABE3B2013F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{FAE8F8D1-550E-474C-9F46-60ABE3B2013F}.Debug|x86.ActiveCfg = Debug|x86
+		{FAE8F8D1-550E-474C-9F46-60ABE3B2013F}.Debug|x86.Build.0 = Debug|x86
+		{FAE8F8D1-550E-474C-9F46-60ABE3B2013F}.Release|Any CPU.ActiveCfg = Release|x86
+		{FAE8F8D1-550E-474C-9F46-60ABE3B2013F}.Release|x86.ActiveCfg = Release|x86
+		{FAE8F8D1-550E-474C-9F46-60ABE3B2013F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PatternsMsi\\PatternsMsi.wixproj
+		SccProjectName1 = PatternsMsi
+		SccLocalPath1 = PatternsMsi
+		SccProjectUniqueName2 = PatternsBA\\PatternsBA.csproj
+		SccProjectName2 = PatternsBA
+		SccLocalPath2 = PatternsBA
+		SccProjectUniqueName3 = Patterns_Setup\\Patterns_Setup.wixproj
+		SccProjectName3 = Patterns_Setup
+		SccLocalPath3 = Patterns_Setup
+		SccProjectUniqueName4 = PluginsMsi\\PluginsMsi.wixproj
+		SccProjectName4 = PluginsMsi
+		SccLocalPath4 = PluginsMsi
+		SccProjectUniqueName5 = Patterns_Setup\\CuesPatterns_Setup.wixproj
+		SccProjectName5 = Patterns_Setup
+		SccLocalPath5 = Patterns_Setup
+		SccProjectUniqueName6 = PatternsPrerequisites\\PatternsPrerequisites.wixproj
+		SccProjectName6 = PatternsPrerequisites
+		SccLocalPath6 = PatternsPrerequisites
+	EndGlobalSection
+EndGlobal

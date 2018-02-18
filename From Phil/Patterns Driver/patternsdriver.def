@@ -1,0 +1,7 @@
+LIBRARY	"PatternsDriver"
+EXPORTS
+	EngineInitialize
+	EngineProcessHR
+	EngineProcessUP
+	EngineReadResults
+	EngineUninitialize	

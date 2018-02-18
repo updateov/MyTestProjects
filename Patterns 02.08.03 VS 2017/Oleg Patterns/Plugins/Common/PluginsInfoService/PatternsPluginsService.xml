@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PatternsAddOnSettings.xsd">
+  <sections>
+    <!-- THE SETTINGS BELOW THIS LINE ARE NORMALLY MODIFIED -->    
+    <section level="0" name="CheckList Plugin Configurations">
+      <setting key="MinimalLateDecelConfidence" value="0.7" minVal="0.0" maxVal="0.95" info="CheckList algorithm - Minimal late decel confidence value." type="Real" editedByUser="False"/>
+      <setting key="MinimalLateDecelAmount" value="2" minVal="1" maxVal="40" info="CheckList algorithm - Minimal late decel amount value." type="Integer" editedByUser="False"/>
+      <setting key="MinimalLargeAndLongDecelAmount" value="3" minVal="1" maxVal="40" info="CheckList algorithm - Minimal large and long decel amount value." type="Integer" editedByUser="False"/>
+      <setting key="MinimalLateAndLargeAndLongDecelAmount" value="2" minVal="1" maxVal="40" info="CheckList algorithm - Minimal (late decel amount > 0) and large and long decel amount value." type="Integer" editedByUser="False"/>
+      <setting key="MinimalLateAndProlongedDecelAmount" value="2" minVal="1" maxVal="40" info="CheckList algorithm - Minimal (late decel amount > 0) and prolonged decel with minimal defined height amount value." type="Integer" editedByUser="False"/>
+      <setting key="MinimalProlongedDecelHeight" value="20" minVal="10" maxVal="160" info="CheckList algorithm - Minimal prolonged decel height value." type="Integer" editedByUser="False"/>
+      <setting key="MinimalContractionsAmount" value="16" minVal="1" maxVal="35" info="CheckList algorithm - Minimal contractions amount." type="Integer" editedByUser="False"/>
+      <setting key="MinimalLongContractionsAmount" value="2" minVal="1" maxVal="16" info="CheckList algorithm - Minimal long contractions (> 120 seconds) amount." type="Integer" editedByUser="False"/>
+      <setting key="MinimalAccelerationsAmount" value="0" minVal="0" maxVal="40" info="CheckList algorithm - Minimal accelerations amount." type="Integer" editedByUser="False"/>
+      <setting key="MinimalBaselineVariability" value="6" minVal="0" maxVal="50" info="CheckList algorithm - Minimal baseline variability value." type="Integer" editedByUser="False"/>
+      <setting key="CRIStateQualificationWindowSize" value="1800" minVal="0" maxVal="14400" info="Window size to qualify Negative CheckList state in seconds." type="Integer" editedByUser="False"/>
+      <setting key="MinimalAmountOfDataInQualificationWindow" value="75" minVal="0" maxVal="100" info="Minimal amount of data to qualify CheckList state calculation in percent." type="Integer" editedByUser="False"/>
+      <setting key="ContractilityPositiveDurability" value="1.0"  minVal="1.0" maxVal="100.0" info="Positive state persistency - interval in minutes" type="Real" editedByUser="False"/>
+      <setting key="ContractilityPositivePercentage" value="100" minVal="1" maxVal="100" info="Positive state persistency - required percentage of the interval" type="Integer" editedByUser="False"/>
+      <setting key="ContractilityNegativeDurability" value="1.0" minVal="1.0" maxVal="100.0" info="Negative state persistency - interval in minutes" type="Real" editedByUser="False"/>
+      <setting key="ContractilityNegativePercentage" value="100" minVal="1" maxVal="100" info="Negative state persistency - required percentage of the interval" type="Integer" editedByUser="False"/>
+      <setting key="SaveStatisticalDataset" value="FALSE" info="Determine if to save complete CheckList information history for discharged visits (TRUE), or only minimal information allowing to produce popup acknowledge summary reports (FALSE)." type="boolean" editedByUser="False"/>
+      <setting key="MinimalDowntimeDurationForSystemAck" value="15" minVal="1" maxVal="60" info="A system initiated acknowlege for all unacknowledged popups will be triggered after a downtime longer than this duration in minutes" type="Integer" editedByUser="False"/>      
+    </section>
+    <section level="1" name="Export Plugin Configurations">
+      <setting key="IntervalDuration" value="30" info="Default Export duration in minutes (15/30)." type="IntervalDuration" editedByUser="False"/>      
+      <setting key="CheckIntervalCompleteInterval" value="120000" minVal="1000" maxVal="600000" info="Duration between checks if export interval is complete (Millisec)." type="Integer" editedByUser="False"/>
+      <setting key="CALMCheckConnectionInterval" value="10000" minVal="1000" maxVal="60000" info="Interval for connectivity check with the CALM Server (Millisec)." type="Integer" editedByUser="False"/>
+      <setting key="EncryptionPassword" value="12345" info="Used for encrypting messages between Export dialog (workstation) and Export plugin (server)." type="String" editedByUser="False"/>
+      <setting key="PeriAuthServicePort" value="2506" minVal="1024" maxVal="49151" info="PeriAuth connectivity port#" type="Integer" editedByUser="False"/>
+      <setting key="AdminGroupName" value="Administrators" info="User group for authenticating CALM local users" type="String" editedByUser="False"/>
+      <!--<setting key="EnableSSO" value="FALSE" info="" type="boolean" />-->
+    </section>
+    <section level="2" name="Export Plugin Values Rounding">
+      <setting key="MeanBaselineFHRRoundingTo" value="5" minVal="1" maxVal="10" info="Round calculated Mean Baseline FHR value to nearest rounded value. e.g. if set to '5' then a calculated value of 137 will be rounded to 135 to be exported, while 138 will be rounded to 140. If set to '1' no rounding is done and the originally calculated values are exported instead." type="Integer" editedByUser="False"/>
+      <setting key="MVURoundingTo" value="5" minVal="1" maxVal="10" info="Round calculated MVU value to nearest rounded value. e.g. if set to '5' then a calculated value of 137 will be rounded to 135 to be exported, while 138 will be rounded to 140. If set to '1' no rounding is done and the originally calculated values are exported instead." type="Integer" editedByUser="False"/>
+      <setting key="CTRDurationRoundingTo" value="5" minVal="1" maxVal="10" info="Round calculated Contraction Duration value to nearest rounded value. e.g. if set to '5' then a calculated value of 137 will be rounded to 135 to be exported, while 138 will be rounded to 140. If set to '1' no rounding is done and the originally calculated values are exported instead." type="Integer" editedByUser="False"/>
+      <setting key="CTRIntesityRoundingTo" value="5" minVal="1" maxVal="10" info="Round calculated Contraction Intensity value to nearest rounded value. e.g. if set to '5' then a calculated value of 137 will be rounded to 135 to be exported, while 138 will be rounded to 140. If set to '1' no rounding is done and the originally calculated values are exported instead." type="Integer" editedByUser="False"/>
+    </section>
+    <section level="3" name="Advanced">
+      <setting key="PatternsDataFeed" value="http://localhost:7802/PatternsDataFeed" info="" type="String" editedByUser="False"/>
+      <setting key="PluginsDataFeed" value="http://localhost:7803/PluginsDataFeed" info="" type="String" editedByUser="False"/>
+      <setting key="CALMServerLink" value="net.tcp://localhost:7110/MMService" info="" type="String" editedByUser="False"/>
+      <setting key="PatternsRequestInterval" value="15000" minVal="1000" maxVal="60000" info="" type="Integer" editedByUser="False"/>
+      <setting key="PatternsRequestTimeOut" value="10000" minVal="1000" maxVal="100000" info="" type="Integer" editedByUser="False"/>
+      <setting key="CALMServicesEnabled" value="True" info="Indicates if the site uses CALM services." type="boolean" editedByUser="False"/>
+      <setting key="CRIStateConceptID" value="0" info="Saves changes in CheckList state to CALM concept." minVal="-2147483648" maxVal="2147483647" type="Integer" editedByUser="False"/>
+    </section>
+    <section level="4" name="Statistics and Logging">
+      <setting key="LoggingLevelDebug" value="INFORMATION" info="Minimal level of event type which will be written to Debug view\Trace." type="LoggerLevel" editedByUser="False"/>
+      <setting key="LoggingLevelConsole" value="INFORMATION" info="Minimal level of event type which will be written to the Console." type="LoggerLevel" editedByUser="False"/>
+      <setting key="LoggingLevelEventLog" value="INFORMATION" info="Minimal level of event type which will be written to the EventLog." type="LoggerLevel" editedByUser="False"/>
+      <setting key="LoggingEventLogName" value="Application"  info="Name of EventLog for events." type="string" editedByUser="False"/>
+    </section>
+
+  </sections>
+  <valueDataTypeEnums>
+    <enum name="LoggerLevel">
+      <enumVal value="ALL" />
+      <enumVal value="VERBOSE" />
+      <enumVal value="INFORMATION" />
+      <enumVal value="WARNING" />
+      <enumVal value="ERROR" />
+      <enumVal value="CRITICAL" />
+      <enumVal value="OFF" />
+    </enum>
+    <enum name="IntervalDuration">
+      <enumVal value="15" />
+      <enumVal value="30" />
+    </enum>
+  </valueDataTypeEnums>
+</settings>

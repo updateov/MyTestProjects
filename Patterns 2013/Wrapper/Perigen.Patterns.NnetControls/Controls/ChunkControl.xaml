@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Perigen.Patterns.NnetControls.Controls.ChunkControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="27" d:DesignWidth="150" 
+             Name="chunkControl" 
+             Background="Transparent" 
+             MouseEnter="chunkControl_MouseEnter" 
+             MouseLeave="chunkControl_MouseLeave"
+             MouseLeftButtonUp="chunkControl_MouseLeftButtonUp">
+    
+    <UserControl.Resources>
+        
+        <ControlTemplate x:Key="IconDone">
+            <Image Source="../Resources/Done.ico" Width="12" Height="12"/>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="IconExport">
+            <Image Source="../Resources/Export.ico" Width="12" Height="12"/>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+    
+    <Grid Name="mainGrid" >
+
+        <Line Name="line1" X1="1" Y1="0" X2="{Binding Path=ActualWidth, ElementName=chunkControl}" Y2="0" Stroke="White" StrokeThickness="1">
+            <!--<Line.Style>
+                <Style TargetType="Line">
+                    <Style.Triggers>
+                        <Trigger Property="{Binding Path=IsMouseOver, ElementName=chunkControl}" Value="True">
+                            <Setter Property="Stroke" Value="#dfdfdf"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Line.Style>-->
+        </Line>
+
+        <Line Name="line2" X1="1" Y1="27" X2="{Binding Path=ActualWidth, ElementName=chunkControl}" Y2="27" Stroke="White" StrokeThickness="1">
+            <!--<Line.Style>
+                <Style TargetType="Line">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=chunkControl}" Value="True">
+                            <Setter Property="Stroke" Value="#dfdfdf"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Line.Style>-->
+        </Line>
+        
+        <Line X1="0" Y1="0" X2="0" Y2="27" Stroke="#dfdfdf" StrokeThickness="2"/>
+
+        <TextBlock Text="{Binding Path=StartTime, StringFormat='{}{0:H:mm}'}" Height="12"  Margin="-12,0,0,0" Name="LblStartTime" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Arial" FontSize="10" Foreground="#686868" TextTrimming="CharacterEllipsis">        
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="3" Opacity="1" ShadowDepth="0" Color="White"></DropShadowEffect>
+            </TextBlock.Effect>
+        </TextBlock>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <Canvas Name="canvasExport" Height="12" Width="12">
+                <ContentControl>
+                    <ContentControl.Style>
+                        <Style TargetType="ContentControl">
+                            <Setter Property="Template" Value="{StaticResource IconDone}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=IsExported, ElementName=chunkControl}" Value="False">
+                                    <Setter Property="Template" Value="{StaticResource IconExport}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ContentControl.Style>
+                </ContentControl>
+            </Canvas>
+            <TextBlock Name="txtExport" Text="Export" >
+               <TextBlock.Style>
+                   <Style TargetType="TextBlock">
+                       <Setter Property="FontSize" Value="11"/>
+                       <Setter Property="FontFamily" Value="Arial"/>
+                       <Setter Property="Foreground" Value="#3e87bb"/>
+                       <Setter Property="Margin" Value="5,0,0,0"/>
+                       <Setter Property="Visibility" Value="Collapsed"/>
+                       <Style.Triggers>
+                           <DataTrigger Binding="{Binding Path=IsExported, ElementName=chunkControl}" Value="False">
+                               <Setter Property="Visibility" Value="Visible"/>
+                           </DataTrigger>
+                           <DataTrigger Binding="{Binding Path=TimeRange, ElementName=chunkControl}" Value="15">
+                               <Setter Property="Visibility" Value="Collapsed"/>
+                           </DataTrigger>
+                       </Style.Triggers>                       
+                   </Style>
+               </TextBlock.Style>
+            </TextBlock>
+
+        </StackPanel>
+
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Style.Triggers>
+                    
+                    <!--<Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#dfdfdf"/>
+                    </Trigger>-->
+                    <!--<DataTrigger Binding="{Binding Path=IsExported, ElementName=chunkControl}" Value="False">
+                        <Setter Property="Background" Value="#e7f4fe"/>
+                    </DataTrigger>-->
+
+                    <!--<MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding MouseEnter, RelativeSource={RelativeSource Self}}" Value="True"/>
+                            <Condition Binding="{Binding Path=IsExported, ElementName=chunkControl}" Value="False"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="ToolTip" Value="Export required."/>
+                    </MultiDataTrigger>-->
+
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+    </Grid>
+    
+</UserControl>

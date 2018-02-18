@@ -1,0 +1,6 @@
+<strings>
+	<string inStr="qwerty" outStr="qwerty"/>
+	<string inStr="kjhgf" outStr="qwerty"/>
+	<string inStr="654321" outStr="4m3n2b1a"/>
+	<string inStr="123456" outStr="4m3n2b1a"/>
+</strings>

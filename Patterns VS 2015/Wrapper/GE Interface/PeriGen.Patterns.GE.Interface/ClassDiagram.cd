@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PeriGen.Patterns.GE.Interface.Demographics.FieldsMapping" Collapsed="true">
+    <Position X="9.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Demographics\FieldsMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Demographics.Patient">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AADASBAAAACAECAMIAAAAIRAABAggIBBAAAAQACACAA=</HashCode>
+      <FileName>Demographics\Patient.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TrailList" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Demographics.PatientADTLogItem" Collapsed="true">
+    <Position X="11.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Demographics\PatientADTLogDataItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Demographics.PatientExtensions" Collapsed="true">
+    <Position X="8" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Demographics\PatientExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Demographics.PatientTrailItem" Collapsed="true">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAgIAAAAAAAAAAAQA=</HashCode>
+      <FileName>Demographics\PatientTrailItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Demographics.PatientTrailItemList">
+    <Position X="6.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Demographics\PatientTrailItemList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.TracingServices.TracingProcessorBase" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgICAACAQyBgAcAAIAAAABAgcQAVgAAAAABABQEIGgE=</HashCode>
+      <FileName>GETracingServices\TracingProcessorBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.TracingServices.TracingProcessorHistoric" Collapsed="true">
+    <Position X="11.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAEABBQBEAhAIkADhAAIBAEEAQBCAAxFAAAAGKQAE=</HashCode>
+      <FileName>GETracingServices\TracingProcessorHistoric.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.TracingServices.TracingProcessorLive" Collapsed="true">
+    <Position X="9.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASKAGgxAgAEBpATkkDAgNAAAAEAAACAAiFhGAAmCUAE=</HashCode>
+      <FileName>GETracingServices\TracingProcessorLive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Chalkboard&lt;T&gt;">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAkAABCFEEAAAAMgACYAAQCgKQgAAQAgAQAAECAA=</HashCode>
+      <FileName>Processing\Chalkboard.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Episodes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Common" Collapsed="true">
+    <Position X="8" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processing\Common.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PeriGen.Patterns.GE.Interface.Episode">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IABAAAgGQBAECAAEAAIAGQEAABAhAAVAQAAAABlICAA=</HashCode>
+      <FileName>Processing\Episode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EpisodeStatus" />
+      <Property Name="Patient" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="PeriGen.Patterns.GE.Interface.EpisodeStatuses" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAACAAGAAAA=</HashCode>
+      <FileName>Processing\Episode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

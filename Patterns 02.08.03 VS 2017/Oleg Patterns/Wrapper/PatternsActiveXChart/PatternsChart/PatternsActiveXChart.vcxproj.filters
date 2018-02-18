@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="patterns gui">
+      <UniqueIdentifier>{ce68733b-79e7-462a-87c0-73c5f809b38c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternsChartCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns\patterns, fetus.h">
+      <Filter>patterns gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns\patterns, conductor.h">
+      <Filter>patterns gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns\patterns, config.h">
+      <Filter>patterns gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns\patterns, input adapter.h">
+      <Filter>patterns gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns\patterns, subscription.h">
+      <Filter>patterns gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns Gui\patterns gui, services.h">
+      <Filter>patterns gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns Gui\patterns gui, double buffer.h">
+      <Filter>patterns gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns Gui\patterns gui, tracing.h">
+      <Filter>patterns gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns Application\icon_button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Patterns Application\popup message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternsExportableChunkNative.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NativeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hyperlink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternsChart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TracingsContainerWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternsChartCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns\patterns, fetus.cpp">
+      <Filter>patterns gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns\patterns, conductor.cpp">
+      <Filter>patterns gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns\patterns, config.cpp">
+      <Filter>patterns gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns\patterns, input adapter.cpp">
+      <Filter>patterns gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns\patterns, subscription.cpp">
+      <Filter>patterns gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns Gui\patterns gui, services.cpp">
+      <Filter>patterns gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns Gui\patterns gui, tracing.cpp">
+      <Filter>patterns gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns Application\icon_button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Patterns Application\popup message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternsExportableChunkNative.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NativeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hyperlink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternsChart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TracingsContainerWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

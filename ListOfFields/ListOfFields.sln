@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClasses", "TestClasses\TestClasses.csproj", "{D819BAF2-B401-4A1B-86B8-35D10037372D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectedFields", "ReflectedFields\ReflectedFields.csproj", "{E114E0B4-949E-4BF7-B1C7-1829BCFBD41D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D819BAF2-B401-4A1B-86B8-35D10037372D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D819BAF2-B401-4A1B-86B8-35D10037372D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D819BAF2-B401-4A1B-86B8-35D10037372D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D819BAF2-B401-4A1B-86B8-35D10037372D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E114E0B4-949E-4BF7-B1C7-1829BCFBD41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E114E0B4-949E-4BF7-B1C7-1829BCFBD41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E114E0B4-949E-4BF7-B1C7-1829BCFBD41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E114E0B4-949E-4BF7-B1C7-1829BCFBD41D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

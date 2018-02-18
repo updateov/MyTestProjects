@@ -1,0 +1,109 @@
+﻿<Window x:Class="EventAggregatorSample.MainWindow"
+				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				Title="EventAggregator Sample" Height="220" Width="545" ResizeMode="NoResize">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Border BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="5">
+			<StackPanel Grid.Column="0">
+				<Label Content="Publish" FontWeight="Black"/>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Send String 1:" Margin="3"/>
+					<TextBox Name="TextBoxSendString1" Width="100" Margin="3"/>
+					<Button Content="Send" Click="ButtonSendString1" Padding="5,0" Margin="3"/>
+					<StackPanel.ToolTip>
+						<StackPanel>
+							<TextBlock Text="Click of &quot;Send&quot; button publishes one event:"/>
+							<TextBlock Text=" •  string event with the contents of this textbox"/>
+						</StackPanel>
+					</StackPanel.ToolTip>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Send String 2:" Margin="3"/>
+					<TextBox Name="TextBoxSendString2" Width="100" Margin="3"/>
+					<Button Content="Send" Click="ButtonSendString2" Padding="5,0" Margin="3"/>
+					<StackPanel.ToolTip>
+						<StackPanel>
+							<TextBlock Text="Click of &quot;Send&quot; button publishes one event:"/>
+							<TextBlock Text=" •  string event with the contents of this textbox"/>
+						</StackPanel>
+					</StackPanel.ToolTip>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Send Integer:" Margin="3"/>
+					<TextBox Name="TextBoxSendInt" Width="100" Margin="3"/>
+					<Button Content="Send" Click="ButtonSendInt" Padding="5,0" Margin="3"/>
+					<StackPanel.ToolTip>
+						<StackPanel>
+							<TextBlock Text="Click of &quot;Send&quot; button publishes three events:"/>
+							<TextBlock Text=" •  string event with the contents of this textbox"/>
+							<TextBlock Text=" •  int event with converted contents of this textbox"/>
+							<TextBlock Text="      if contents is a positive integer"/>
+							<TextBlock Text=" •  int event with converted contents of this textbox"/>
+							<TextBlock Text="      if contents is a negative integer"/>
+							<TextBlock Text="Events are Unsubscribed/Subscribed with the following inputs:"/>
+							<TextBlock Text=" •  integer value '0' resets the subscriptions"/>
+							<TextBlock Text="      => unsubscribes using event hander, then re-subscribes"/>
+							<TextBlock Text=" •  negative integer value unsubscribes to the negative integer subscriptions"/>
+							<TextBlock Text="      => unsubscribes using the subscription variable"/>
+							<TextBlock Text=" •  integer value less than '-1000' unsubscribes to all integer subscriptions"/>
+							<TextBlock Text="      => unsubscribes using the event hander"/>
+						</StackPanel>
+					</StackPanel.ToolTip>
+				</StackPanel>
+				<StackPanel Margin="10,4">
+					<TextBlock Text="Hover over controls to see function of" Foreground="DarkGreen"/>
+					<TextBlock Text="control group." Foreground="DarkGreen"/>
+				</StackPanel>
+			</StackPanel>
+		</Border>
+		<Border Grid.Column="1" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="5">
+			<StackPanel>
+				<Label Content="Subscribe" FontWeight="Black"/>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Recieved String:" Margin="3"/>
+					<TextBox Name="TextBoxReceiveString1" Width="100" Margin="3"/>
+					<StackPanel.ToolTip>
+						<StackPanel>
+							<TextBlock Text="Subscribes to string event:"/>
+							<TextBlock Text=" •  Updates textbox with publication of any string event "/>
+						</StackPanel>
+					</StackPanel.ToolTip>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Recieved Filtered:" Margin="3"/>
+					<TextBox Name="TextBoxReceiveString2" Width="100" Margin="3"/>
+					<StackPanel.ToolTip>
+						<StackPanel>
+							<TextBlock Text="Subscribes to string event:"/>
+							<TextBlock Text=" •  Updates textbox if string event package contains the character 'b'"/>
+						</StackPanel>
+					</StackPanel.ToolTip>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Recieved Integer:" Margin="3"/>
+					<TextBox Name="TextBoxReceiveInt" Width="100" Margin="3"/>
+					<StackPanel.ToolTip>
+						<StackPanel>
+							<TextBlock Text="Subscribes to integer event:"/>
+							<TextBlock Text=" •  Updates textbox with publication of integer events"/>
+						</StackPanel>
+					</StackPanel.ToolTip>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Recieved Integer 2:" Margin="3"/>
+					<TextBox Name="TextBoxReceiveStringInt" Width="100" Margin="3"/>
+					<StackPanel.ToolTip>
+						<StackPanel>
+							<TextBlock Text="Subscribes to string event:"/>
+							<TextBlock Text=" •  Updates textbox if string event package represents and integer"/>
+						</StackPanel>
+					</StackPanel.ToolTip>
+				</StackPanel>
+			</StackPanel>
+		</Border>
+	</Grid>
+</Window>

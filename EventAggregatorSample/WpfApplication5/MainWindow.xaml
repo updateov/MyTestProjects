@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApplication5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplication5"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button x:Name="b" Content="click me" Click="Button_Click">
+            <!--<Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click" SourceName="b">
+                    <BeginStoryboard Name="FoucsTrueStoryboard">
+                        <Storyboard>                            
+                            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="exIC"  Storyboard.TargetProperty="IsExpand">
+                                <DiscreteBooleanKeyFrame KeyTime="00:00:00.01" Value="False" />
+                                <DiscreteBooleanKeyFrame KeyTime="00:00:00.01" Value="True" />
+                            </BooleanAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>-->
+        </Button>
+        <Button Click="Button_Click_1" Content="collapse me"/>
+        <local:ExpandedItemsControl x:Name="exIC" ItemsSource="{Binding}">
+            <local:ExpandedItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Expander Content="{Binding Content}" Header="{Binding Header}" IsExpanded="{Binding ElementName=exIC,Path=IsExpand,Mode=OneWay}" Collapsed="Expander_Collapsed" Expanded="Expander_Collapsed"/>
+                </DataTemplate>
+            </local:ExpandedItemsControl.ItemTemplate>
+            
+            <!--<Expander Header="AAA" Content="AAA" IsExpanded="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl},Path=IsExpand}"/>
+            <Expander Header="AAA" Content="AAA" IsExpanded="{Binding ElementName=exIC,Path=IsExpand}"/>
+            <Expander Header="AAA" Content="AAA" IsExpanded="{Binding ElementName=exIC,Path=IsExpand}"/>
+            <Expander Header="AAA" Content="AAA" IsExpanded="{Binding ElementName=exIC,Path=IsExpand}"/>-->
+        </local:ExpandedItemsControl>
+    </StackPanel>
+</Window>

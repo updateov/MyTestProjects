@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApplication3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplication3"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <StackPanel.Resources>
+                <local:Converter x:Key="Converter" />
+            </StackPanel.Resources>
+            <ToggleButton Name="ExpandAll">
+                <ToggleButton.IsChecked>
+                    <MultiBinding Mode="OneWayToSource" Converter="{StaticResource Converter}">
+                        <Binding ElementName="Expander1" Path="IsExpanded" />
+                        <Binding ElementName="Expander2" Path="IsExpanded" />
+                        <Binding ElementName="Expander3" Path="IsExpanded" />
+                    </MultiBinding>
+                </ToggleButton.IsChecked>
+                Toggle
+            </ToggleButton>
+            <Expander Name="Expander1">
+                Hai
+            </Expander>
+            <Expander Name="Expander2">
+                Hello
+            </Expander>
+            <Expander Name="Expander3">
+                Weird
+            </Expander>
+        </StackPanel>
+    </Grid>
+</Window>
