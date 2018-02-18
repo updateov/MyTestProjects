@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <DownloadAction Source="Perigen.Patterns.NnetControls.dll" Destination="" Version="01.00.00.00">
-	  <RegisterAction FileName="Perigen.Patterns.NnetControls.dll" Command="RegAsm.exe" />
-  </DownloadAction>
-  <DownloadAction Source="RestSharp.dll" Destination="" Version="105.2.3.0" />
-</Actions>
