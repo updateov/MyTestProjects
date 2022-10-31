@@ -45,6 +45,11 @@ namespace WpfGridButtonApp
             MessageBox.Show("This patient is already running");
         }
 
+        /// <summary>
+        /// Click Stop
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
             DataRowView dataRowView = (DataRowView)((Button)e.Source).DataContext;
