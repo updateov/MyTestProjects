@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfGridButtonApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfGridButtonApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Set output DB file:" Margin="5"/>
+            <TextBox Name="textBoxOutputFolder" Margin="0,5,5,5" Width="750" IsReadOnly="True"/>
+            <Button Name="buttonOutputFolderBrowse" Content="..." Width="35" Click="buttonOutputFolderBrowse_Click"/>
+        </StackPanel>
+        <DataGrid Name="dataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" Margin="5,10,5,20" 
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RowBackground="#fff" FontWeight="Bold" 
+                  Foreground="#525252" ScrollViewer.CanContentScroll="True" MaxHeight="900" AlternatingRowBackground="#f2f2f2" 
+                  BorderBrush="#000" BorderThickness="1" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="FirstName" Binding="{Binding Path='FirstName'}" IsReadOnly="True" Width="100"/>
+                <DataGridTextColumn Header="LastName" Binding="{Binding Path='LastName'}" IsReadOnly="True" Width="100"/>
+                <DataGridTextColumn Header="Inits" Binding="{Binding Path='Inits'}" IsReadOnly="True" Width="50"/>
+                <DataGridTextColumn Header="BedName" Binding="{Binding Path='BedName'}" IsReadOnly="True" Width="250"/>
+                <DataGridTextColumn Header="VisitKey" Binding="{Binding Path='VisitKey'}" IsReadOnly="True" Width="60"/>
+                <DataGridTextColumn Header="FileName" Binding="{Binding Path='FileName'}" IsReadOnly="True" Width="510"/>
+                <DataGridTextColumn Header="State" Binding="{Binding Path='State'}" IsReadOnly="True" Width="55"/>
+                <DataGridTemplateColumn Header="Start" Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnStart" Content="Start" Click="btnStart_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Pause" Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnStop" Content="Stop" Click="btnStop_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Discharge" Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnDischarge" Content="Discharge" Click="btnDischarge_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="2" Click="btnAddPatient_Click" Name="btnAddPatient" Content="Add Patient" Width="70" HorizontalAlignment="Right" Margin="5, 10"/>
+    </Grid>
+</Window>
