@@ -34,6 +34,11 @@ namespace WpfGridButtonApp
             dataGrid.ItemsSource = Manager.Instance.PatientsData.DefaultView;
         }
 
+        /// <summary>
+        /// Click Start
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
             DataRowView dataRowView = (DataRowView)((Button)e.Source).DataContext;
