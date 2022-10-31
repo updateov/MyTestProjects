@@ -24,6 +24,9 @@ namespace WpfGridButtonApp
     {
         public DateTime StartTime { get; set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public MainWindow()
         {
             Manager.Instance.InitDataTable();
